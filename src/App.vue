@@ -1,5 +1,19 @@
-<script></script>
+<script>
+import Navbar from '@/components/Navbar.vue'
 
-<template></template>
+export default {
+  components: { Navbar }
+}
+</script>
 
-<style lang="scss"></style>
+<template>
+  <navbar />
+</template>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+</style>
