@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  src:
+    local("Playfair Display"),
+    url("@/assets/fonts/PlayfairDisplay/PlayfairDisplay-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Gilroy", sans-serif;
+  font-weight: 500;
+  src:
+    local("Gilroy"),
+    url("@/assets/fonts/Gilroy/Gilroy-Medium.woff2") format("woff2"),
+    url("@/assets/fonts/Gilroy/Gilroy-Medium.woff") format("woff");
+}
