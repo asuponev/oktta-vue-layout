@@ -33,7 +33,6 @@
     gap: 16px;
 
     &-title {
-      font: $font-main-gilroy;
       color: $color-text-burger;
     }
 

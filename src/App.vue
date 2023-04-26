@@ -8,6 +8,9 @@ export default {
 
 <template>
   <navbar />
+  <main>
+    <router-view></router-view>
+  </main>
 </template>
 
 <style>
