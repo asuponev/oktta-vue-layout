@@ -22,7 +22,7 @@ export default {
             delay: 1000,
             duration: 3000,
             fill: 'forwards',
-            easing: 'ease-in-out'
+            easing: 'ease-out'
           }
         )
       })
@@ -30,7 +30,11 @@ export default {
   },
   watch: {},
   mounted() {
-    window.addEventListener('resize', this.moveTitleText())
+    this.moveTitleText()
+    window.addEventListener('resize', this.moveTitleText)
+  },
+  unmounted() {
+    window.removeEventListener('resize', this.moveTitleText)
   }
 }
 </script>
@@ -247,6 +251,7 @@ export default {
 
   &__counter {
     font: $font-small-playfair;
+    font-variant-numeric: lining-nums;
   }
 
   &__content {
