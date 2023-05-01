@@ -141,6 +141,10 @@ export default {
       border: 1px solid $color-general-green;
       background: $color-general-green;
     }
+
+    &:active {
+      border: 1px solid $color-divider;
+    }
   }
 }
 

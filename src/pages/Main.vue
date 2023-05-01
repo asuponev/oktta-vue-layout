@@ -1,11 +1,13 @@
 <script>
 import ClientsList from '@/components/ClientsList.vue'
 import ServicesSlider from '@/components/ServicesSlider.vue'
+import PublicationsList from '@/components/PublicationsList.vue'
 
 export default {
   components: {
     ClientsList,
-    ServicesSlider
+    ServicesSlider,
+    PublicationsList
   },
   data() {
     return {}
@@ -127,8 +129,8 @@ export default {
                 <p class="card__title">
                   Сеть продуктовых магазинов
                   <span class="card__title card__title--italic">
-                    “Вкустер”
-                  </span>
+                              “Вкустер”
+                            </span>
                 </p>
               </div>
               <p class="card__description">
@@ -176,6 +178,12 @@ export default {
         </h2>
       </div>
       <clients-list />
+    </section>
+    <section class="publications">
+      <p class="publications__title">
+        Публик<span class="italic">а</span>ции
+      </p>
+      <publications-list />
     </section>
   </div>
 </template>
@@ -464,6 +472,25 @@ export default {
     color: $color-text-secondary;
     font: $font-small-gilroy;
     text-indent: 56px;
+  }
+}
+
+.publications {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  padding: 112px 30px 96px;
+
+  &__title {
+    grid-column: 1;
+    font: $font-h1-gilroy;
+    letter-spacing: -0.04em;
+    max-width: 1020px;
+
+    .italic {
+      font: $font-h1-playfair;
+      font-variant-numeric: lining-nums;
+    }
   }
 }
 

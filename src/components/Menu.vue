@@ -19,7 +19,10 @@ export default {
         <p class="menu__nav-count">(13)</p>
       </div>
       <div class="menu__nav-item">
-        <a @click="$router.push('/company')" class="menu__nav-link">
+        <a
+          @click="$router.push('/company')"
+          class="menu__nav-link"
+        >
           <span>Ко<span class="italic">м</span>пания</span>
         </a>
         <p class="menu__nav-count"></p>

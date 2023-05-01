@@ -81,6 +81,7 @@ export default {
       justify-content: center;
       border: 1px solid $color-divider;
       border-radius: 50%;
+      background: $color-general-white;
       transition: border 0.2s ease-in-out, background 0.2s ease-in-out;
       cursor: pointer;
 
@@ -116,26 +117,29 @@ export default {
 }
 
 @media (min-width: 769px) {
-  .list {
-    &__item:hover {
-      background: $color-general-green;
+  .list__item:hover {
+    background: $color-general-green;
 
-      .list__item-link {
-        border: 1px solid $color-general-dark;
-        background: $color-general-dark;
+    .list__item-btn {
+      border: 1px solid $color-general-dark;
+      background: $color-general-dark;
 
-        svg {
-          stroke: $color-general-white;
-        }
+      svg {
+        stroke: $color-general-white;
       }
 
-      .list__item-cover {
-        display: block;
+      &:active {
+        background: $color-hover-bg;
+        border: 1px solid $color-hover-bg;
+      }
+    }
 
-        div {
-          opacity: 1;
-          width: 100%;
-        }
+    .list__item-cover {
+      display: block;
+
+      div {
+        opacity: 1;
+        width: 100%;
       }
     }
   }
