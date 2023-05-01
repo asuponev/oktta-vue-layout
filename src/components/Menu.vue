@@ -74,7 +74,7 @@ export default {
   z-index: 2;
   color: $color-general-white;
   padding: 56px 30px 24px;
-  transition: height 0.7s ease-in-out, top 0.7s ease-in-out;
+  transition: height 0.5s ease-in-out, top 0.5s ease-in-out;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 

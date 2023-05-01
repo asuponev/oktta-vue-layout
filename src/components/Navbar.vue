@@ -24,7 +24,10 @@ export default {
 
 <template>
   <header :class="[menuVisible ? 'header_dark' : '', 'header']">
-    <div @click="$router.push('/')" class="header__logo">
+    <div
+      @click="$router.push('/')"
+      class="header__logo"
+    >
       <img
         v-if="!menuVisible"
         src="@/assets/images/logo.svg"
@@ -40,35 +43,36 @@ export default {
         height="17"
       />
     </div>
-    <div @click="toggleMenu" class="header__menu">
-      <p
-        :class="[
+    <div
+      @click="toggleMenu"
+      class="header__menu"
+    >
+      <p :class="[
           menuVisible ? 'header__menu-title_dark' : '',
           'header__menu-title'
-        ]"
-      >
+        ]">
         меню
       </p>
-      <div
-        :class="[
+      <div :class="[
           menuVisible ? 'header__menu-burger_open' : '',
           'header__menu-burger'
-        ]"
-      >
-        <img
+        ]">
+        <svg
           v-if="!menuVisible"
-          src="@/assets/icons/burger.svg"
-          alt="burger"
           width="12"
           height="12"
-        />
-        <img
+        >
+          <use xlink:href="@/assets/icons/_sprite.svg#burger">
+          </use>
+        </svg>
+        <svg
           v-else
-          src="@/assets/icons/close.svg"
-          alt="close"
           width="8"
           height="8"
-        />
+        >
+          <use xlink:href="@/assets/icons/_sprite.svg#close">
+          </use>
+        </svg>
       </div>
     </div>
   </header>
@@ -81,7 +85,6 @@ export default {
   align-items: center;
   justify-content: space-between;
   padding: 12px 30px;
-  transition: background 0.5s ease-in-out;
 
   &_dark {
     background: $color-general-dark;

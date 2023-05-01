@@ -1,6 +1,12 @@
 <script>
+import ClientsList from '@/components/ClientsList.vue'
+import ServicesSlider from '@/components/ServicesSlider.vue'
+
 export default {
-  components: {},
+  components: {
+    ClientsList,
+    ServicesSlider
+  },
   data() {
     return {}
   },
@@ -40,8 +46,8 @@ export default {
 </script>
 
 <template>
-  <section class="hero">
-    <div class="wrapper">
+  <div class="wrapper">
+    <section class="hero">
       <div class="hero__content">
         <div class="title">
           <div class="title__line">
@@ -54,8 +60,7 @@ export default {
           </div>
           <div class="title__line">
             <p class="title__text">
-              <span class="title__text title__text--italic">продукты </span
-              >&nbsp;
+              <span class="title__text title__text--italic">продукты </span>&nbsp;
             </p>
             <p class="title__text animate">
               в п<span class="title__text title__text--italic">а</span>ртнерстве
@@ -134,15 +139,51 @@ export default {
         </div>
         <button class="button">все кейсы</button>
       </div>
-    </div>
-  </section>
+    </section>
+    <section class="services">
+      <div class="services__intro">
+        <h2 class="services__title">Услуги</h2>
+        <p class="services__subtitle">
+          Детальное исследование, интуитивно понятный дизайн и высокое качество
+          разработки позволяют нам ответить на все запросы клиента и создать
+          востребованный продукт.
+        </p>
+        <div class="services__buttons">
+          <button>
+            <svg>
+              <use xlink:href="@/assets/icons/_sprite.svg#slider-left">
+              </use>
+            </svg>
+          </button>
+          <button>
+            <svg>
+              <use xlink:href="@/assets/icons/_sprite.svg#slider-right">
+              </use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <services-slider />
+    </section>
+    <section class="clients">
+      <div class="clients__intro">
+        <p class="clients__subtitle">
+          Прозрачность в работе, доверие, открытость новому и нацеленность на
+          результат лежат в основе видения ценностей нашей компании.
+        </p>
+        <h2 class="clients__title">
+          Поработали более чем с <span class="italic">85 клиентами</span>
+        </h2>
+      </div>
+      <clients-list />
+    </section>
+  </div>
 </template>
 
 <style lang="scss" scoped>
 .wrapper {
   margin: 0 auto;
   max-width: 1440px;
-  padding: 0 30px;
 }
 
 .hero {
@@ -151,6 +192,7 @@ export default {
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 20px;
     grid-row-gap: 5px;
+    padding: 0 30px;
   }
 }
 
@@ -232,7 +274,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding: 32px 24px 29px;
+  padding: 28px 24px 29px;
   color: $color-general-white;
   display: flex;
   flex-direction: column;
@@ -311,6 +353,7 @@ export default {
   font: $font-button;
   letter-spacing: -0.03em;
   margin-top: 12px;
+  cursor: pointer;
 }
 
 .tags {
@@ -329,6 +372,98 @@ export default {
     &:first-child {
       margin-left: 0;
     }
+  }
+}
+
+.services {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  &__intro {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 40px;
+    padding: 0 30px;
+  }
+
+  &__title {
+    grid-area: 1 / 3 / 2 / 4;
+    font: $font-h1-playfair;
+    letter-spacing: -0.04em;
+  }
+
+  &__subtitle {
+    grid-area: 2 / 3 / 3 / 4;
+    color: $color-text-secondary;
+    font: $font-small-gilroy;
+    text-indent: 56px;
+    max-width: 290px;
+  }
+
+  &__buttons {
+    grid-area: 2 / 4 / 3 / 5;
+    align-self: end;
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    button {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid $color-divider;
+      border-radius: 50%;
+      background: inherit;
+      cursor: pointer;
+
+      svg {
+        width: 10px;
+        height: 10px;
+        stroke: $color-general-black;
+      }
+    }
+  }
+}
+
+.clients {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+
+  &__intro {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 40px;
+    padding: 0 30px;
+  }
+
+  &__title {
+    grid-area: 2 / 1 / 3 / 5;
+    text-align: center;
+    justify-self: center;
+    font: $font-h1-gilroy;
+    letter-spacing: -0.04em;
+    max-width: 1020px;
+
+    .italic {
+      font: $font-h1-playfair;
+      font-variant-numeric: lining-nums;
+    }
+  }
+
+  &__subtitle {
+    grid-area: 1 / 2 / 2 / 3;
+    color: $color-text-secondary;
+    font: $font-small-gilroy;
+    text-indent: 56px;
   }
 }
 
@@ -361,6 +496,7 @@ export default {
   .wrapper {
     padding: 0 20px;
   }
+
   .hero {
     &__content {
       grid-template-columns: repeat(12, 1fr);
@@ -453,6 +589,7 @@ export default {
   .wrapper {
     padding: 0 16px;
   }
+
   .hero {
     &__content {
       grid-template-columns: repeat(12, 1fr);
@@ -475,6 +612,7 @@ export default {
     margin-top: 32px;
     grid-area: 1 / 1 / 2 / 9;
     justify-self: start;
+
     .tags__item {
       font-size: 16px;
     }
