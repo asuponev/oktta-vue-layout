@@ -150,4 +150,12 @@ export default {
     }
   }
 }
+
+@media (max-width: 900px) {
+  .list__item-title {
+    p {
+      font-size: 24px;
+    }
+  }
+}
 </style>

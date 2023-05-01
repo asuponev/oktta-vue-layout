@@ -119,4 +119,33 @@ export default {
     }
   }
 }
+
+@media (max-width: 900px) {
+  .slider {
+    &__wrapper {
+      padding-left: 20px;
+    }
+
+    &__item {
+      &-cover {
+        width: 330px;
+        height: 218px;
+      }
+
+      &-title {
+        p {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .slider {
+    &__wrapper {
+      padding-left: 16px;
+    }
+  }
+}
 </style>

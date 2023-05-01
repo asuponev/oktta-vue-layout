@@ -129,8 +129,8 @@ export default {
                 <p class="card__title">
                   Сеть продуктовых магазинов
                   <span class="card__title card__title--italic">
-                              “Вкустер”
-                            </span>
+                                                        “Вкустер”
+                                                      </span>
                 </p>
               </div>
               <p class="card__description">
@@ -219,14 +219,6 @@ export default {
 
     &--italic {
       font: $font-h1-playfair;
-    }
-
-    @media (max-width: 1110px) {
-      font-size: 64px;
-    }
-
-    @media (max-width: 730px) {
-      font-size: 40px;
     }
   }
 }
@@ -517,18 +509,47 @@ export default {
   .button {
     margin-top: 20px;
   }
+
+  .clients {
+    gap: 55px;
+
+    &__intro {
+      grid-row-gap: 16px;
+    }
+  }
+}
+
+@media (max-width: 1110px) {
+
+  .title__text,
+  .publications__title,
+  .clients__title,
+  .services__title {
+    font-size: 64px;
+
+    .italic {
+      font-size: 64px;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .publications {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
 }
 
 @media (max-width: 900px) {
-  .wrapper {
-    padding: 0 20px;
-  }
 
   .hero {
     &__content {
       grid-template-columns: repeat(12, 1fr);
       grid-column-gap: 0px;
       grid-row-gap: 20px;
+      padding: 0 20px;
     }
   }
 
@@ -610,18 +631,72 @@ export default {
       font-size: 14px;
     }
   }
+
+  .services {
+    padding-top: 100px;
+    gap: 32px;
+
+    &__intro {
+      grid-column-gap: 10px;
+      grid-row-gap: 30px;
+      padding: 0 20px;
+    }
+
+
+    &__subtitle {
+      grid-area: 2 / 3 / 3 / 5;
+    }
+
+    &__buttons {
+      display: none;
+    }
+  }
+
+  .clients {
+    gap: 48px;
+
+    &__intro {
+      grid-column-gap: 10px;
+      grid-row-gap: 30px;
+      padding: 0 20px;
+    }
+
+    &__title {
+      max-width: 670px;
+    }
+
+    &__subtitle {
+      grid-area: 1 / 2 / 2 / 4;
+    }
+  }
+
+  .publications {
+    padding: 100px 20px 91px;
+  }
+}
+
+@media (max-width: 730px) {
+
+  .title__text,
+  .publications__title,
+  .clients__title,
+  .services__title {
+    font-size: 40px;
+
+    .italic {
+      font-size: 40px;
+    }
+  }
 }
 
 @media (max-width: 500px) {
-  .wrapper {
-    padding: 0 16px;
-  }
 
   .hero {
     &__content {
       grid-template-columns: repeat(12, 1fr);
       grid-column-gap: 0px;
       grid-row-gap: 20px;
+      padding: 0 16px;
     }
   }
 
@@ -716,6 +791,46 @@ export default {
     &__item {
       font-size: 14px;
     }
+  }
+
+  .services {
+    padding-top: 44px;
+    gap: 16px;
+
+    &__intro {
+      grid-column-gap: 0px;
+      grid-row-gap: 26px;
+      padding: 0 16px;
+    }
+
+    &__title {
+      grid-area: 1 / 2 / 2 / 4;
+    }
+
+    &__subtitle {
+      grid-area: 2 / 2 / 3 / 5;
+      max-width: 230px;
+    }
+  }
+
+  .clients {
+    gap: 48px;
+
+    &__intro {
+      grid-column-gap: 0px;
+      grid-row-gap: 32px;
+      padding: 0 16px;
+    }
+
+    &__subtitle {
+      grid-area: 1 / 1 / 2 / 5;
+      max-width: 315px;
+    }
+  }
+
+  .publications {
+    padding: 96px 16px 118px;
+    gap: 52px;
   }
 }
 </style>

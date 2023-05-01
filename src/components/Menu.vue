@@ -1,5 +1,10 @@
 <script>
+import SocialBlock from './SocialBlock.vue'
+
 export default {
+  components: {
+    SocialBlock
+  },
   props: {
     isOpen: {
       type: Boolean,
@@ -51,14 +56,7 @@ export default {
         <a href="tel:+995555411407">+995 555 411 407</a>
         <a href="mailto:hello@okttastudio.com">hello@okttastudio.com</a>
       </div>
-      <div class="menu__footer-social">
-        <a href="/">behance</a>
-        <a href="/">linkedin</a>
-        <a href="/">dprofile</a>
-        <a href="/">vc.ru</a>
-        <a href="/">instagram</a>
-        <a href="/">ya.music</a>
-      </div>
+      <social-block />
     </div>
   </div>
 </template>
@@ -169,30 +167,6 @@ export default {
         letter-spacing: -0.03em;
         text-decoration: none;
         color: $color-general-white;
-      }
-    }
-
-    &-social {
-      display: flex;
-      align-items: center;
-
-      a {
-        padding: 3px 12px;
-        background: inherit;
-        color: $color-general-white;
-        border: 1px solid $color-border;
-        border-radius: 100px;
-        background: $color-general-dark;
-        letter-spacing: -0.03em;
-        margin-left: -10px;
-        cursor: pointer;
-        transition: color 0.2s ease-in-out, background 0.2s ease-in-out;
-        text-decoration: none;
-
-        &:hover {
-          color: $color-general-dark;
-          background: $color-general-white;
-        }
       }
     }
   }
