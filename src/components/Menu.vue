@@ -72,7 +72,7 @@ export default {
   justify-content: space-between;
   flex-direction: column;
   background: $color-general-dark;
-  z-index: 2;
+  z-index: 100;
   color: $color-general-white;
   padding: 56px 30px 24px;
   transition: height 0.5s ease-in-out, top 0.5s ease-in-out;
@@ -227,7 +227,7 @@ export default {
 
 @media (max-width: 700px) {
   .menu {
-    padding: 152px 16px 48px;
+    padding: 152px 16px 92px;
 
     &__nav {
       grid-template-rows: repeat(5, 38px);

@@ -189,10 +189,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.wrapper {
-  margin: 0 auto;
-  max-width: 1440px;
-}
 
 .hero {
   &__content {

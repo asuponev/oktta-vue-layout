@@ -21,4 +21,9 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1440px;
+}
 </style>

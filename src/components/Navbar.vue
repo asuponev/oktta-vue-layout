@@ -1,5 +1,7 @@
 <script>
 import MenuVue from './Menu.vue'
+import logoBlack from '@/assets/images/logo.svg'
+import logoWhite from '@/assets/images/logo-white.svg'
 
 export default {
   components: {
@@ -7,7 +9,9 @@ export default {
   },
   data() {
     return {
-      menuVisible: false
+      menuVisible: false,
+      logoBlack,
+      logoWhite
     }
   },
   methods: {
@@ -23,21 +27,19 @@ export default {
 </script>
 
 <template>
-  <header :class="[menuVisible ? 'header_dark' : '', 'header']">
+  <header :class="[
+    menuVisible
+      ? 'header_dark'
+      : $route.path === '/company'
+        ? 'header_company'
+        : '', 'header'
+  ]">
     <div
       @click="$router.push('/')"
       class="header__logo"
     >
       <img
-        v-if="!menuVisible"
-        src="@/assets/images/logo.svg"
-        alt="logo"
-        width="90"
-        height="17"
-      />
-      <img
-        v-else
-        src="@/assets/images/logo-white.svg"
+        :src="menuVisible || $route.path === '/company' ? logoWhite : logoBlack"
         alt="logo"
         width="90"
         height="17"
@@ -48,14 +50,16 @@ export default {
       class="header__menu"
     >
       <p :class="[
-          menuVisible ? 'header__menu-title_dark' : '',
-          'header__menu-title'
+          menuVisible || $route.path === '/company'
+            ? 'header__menu-title_dark'
+            : '', 'header__menu-title'
         ]">
         меню
       </p>
       <div :class="[
-          menuVisible ? 'header__menu-burger_open' : '',
-          'header__menu-burger'
+          menuVisible
+            ? 'header__menu-burger_open'
+            : '', 'header__menu-burger'
         ]">
         <svg
           v-if="!menuVisible"
@@ -88,6 +92,14 @@ export default {
 
   &_dark {
     background: $color-general-dark;
+  }
+
+  &_company {
+    background: $color-general-dark;
+    background-image: url("@/assets/images/company-bg.png");
+    background-repeat: no-repeat;
+    background-position: -90px -970px;
+    background-size: cover;
   }
 
   &__logo {
@@ -148,9 +160,28 @@ export default {
   }
 }
 
+@media (max-width: 1280px) {
+  .header_company {
+    background-position: -10px -850px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .header_company {
+    background-position: -250px -530px;
+    background-size: 175%;
+  }
+}
+
 @media (max-width: 768px) {
   .header {
     padding: 12px 20px;
+  }
+}
+
+@media (max-width: 590px) {
+  .header_company {
+    background-position: -260px -168px;
   }
 }
 
