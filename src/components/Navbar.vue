@@ -180,14 +180,13 @@ export default {
 }
 
 @media (max-width: 590px) {
-  .header_company {
-    background-position: -260px -168px;
-  }
-}
 
-@media (max-width: 390px) {
   .header {
     padding: 12px 16px;
+
+    &_company {
+      background-position: -260px -168px;
+    }
   }
 }
 </style>

@@ -1,7 +1,25 @@
 @import './_variables.scss';
 @import './_fonts.scss';
 
+html,
 body {
+  height: 100%;
   font: $font-body;
   color: $color-general-dark;
+}
+
+#app {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+footer {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+main {
+  flex-grow: 1;
 }

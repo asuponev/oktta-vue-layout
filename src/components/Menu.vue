@@ -33,7 +33,10 @@ export default {
         <p class="menu__nav-count"></p>
       </div>
       <div class="menu__nav-item">
-        <a class="menu__nav-link">
+        <a
+          @click="$router.push('/services')"
+          class="menu__nav-link"
+        >
           <span>Услу<span class="italic">г</span>и</span>
         </a>
         <p class="menu__nav-count"></p>
@@ -96,26 +99,26 @@ export default {
       display: flex;
       align-items: flex-end;
       gap: 20px;
-    }
 
-    &-item:nth-child(1) {
-      grid-area: 1 / 2 / 2 / 4;
-    }
+      &:nth-child(1) {
+        grid-area: 1 / 2 / 2 / 4;
+      }
 
-    &-item:nth-child(2) {
-      grid-area: 2 / 4 / 3 / 8;
-    }
+      &:nth-child(2) {
+        grid-area: 2 / 4 / 3 / 8;
+      }
 
-    &-item:nth-child(3) {
-      grid-area: 3 / 5 / 4 / 8;
-    }
+      &:nth-child(3) {
+        grid-area: 3 / 5 / 4 / 8;
+      }
 
-    &-item:nth-child(4) {
-      grid-area: 4 / 8 / 5 / 12;
-    }
+      &:nth-child(4) {
+        grid-area: 4 / 8 / 5 / 12;
+      }
 
-    &-item:nth-child(5) {
-      grid-area: 5 / 4 / 6 / 8;
+      &:nth-child(5) {
+        grid-area: 5 / 4 / 6 / 8;
+      }
     }
 
     &-link {
