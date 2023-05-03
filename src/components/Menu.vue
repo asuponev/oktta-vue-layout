@@ -18,7 +18,10 @@ export default {
   <div :class="[isOpen ? 'open' : '', 'menu']">
     <nav class="menu__nav">
       <div class="menu__nav-item">
-        <a class="menu__nav-link">
+        <a
+          @click="$router.push('/cases')"
+          class="menu__nav-link"
+        >
           <span>Ке<span class="italic">й</span>сы</span>
         </a>
         <p class="menu__nav-count">(13)</p>

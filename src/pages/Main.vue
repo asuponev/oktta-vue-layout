@@ -189,7 +189,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-
 .hero {
   &__content {
     display: grid;
