@@ -1,0 +1,53 @@
+<script>
+export default {
+
+}
+</script>
+
+<template>
+  <button class="form-send-button">
+    отправить
+    <svg>
+      <use xlink:href="@/assets/icons/_sprite.svg#arrow-link">
+      </use>
+    </svg>
+  </button>
+</template>
+
+<style lang="scss" scoped>
+.form-send-button {
+  height: 60px;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font: $font-button;
+  letter-spacing: -0.03em;
+  color: $color-general-dark;
+  background: $color-general-white;
+  border: none;
+  cursor: pointer;
+  border-radius: 40px;
+  margin-top: 18px;
+  transition: background 0.2s ease-in-out;
+
+  svg {
+    width: 13px;
+    height: 13px;
+    stroke: $color-general-black;
+  }
+
+  &:hover {
+    background: $color-general-green;
+  }
+}
+
+@media (max-width: 1024px) {
+  .form-send-button {
+    height: 46px;
+    padding: 14px 0;
+    font-size: 16px;
+  }
+}
+</style>

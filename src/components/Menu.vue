@@ -54,7 +54,10 @@ export default {
         <p class="menu__nav-count"></p>
       </div>
       <div class="menu__nav-item">
-        <a class="menu__nav-link">
+        <a
+          @click="$router.push('/careers')"
+          class="menu__nav-link"
+        >
           <span>Ка<span class="italic">р</span>ьера</span>
         </a>
         <p class="menu__nav-count">(4)</p>
