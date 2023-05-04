@@ -45,7 +45,10 @@ export default {
         <p class="menu__nav-count"></p>
       </div>
       <div class="menu__nav-item">
-        <a class="menu__nav-link">
+        <a
+          @click="$router.push('/contacts')"
+          class="menu__nav-link"
+        >
           <span>Конта<span class="italic">к</span>ты</span>
         </a>
         <p class="menu__nav-count"></p>

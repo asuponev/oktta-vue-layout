@@ -1,17 +1,40 @@
 <script>
 export default {
-
+  props: {
+    light: {
+      type: Boolean,
+      default: false
+    }
+  }
 }
 </script>
 
 <template>
   <div class="social">
-    <a href="/">behance</a>
-    <a href="/">linkedin</a>
-    <a href="/">dprofile</a>
-    <a href="/">vc.ru</a>
-    <a href="/">instagram</a>
-    <a href="/">ya.music</a>
+    <a
+      :class="[light ? 'social__link--light' : '', 'social__link']"
+      href="/"
+    >behance</a>
+    <a
+      :class="[light ? 'social__link--light' : '', 'social__link']"
+      href="/"
+    >linkedin</a>
+    <a
+      :class="[light ? 'social__link--light' : '', 'social__link']"
+      href="/"
+    >dprofile</a>
+    <a
+      :class="[light ? 'social__link--light' : '', 'social__link']"
+      href="/"
+    >vc.ru</a>
+    <a
+      :class="[light ? 'social__link--light' : '', 'social__link']"
+      href="/"
+    >instagram</a>
+    <a
+      :class="[light ? 'social__link--light' : '', 'social__link']"
+      href="/"
+    >ya.music</a>
   </div>
 </template>
 
@@ -20,7 +43,7 @@ export default {
   display: flex;
   align-items: center;
 
-  a {
+  &__link {
     padding: 3px 12px;
     background: inherit;
     color: $color-general-white;
@@ -37,6 +60,24 @@ export default {
       color: $color-general-dark;
       background: $color-general-white;
     }
+
+    &--light {
+      color: $color-general-dark;
+      border: 1px solid $color-general-dark;
+      background: $color-general-white;
+
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3) {
+        margin-bottom: -4px;
+      }
+    }
+
+    &--light:hover {
+      color: $color-general-white;
+      border: 1px solid $color-general-dark;
+      background: $color-general-dark;
+    }
   }
 }
 
@@ -47,16 +88,28 @@ export default {
     flex-wrap: wrap;
     justify-content: flex-end;
 
-    a:nth-child(1),
-    a:nth-child(2),
-    a:nth-child(3) {
-      margin-bottom: -2px;
-    }
-
-    a {
+    &__link {
       font-size: 14px;
       padding: 1px 10px;
       margin-left: -8px;
+
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3) {
+        margin-bottom: -2px;
+      }
+
+      &--light {
+        font-size: 16px;
+        padding: 3px 12px;
+
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3) {
+          margin-bottom: -4px;
+        }
+      }
+
     }
   }
 }
