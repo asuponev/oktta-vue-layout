@@ -1,5 +1,5 @@
 <script>
-import FormContact from '@/components/FormContact.vue'
+import FormContact from '@/components/forms/FormContact.vue'
 
 export default {
   components: {

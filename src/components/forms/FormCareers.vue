@@ -1,8 +1,8 @@
 <script>
-import CustomInput from '@/components/form-elements/CustomInput.vue'
-import CustomTextarea from './form-elements/CustomTextarea.vue'
-import SendButton from './form-elements/SendButton.vue'
-import AgreementText from './form-elements/AgreementText.vue'
+import CustomInput from '@/components/forms/form-elements/CustomInput.vue'
+import CustomTextarea from '@/components/forms/form-elements/CustomTextarea.vue'
+import SendButton from '@/components/forms/form-elements/SendButton.vue'
+import AgreementText from '@/components/forms/form-elements/AgreementText.vue'
 
 export default {
   components: {

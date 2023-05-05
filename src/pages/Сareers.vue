@@ -1,7 +1,7 @@
 <script>
 import CareerProfits from '@/components/CareerProfits.vue'
 import OpenPositions from '@/components/OpenPositions.vue'
-import FormCareers from '../components/FormCareers.vue'
+import FormCareers from '@/components/forms/FormCareers.vue'
 
 export default {
   components: {
