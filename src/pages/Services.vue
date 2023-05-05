@@ -17,8 +17,8 @@ export default {
           href="/"
           class="services__item-link"
         >
-          <span>Ан<span class="italic">а</span>литика
-          и иссл<span class="italic">е</span>дования</span>
+          <p>Ан<span class="italic">а</span>литика
+            и иссл<span class="italic">е</span>дования</p>
         </a>
       </div>
       <div class="services__item">
@@ -27,7 +27,7 @@ export default {
           href="/"
           class="services__item-link"
         >
-          <span>CX-исс<span class="italic">л</span>едования</span>
+          <p>CX-исс<span class="italic">л</span>едования</p>
         </a>
       </div>
       <div class="services__item">
@@ -36,8 +36,8 @@ export default {
           href="/"
           class="services__item-link"
         >
-          <span>Мобил<span class="italic">ь</span>ная и веб-
-          раз<span class="italic">р</span>аботка</span>
+          <p>Мобил<span class="italic">ь</span>ная и
+          веб-раз<span class="italic">р</span>аботка</p>
         </a>
       </div>
       <div class="services__item">
@@ -46,9 +46,9 @@ export default {
           href="/"
           class="services__item-link"
         >
-          <span>Диза<span class="italic">й</span>н
+          <p>Диза<span class="italic">й</span>н
           мобильн<span class="italic">ы</span>х и 
-          веб-интер<span class="italic">ф</span>ейсов</span>
+          веб-интер<span class="italic">ф</span>ейсов</p>
         </a>
       </div>
       <div class="services__item">
@@ -57,8 +57,8 @@ export default {
           href="/"
           class="services__item-link"
         >
-          <span>Бр<span class="italic">е</span>ндинг и
-          упа<span class="italic">к</span>овка</span>
+          <p>Бр<span class="italic">е</span>ндинг и
+          упа<span class="italic">к</span>овка</p>
         </a>
       </div>
       <div class="services__item">
@@ -67,8 +67,8 @@ export default {
           href="/"
           class="services__item-link"
         >
-          <span>Спри<span class="italic">н</span>т за
-          7 дне<span class="italic">й</span></span>
+          <p>Спри<span class="italic">н</span>т за
+          7 дне<span class="italic">й</span></p>
         </a>
       </div>
       <div class="services__item">
@@ -77,8 +77,8 @@ export default {
           href="/"
           class="services__item-link"
         >
-          <span>Диза<span class="italic">й</span>н-поддер<span
-            class="italic">ж</span>ка</span>
+          <p>Диза<span class="italic">й</span>н-поддер<span
+            class="italic">ж</span>ка</p>
         </a>
       </div>
     </section>
