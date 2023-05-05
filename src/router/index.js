@@ -7,6 +7,7 @@ import Cases from '@/pages/Cases.vue'
 import Contacts from '@/pages/Contacts.vue'
 import Careers from '@/pages/Careers.vue'
 import Documents from '@/pages/Documents.vue'
+import Brief from '@/pages/Brief.vue'
 
 const routes = [
   {
@@ -36,6 +37,10 @@ const routes = [
   {
     path: '/documents',
     component: Documents
+  },
+  {
+    path: '/brief',
+    component: Brief
   },
 ]
 

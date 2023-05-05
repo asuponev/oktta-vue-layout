@@ -96,7 +96,10 @@ export default {
         </ul>
       </div>
     </section>
-    <hover-green-btn class="contacts-green-btn">
+    <hover-green-btn
+      @click="$router.push('/brief')"
+      class="contacts-green-btn"
+    >
       заполнить бриф
     </hover-green-btn>
     <social-block

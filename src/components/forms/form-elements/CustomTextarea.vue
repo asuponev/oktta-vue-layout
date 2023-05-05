@@ -16,6 +16,17 @@ export default {
     label: {
       type: String,
       default: ''
+    },
+    heightTextarea: {
+      type: Number,
+      default: 120
+    }
+  },
+  computed: {
+    cssProps() {
+      return {
+        'height': (this.heightTextarea) + 'px'
+      }
     }
   }
 }
@@ -29,6 +40,7 @@ export default {
       :name="name"
       :placeholder="placeholder"
       :required="required"
+      :style="cssProps"
       class="form-textarea"
     ></textarea>
   </div>
@@ -46,7 +58,7 @@ export default {
 
 .form-textarea {
   resize: none;
-  height: 120px;
+  // height: 120px;
   padding: 12px 16px;
   background: $color-bg-input;
   border: 1px solid $color-border-input;
