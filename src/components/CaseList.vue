@@ -1,11 +1,17 @@
 <script>
+import HoverGreenBtn from '@/components/UI/HoverGreenBtn.vue'
+
 import caseImg1 from '@/assets/images/mock-content/cases-page-1.png'
 import caseImg2 from '@/assets/images/mock-content/cases-page-2.png'
 import caseImg3 from '@/assets/images/mock-content/cases-page-3.png'
 import caseImg4 from '@/assets/images/mock-content/cases-page-4.png'
 import caseImg5 from '@/assets/images/mock-content/cases-page-5.png'
 import caseImg6 from '@/assets/images/mock-content/cases-page-6.png'
+
 export default {
+  components: {
+    HoverGreenBtn
+  },
   data() {
     return {
       cases: [
@@ -70,6 +76,9 @@ export default {
           <span>{{ item.category }}</span>
         </div>
       </div>
+      <hover-green-btn class="case__card-hover-btn">
+        смотреть проект
+      </hover-green-btn>
     </div>
   </div>
 </template>
@@ -134,6 +143,19 @@ export default {
       align-items: center;
       justify-content: center;
     }
+
+    &-hover-btn {
+      display: none;
+      opacity: 0;
+      width: 250px;
+      height: 250px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(15deg);
+      z-index: 3;
+      font-size: 30px;
+      padding-inline: 20px;
+    }
   }
 }
 
@@ -152,10 +174,18 @@ export default {
     transition: opacity 0.3s ease-in-out;
   }
 
+  .case__card-hover-btn {
+    display: block;
+  }
+
   .case__card:hover {
     cursor: pointer;
 
     .case__card-block {
+      opacity: 1;
+    }
+
+    .case__card-hover-btn {
       opacity: 1;
     }
 

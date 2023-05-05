@@ -2,12 +2,14 @@
 import ClientsList from '@/components/ClientsList.vue'
 import ServicesSlider from '@/components/ServicesSlider.vue'
 import PublicationsList from '@/components/PublicationsList.vue'
+import HoverGreenBtn from '@/components/UI/HoverGreenBtn.vue'
 
 export default {
   components: {
     ClientsList,
     ServicesSlider,
-    PublicationsList
+    PublicationsList,
+    HoverGreenBtn
   },
   data() {
     return {}
@@ -91,7 +93,9 @@ export default {
           </div>
         </div>
         <div class="preview">
-          <button class="preview__button">все кейсы</button>
+          <hover-green-btn class="preview__button">
+            все кейсы
+          </hover-green-btn>
         </div>
         <div class="cards">
           <div class="card card--first">
@@ -242,17 +246,8 @@ export default {
   position: relative;
 
   &__button {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: none;
-    font: $font-button;
-    background: $color-general-green;
-    color: $color-general-dark;
-    position: absolute;
     top: 13%;
     left: -17%;
-    transform: rotate(24.32deg);
   }
 }
 

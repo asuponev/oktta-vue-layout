@@ -1,9 +1,11 @@
 <script>
 import SocialBlock from '@/components/SocialBlock.vue'
+import HoverGreenBtn from '@/components/UI/HoverGreenBtn.vue'
 
 export default {
   components: {
-    SocialBlock
+    SocialBlock,
+    HoverGreenBtn
   },
   data() {
     return {
@@ -94,6 +96,9 @@ export default {
         </ul>
       </div>
     </section>
+    <hover-green-btn class="contacts-green-btn">
+      заполнить бриф
+    </hover-green-btn>
     <social-block
       class="social--contacts"
       :light="true"
@@ -107,6 +112,7 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 44px;
+  position: relative;
 }
 
 .title {
@@ -190,6 +196,16 @@ export default {
   justify-content: flex-start;
 }
 
+.contacts-green-btn {
+  transform: rotate(15deg);
+  left: 280px;
+  bottom: 88px;
+  width: 250px;
+  height: 250px;
+  font-size: 30px;
+  padding-inline: 20px;
+}
+
 @media (max-width: 1024px) {
   .wrapper {
     padding: 0 20px 100px;
@@ -245,12 +261,21 @@ export default {
     margin-top: 180px;
     margin-left: calc(50% + 8px);
   }
+
+  .contacts-green-btn {
+    left: 52px;
+    bottom: 94px;
+    width: 220px;
+    height: 220px;
+    font-size: 24px;
+    padding-inline: 30px;
+  }
 }
 
 @media (max-width: 590px) {
   .wrapper {
     padding: 100px 16px 100px;
-    gap: 58px;
+    gap: 48px;
   }
 
   .title {
@@ -263,7 +288,7 @@ export default {
 
   .contacts {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 48px;
 
     &__country {
       font-size: 14px;
@@ -273,8 +298,17 @@ export default {
   }
 
   .social--contacts {
-    margin-top: 250px;
+    margin-top: 0;
     margin-left: 12px;
+  }
+
+  .contacts-green-btn {
+    position: static;
+    margin-left: 12px;
+    width: 220px;
+    height: 220px;
+    font-size: 24px;
+    padding-inline: 30px;
   }
 }
 </style>

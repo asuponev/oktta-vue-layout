@@ -1,5 +1,10 @@
 <script>
+import HoverGreenBtn from '@/components/UI/HoverGreenBtn.vue'
+
 export default {
+  components: {
+    HoverGreenBtn
+  },
   data() {
     return {
       publications: [
@@ -59,6 +64,9 @@ export default {
           </use>
         </svg>
       </button>
+      <hover-green-btn class="publications-hover-btn">
+        читать
+      </hover-green-btn>
     </li>
   </ul>
 </template>
@@ -68,7 +76,6 @@ export default {
   display: flex;
   flex-direction: column;
   list-style-type: none;
-  position: relative;
 
   &__item {
     display: flex;
@@ -76,6 +83,7 @@ export default {
     gap: 12px;
     padding: 24px 0;
     border-bottom: 1px solid $color-divider;
+    position: relative;
 
     &:first-child {
       padding-top: 16px;
@@ -111,6 +119,7 @@ export default {
       border: 1px solid $color-divider;
       border-radius: 57px;
       background: $color-general-white;
+      color: $color-general-dark;
       cursor: pointer;
       font: $font-body;
       font-size: 18px;
@@ -123,6 +132,21 @@ export default {
         stroke: $color-general-black;
         transition: stroke 0.2s ease-in-out;
       }
+
+      &:hover {
+        border: 1px solid $color-general-dark;
+        background: $color-general-dark;
+        color: $color-general-white;
+
+        svg {
+          stroke: $color-general-white;
+        }
+      }
+
+      &:active {
+        background: $color-hover-bg;
+        border: 1px solid $color-hover-bg;
+      }
     }
 
     &-description {
@@ -132,21 +156,22 @@ export default {
   }
 }
 
-@media (min-width: 769px) {
-  .list__item-btn {
-    &:hover {
-      border: 1px solid $color-general-dark;
-      background: $color-general-dark;
-      color: $color-general-white;
+.publications-hover-btn {
+  display: none;
+  opacity: 0;
+  transform: rotate(-30deg);
+  top: -24px;
+  left: -134px;
+}
 
-      svg {
-        stroke: $color-general-white;
-      }
-    }
+@media (min-width: 1025px) {
+  .publications-hover-btn {
+    display: block;
+  }
 
-    &:active {
-      background: $color-hover-bg;
-      border: 1px solid $color-hover-bg;
+  .list__item:hover {
+    .publications-hover-btn {
+      opacity: 1;
     }
   }
 }
