@@ -5,7 +5,8 @@ import Company from '@/pages/Company.vue'
 import Services from '@/pages/Services.vue'
 import Cases from '@/pages/Cases.vue'
 import Contacts from '@/pages/Contacts.vue'
-import Сareers from '@/pages/Сareers.vue'
+import Careers from '@/pages/Careers.vue'
+import Documents from '@/pages/Documents.vue'
 
 const routes = [
   {
@@ -30,7 +31,11 @@ const routes = [
   },
   {
     path: '/careers',
-    component: Сareers
+    component: Careers
+  },
+  {
+    path: '/documents',
+    component: Documents
   },
 ]
 

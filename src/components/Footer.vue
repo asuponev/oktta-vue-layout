@@ -23,7 +23,7 @@ export default {
           © oktta design studio
         </p>
         <div class="footer__links">
-          <a href="/">
+          <a @click="$router.push('/documents')">
             документы
             <svg>
               <use xlink:href="@/assets/icons/_sprite.svg#arrow-link">
@@ -115,6 +115,7 @@ export default {
       font: $font-button;
       letter-spacing: -0.03em;
       text-decoration: none;
+      cursor: pointer;
 
       svg {
         width: 13px;
