@@ -21,6 +21,7 @@ export default {
   a {
     color: $color-text-secondary;
     text-underline-offset: 2px;
+    transition: color 0.2s ease-in-out;
 
     &:hover {
       color: $color-general-white;

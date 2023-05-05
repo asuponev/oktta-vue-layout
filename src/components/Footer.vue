@@ -17,7 +17,12 @@ export default {
       >
         hello<span class="italic">@</span>okttastudio.com
       </a>
-      <button class="footer__button">заполнить бриф</button>
+      <button
+        @click="$router.push('/brief')"
+        class="footer__button"
+      >
+        заполнить бриф
+      </button>
       <div class="footer__block">
         <p class="footer__notice">
           © oktta design studio
@@ -85,6 +90,11 @@ export default {
     font: $font-button;
     letter-spacing: -0.03em;
     cursor: pointer;
+    transition: background 0.2s ease-in-out;
+
+    &:hover {
+      background: $color-general-white;
+    }
   }
 
   &__block {

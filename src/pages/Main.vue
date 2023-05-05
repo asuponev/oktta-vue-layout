@@ -132,9 +132,7 @@ export default {
                 </div>
                 <p class="card__title">
                   Сеть продуктовых магазинов
-                  <span class="card__title card__title--italic">
-                                                        “Вкустер”
-                                                      </span>
+                  <span class="card__title card__title--italic">“Вкустер”</span>
                 </p>
               </div>
               <p class="card__description">
@@ -344,6 +342,12 @@ export default {
   letter-spacing: -0.03em;
   margin-top: 12px;
   cursor: pointer;
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+
+  &:hover {
+    background: $color-general-green;
+    color: $color-general-dark;
+  }
 }
 
 .tags {
