@@ -113,16 +113,20 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.wrapper {
+  margin-top: 0;
+}
+
 .hero {
-  height: 600px;
+  height: 672px;
   background: $color-general-dark;
   background-image: url("@/assets/images/company-bg.png");
   background-repeat: no-repeat;
-  background-position: -90px -1042px;
+  background-position: -90px -970px;
   background-size: cover;
 
   &__content {
-    padding: 277px 30px 20px;
+    padding: 349px 30px 20px;
   }
 }
 
@@ -326,7 +330,7 @@ export default {
 
 @media (max-width: 1280px) {
   .hero {
-    background-position: -10px -922px;
+    background-position: -10px -850px;
   }
 
   .approach {
@@ -362,12 +366,12 @@ export default {
 
 @media (max-width: 1050px) {
   .hero {
-    height: 900px;
-    background-position: -250px -602px;
+    height: 972px;
+    background-position: -250px -520px;
     background-size: 175%;
 
     &__content {
-      padding: 707px 20px 20px;
+      padding: 779px 20px 20px;
     }
   }
 
@@ -452,11 +456,11 @@ export default {
 
 @media (max-width: 590px) {
   .hero {
-    height: 685px;
-    background-position: -260px -240px;
+    height: 757px;
+    background-position: -260px -168px;
 
     &__content {
-      padding: 440px 16px 16px;
+      padding: 512px 16px 16px;
     }
   }
 

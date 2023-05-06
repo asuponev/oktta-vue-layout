@@ -1,14 +1,17 @@
 <script>
-import Navbar from '@/components/Navbar.vue'
+import CustomHeader from '@/components/header/CustomHeader.vue'
 import CustomFooter from './components/Footer.vue';
 
 export default {
-  components: { Navbar, CustomFooter }
+  components: { 
+    CustomHeader, 
+    CustomFooter 
+  }
 }
 </script>
 
 <template>
-  <navbar />
+  <custom-header />
   <main>
     <router-view></router-view>
   </main>
@@ -25,5 +28,6 @@ export default {
 .wrapper {
   margin: 0 auto;
   max-width: 1440px;
+  margin-top: 72px;
 }
 </style>

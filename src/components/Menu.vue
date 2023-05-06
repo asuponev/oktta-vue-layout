@@ -9,66 +9,79 @@ export default {
     isOpen: {
       type: Boolean,
       default: false
+    },
+    closeMenu: {
+      type: Function
+    }
+  },
+  methods: {
+    onOpenLink(path) {
+      if (this.$route.path !== path) {
+        this.$router.push(path)
+        this.closeMenu()
+      }
     }
   }
 }
 </script>
 
 <template>
-  <div :class="[isOpen ? 'open' : '', 'menu']">
-    <nav class="menu__nav">
-      <div class="menu__nav-item">
-        <a
-          @click="$router.push('/cases')"
-          class="menu__nav-link"
-        >
-          <span>Ке<span class="italic">й</span>сы</span>
-        </a>
-        <p class="menu__nav-count">(13)</p>
+  <div :class="[isOpen ? 'menu--open' : '', 'menu']">
+    <div :class="[isOpen ? 'menu__wrapper--open' : '', 'menu__wrapper']">
+      <nav class="menu__nav">
+        <div class="menu__item">
+          <a
+            @click="onOpenLink('/cases')"
+            class="menu__item-link"
+          >
+            <span>Ке<span class="italic">й</span>сы</span>
+          </a>
+          <p class="menu__item-count">(13)</p>
+        </div>
+        <div class="menu__item">
+          <a
+            @click="onOpenLink('/company')"
+            class="menu__item-link"
+          >
+            <span>Ко<span class="italic">м</span>пания</span>
+          </a>
+          <p class="menu__item-count"></p>
+        </div>
+        <div class="menu__item">
+          <a
+            @click="onOpenLink('/services')"
+            class="menu__item-link"
+          >
+            <span>Услу<span class="italic">г</span>и</span>
+          </a>
+          <p class="menu__item-count"></p>
+        </div>
+        <div class="menu__item">
+          <a
+            @click="onOpenLink('/contacts')"
+            class="menu__item-link"
+          >
+            <span>Конта<span class="italic">к</span>ты</span>
+          </a>
+          <p class="menu__item-count"></p>
+        </div>
+        <div class="menu__item">
+          <a
+            @click="onOpenLink('/careers')"
+            class="menu__item-link"
+          >
+            <span>Ка<span class="italic">р</span>ьера</span>
+          </a>
+          <p class="menu__item-count">(4)</p>
+        </div>
+      </nav>
+      <div class="menu__footer">
+        <div class="menu__footer-contacts">
+          <a href="tel:+995555411407">+995 555 411 407</a>
+          <a href="mailto:hello@okttastudio.com">hello@okttastudio.com</a>
+        </div>
+        <social-block />
       </div>
-      <div class="menu__nav-item">
-        <a
-          @click="$router.push('/company')"
-          class="menu__nav-link"
-        >
-          <span>Ко<span class="italic">м</span>пания</span>
-        </a>
-        <p class="menu__nav-count"></p>
-      </div>
-      <div class="menu__nav-item">
-        <a
-          @click="$router.push('/services')"
-          class="menu__nav-link"
-        >
-          <span>Услу<span class="italic">г</span>и</span>
-        </a>
-        <p class="menu__nav-count"></p>
-      </div>
-      <div class="menu__nav-item">
-        <a
-          @click="$router.push('/contacts')"
-          class="menu__nav-link"
-        >
-          <span>Конта<span class="italic">к</span>ты</span>
-        </a>
-        <p class="menu__nav-count"></p>
-      </div>
-      <div class="menu__nav-item">
-        <a
-          @click="$router.push('/careers')"
-          class="menu__nav-link"
-        >
-          <span>Ка<span class="italic">р</span>ьера</span>
-        </a>
-        <p class="menu__nav-count">(4)</p>
-      </div>
-    </nav>
-    <div class="menu__footer">
-      <div class="menu__footer-contacts">
-        <a href="tel:+995555411407">+995 555 411 407</a>
-        <a href="mailto:hello@okttastudio.com">hello@okttastudio.com</a>
-      </div>
-      <social-block />
     </div>
   </div>
 </template>
@@ -78,22 +91,32 @@ export default {
   height: 0;
   width: 100vw;
   position: absolute;
-  top: -1000px;
-  left: 0;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+  top: -10000px;
+  right: 0;
+  z-index: -10;
   background: $color-general-dark;
-  z-index: 100;
   color: $color-general-white;
-  padding: 56px 30px 24px;
-  transition: height 0.5s ease-in-out, top 0.5s ease-in-out;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  transition: all 0.4s ease;
 
-  &.open {
-    top: 72px;
-    height: calc(100vh - 72px);
+  &--open {
+    top: 0;
+    height: 100vh;
+    z-index: 100;
+  }
+
+  &__wrapper {
+    display: none;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 128px 30px 24px;
+
+    &--open {
+      display: flex;
+    }
   }
 
   &__nav {
@@ -103,31 +126,31 @@ export default {
     width: 100%;
     grid-column-gap: 24px;
     grid-row-gap: 0px;
+  }
 
-    &-item {
-      display: flex;
-      align-items: flex-end;
-      gap: 20px;
+  &__item {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
 
-      &:nth-child(1) {
-        grid-area: 1 / 2 / 2 / 4;
-      }
+    &:nth-child(1) {
+      grid-area: 1 / 2 / 2 / 4;
+    }
 
-      &:nth-child(2) {
-        grid-area: 2 / 4 / 3 / 8;
-      }
+    &:nth-child(2) {
+      grid-area: 2 / 4 / 3 / 8;
+    }
 
-      &:nth-child(3) {
-        grid-area: 3 / 5 / 4 / 8;
-      }
+    &:nth-child(3) {
+      grid-area: 3 / 5 / 4 / 8;
+    }
 
-      &:nth-child(4) {
-        grid-area: 4 / 8 / 5 / 12;
-      }
+    &:nth-child(4) {
+      grid-area: 4 / 8 / 5 / 12;
+    }
 
-      &:nth-child(5) {
-        grid-area: 5 / 4 / 6 / 8;
-      }
+    &:nth-child(5) {
+      grid-area: 5 / 4 / 6 / 8;
     }
 
     &-link {
@@ -186,15 +209,17 @@ export default {
 
 @media (max-width: 1060px) {
   .menu {
-    padding: 240px 20px 20px;
+    &__wrapper {
+      padding: 312px 20px 20px;
+    }
 
     &__nav {
       grid-template-rows: repeat(5, 61px);
       grid-column-gap: 8px;
+    }
 
-      &-item {
-        gap: 10px;
-      }
+    &__item {
+      gap: 10px;
 
       &-link {
         letter-spacing: -2px;
@@ -239,13 +264,17 @@ export default {
 
 @media (max-width: 700px) {
   .menu {
-    padding: 152px 16px 92px;
+    &__wrapper {
+      padding: 224px 16px 92px;
+    }
 
     &__nav {
       grid-template-rows: repeat(5, 38px);
       grid-row-gap: 8px;
+    }
 
-      &-item:nth-child(4) {
+    &__item {
+      &:nth-child(4) {
         grid-area: 4 / 7 / 5 / 11;
       }
 
