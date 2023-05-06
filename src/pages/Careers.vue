@@ -65,7 +65,8 @@ export default {
 
   .title {
     font-size: 40px;
-
+    max-width: 350px;
+    
     .italic {
       font-size: 40px;
     }

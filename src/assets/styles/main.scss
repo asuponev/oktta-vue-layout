@@ -6,6 +6,11 @@ body {
   height: 100%;
   font: $font-body;
   color: $color-general-dark;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
 }
 
 #app {

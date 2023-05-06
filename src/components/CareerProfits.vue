@@ -19,45 +19,51 @@ export default {
     </div>
     <div class="section__block">
       <div class="profit">
-        <div class="profit__card">
-          <span class="profit__card-id">(01)</span>
-          <p class="profit__card-title">
-            Внутр<span class="italic">е</span>ннее обучение
-          </p>
-          <p class="profit__card-description">
-            проанализировали, из каких регионов идет наибольший трафик и какие из
-            них имеют наивысший процент отказов
-          </p>
-        </div>
-        <div class="profit__card">
-          <span class="profit__card-id">(02)</span>
-          <p class="profit__card-title">
-            Опл<span class="italic">а</span>та курсов
-          </p>
-          <p class="profit__card-description">
-            проанализировали, из каких регионов идет наибольший трафик и какие из
-            них имеют наивысший процент отказов
-          </p>
-        </div>
-        <div class="profit__card">
-          <span class="profit__card-id">(03)</span>
-          <p class="profit__card-title">
-            Корпо<span class="italic">р</span>ативы в VR
-          </p>
-          <p class="profit__card-description">
-            проанализировали, из каких регионов идет наибольший трафик и какие из
-            них имеют наивысший процент отказов
-          </p>
-        </div>
-        <div class="profit__card">
-          <span class="profit__card-id">(04)</span>
-          <p class="profit__card-title">
-            Помо<span class="italic">щ</span>ь с релокацией
-          </p>
-          <p class="profit__card-description">
-            проанализировали, из каких регионов идет наибольший трафик и какие из
-            них имеют наивысший процент отказов
-          </p>
+        <div class="profit__cards">
+          <div class="profit__card">
+            <span class="profit__card-id">(01)</span>
+            <p class="profit__card-title">
+              Внутр<span class="italic">е</span>ннее обучение
+            </p>
+            <p class="profit__card-description">
+              проанализировали, из каких регионов идет наибольший трафик и какие
+              из
+              них имеют наивысший процент отказов
+            </p>
+          </div>
+          <div class="profit__card">
+            <span class="profit__card-id">(02)</span>
+            <p class="profit__card-title">
+              Опл<span class="italic">а</span>та курсов
+            </p>
+            <p class="profit__card-description">
+              проанализировали, из каких регионов идет наибольший трафик и какие
+              из
+              них имеют наивысший процент отказов
+            </p>
+          </div>
+          <div class="profit__card">
+            <span class="profit__card-id">(03)</span>
+            <p class="profit__card-title">
+              Корпо<span class="italic">р</span>ативы в VR
+            </p>
+            <p class="profit__card-description">
+              проанализировали, из каких регионов идет наибольший трафик и какие
+              из
+              них имеют наивысший процент отказов
+            </p>
+          </div>
+          <div class="profit__card">
+            <span class="profit__card-id">(04)</span>
+            <p class="profit__card-title">
+              Помо<span class="italic">щ</span>ь с релокацией
+            </p>
+            <p class="profit__card-description">
+              проанализировали, из каких регионов идет наибольший трафик и какие
+              из
+              них имеют наивысший процент отказов
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -81,17 +87,12 @@ export default {
   &__block {
     width: calc(50% - 20px / 2);
     height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
 
     &:first-child {
       margin-top: 70px;
-    }
-
-    &:last-child {
-      overflow-y: scroll;
-
-      &::-webkit-scrollbar {
-        width: 0;
-      }
     }
   }
 
@@ -119,9 +120,15 @@ export default {
 }
 
 .profit {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
 
   &__card {
     width: 392px;
@@ -163,6 +170,10 @@ export default {
       margin-bottom: 70px;
     }
   }
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -176,13 +187,10 @@ export default {
 
     &__block {
       width: auto;
+      align-items: center;
 
       &:first-child {
         margin-top: 0;
-      }
-
-      &:last-child {
-        overflow: hidden;
       }
     }
 
@@ -200,6 +208,8 @@ export default {
   }
 
   .profit {
+    overflow: hidden;
+
     &__card {
       width: 336px;
 
@@ -230,10 +240,6 @@ export default {
 
 @media (max-width: 590px) {
   .section {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
     gap: 48px;
     padding: 48px 0 44px;
     background-image: url("@/assets/images/careers-bg3.png");
@@ -242,30 +248,11 @@ export default {
     margin-top: 34px;
 
     &__block {
+      width: 100%;
       height: auto;
 
       &:first-child {
         align-self: center;
-      }
-
-      &:last-child {
-        overflow-x: scroll;
-        padding-bottom: 20px;
-
-        &::-webkit-scrollbar {
-          height: 4px;
-        }
-
-        &::-webkit-scrollbar-track {
-          background: rgba(134, 144, 153, 0.2);
-          border-radius: 25px;
-          margin: 0 48px;
-        }
-
-        &::-webkit-scrollbar-thumb {
-          background: $color-general-white;
-          border-radius: 31px;
-        }
       }
     }
 
@@ -284,8 +271,13 @@ export default {
   }
 
   .profit {
-    flex-direction: row;
-    gap: 8px;
+    overflow-x: scroll;
+    padding-bottom: 20px;
+
+    &__cards {
+      flex-direction: row;
+      gap: 8px;
+    }
 
     &__card {
       min-width: 320px;
@@ -302,6 +294,21 @@ export default {
       &:first-child {
         margin-left: 24px;
       }
+    }
+
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(134, 144, 153, 0.2);
+      border-radius: 25px;
+      margin: 0 48px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $color-general-white;
+      border-radius: 31px;
     }
   }
 }
