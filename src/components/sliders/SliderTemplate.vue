@@ -13,7 +13,7 @@ export default {
         leftItems = sliderItems.getBoundingClientRect().left,
         rightItems = sliderItems.getBoundingClientRect().right;
 
-      if (rightItems > 398) {
+      if (rightItems > 0) {
         sliderItems.style.transform = `translateX(${leftItems - 398}px)`
       }
     },
@@ -73,7 +73,6 @@ export default {
 
   &__wrapper {
     width: 100%;
-    margin-top: 16px;
     overflow: hidden;
   }
 

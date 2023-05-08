@@ -1,6 +1,6 @@
 <script>
 import ClientsList from '@/components/ClientsList.vue'
-import ServicesSlider from '@/components/ServicesSlider.vue'
+import ServicesSlider from '@/components/sliders/ServicesSlider.vue'
 import PublicationsList from '@/components/PublicationsList.vue'
 import HoverGreenBtn from '@/components/UI/HoverGreenBtn.vue'
 
@@ -152,20 +152,6 @@ export default {
           разработки позволяют нам ответить на все запросы клиента и создать
           востребованный продукт.
         </p>
-        <div class="services__buttons">
-          <button>
-            <svg>
-              <use xlink:href="@/assets/icons/_sprite.svg#slider-left">
-              </use>
-            </svg>
-          </button>
-          <button>
-            <svg>
-              <use xlink:href="@/assets/icons/_sprite.svg#slider-right">
-              </use>
-            </svg>
-          </button>
-        </div>
       </div>
       <services-slider />
     </section>
@@ -373,7 +359,6 @@ export default {
   padding-top: 100px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
 
   &__intro {
     display: grid;
@@ -381,6 +366,7 @@ export default {
     grid-column-gap: 20px;
     grid-row-gap: 40px;
     padding: 0 30px;
+    margin-bottom: 56px;
   }
 
   &__title {
@@ -395,33 +381,6 @@ export default {
     font: $font-small-gilroy;
     text-indent: 56px;
     max-width: 290px;
-  }
-
-  &__buttons {
-    grid-area: 2 / 4 / 3 / 5;
-    align-self: end;
-    justify-self: end;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    button {
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid $color-divider;
-      border-radius: 50%;
-      background: inherit;
-      cursor: pointer;
-
-      svg {
-        width: 10px;
-        height: 10px;
-        stroke: $color-general-black;
-      }
-    }
   }
 }
 
@@ -639,10 +598,6 @@ export default {
 
     &__subtitle {
       grid-area: 2 / 3 / 3 / 5;
-    }
-
-    &__buttons {
-      display: none;
     }
   }
 

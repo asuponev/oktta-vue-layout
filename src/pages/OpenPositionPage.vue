@@ -1,18 +1,13 @@
 <script>
 import OpenPositionView from '@/components/OpenPositionView.vue'
-import CustomSlider from '@/components/CustomSlider.vue'
+import CareersSlider from '@/components/sliders/CareersSlider.vue'
 import FormCareers from '@/components/forms/FormCareers.vue'
 import Breadcrumbs from '@/components/UI/Breadcrumbs.vue'
-
-import sliderImage1 from '@/assets/images/careers-slider/card1.svg'
-import sliderImage2 from '@/assets/images/careers-slider/card2.svg'
-import sliderImage3 from '@/assets/images/careers-slider/card3.svg'
-import sliderImage4 from '@/assets/images/careers-slider/card4.svg'
 
 export default {
   components: {
     OpenPositionView,
-    CustomSlider,
+    CareersSlider,
     FormCareers,
     Breadcrumbs
   },
@@ -48,32 +43,6 @@ export default {
           'Интересные и разнообразные проекты'
         ]
       },
-      sliderItems: [
-        {
-          id: 1,
-          title: 'Свобода мысли и действий',
-          description: 'Нет бюрократической кабалы и микроменеджмента.',
-          image: sliderImage1
-        },
-        {
-          id: 2,
-          title: 'Неформальное общение',
-          description: 'Не желаем доброго времени суток и не обращаемся на Вы.',
-          image: sliderImage2
-        },
-        {
-          id: 3,
-          title: 'Удалёнка',
-          description: 'Каждый может выбрать удобный график. И никто не будет осуждать за поздние ответы.',
-          image: sliderImage3
-        },
-        {
-          id: 4,
-          title: 'Инструменты',
-          description: 'Используем современный стек, оплачиваем английский и подписки на сервисы.',
-          image: sliderImage4
-        },
-      ]
     }
   }
 }
@@ -89,7 +58,7 @@ export default {
       <div class="title">
         <span>Ком<span class="italic">ф</span>ортная работа без рутины</span>
       </div>
-      <custom-slider :items="sliderItems" />
+      <careers-slider />
     </section>
     <section class="section-form">
       <form-careers
