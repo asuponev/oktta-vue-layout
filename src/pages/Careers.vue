@@ -1,11 +1,11 @@
 <script>
-import CareerProfits from '@/components/CareerProfits.vue'
-import OpenPositionsList from '@/components/OpenPositionsList.vue'
+import CareerInOkttaSection from '@/components/sections/CareerInOkttaSection.vue'
+import OpenPositionsList from '@/components/sections/OpenPositionsList.vue'
 import FormCareers from '@/components/forms/FormCareers.vue'
 
 export default {
   components: {
-    CareerProfits,
+    CareerInOkttaSection,
     OpenPositionsList,
     FormCareers
   },
@@ -13,26 +13,22 @@ export default {
 </script>
 
 <template>
-  <div class="wrapper">
-    <section class="title">
-      <span>Д<span class="italic">е</span>лаем
-      гранд<span class="italic">и</span>озное,</span>
-      <span>не хв<span class="italic">а</span>тает только</span>
-      <span class="italic">тебя</span>
-    </section>
-    <career-profits />
-    <open-positions-list />
-    <form-careers />
-  </div>
+  <section>
+    <div class="wrapper">
+      <div class="title">
+        <span>Д<span class="italic">е</span>лаем
+        гранд<span class="italic">и</span>озное,</span>
+        <span>не хв<span class="italic">а</span>тает только</span>
+        <span class="italic">тебя</span>
+      </div>
+    </div>
+  </section>
+  <career-in-oktta-section />
+  <open-positions-list />
+  <form-careers />
 </template>
 
 <style lang="scss" scoped>
-.wrapper {
-  padding: 0 30px 30px;
-  display: flex;
-  flex-direction: column;
-}
-
 .title {
   display: flex;
   flex-direction: column;
@@ -45,11 +41,8 @@ export default {
 }
 
 @media (max-width: 1024px) {
-  .wrapper {
-    padding: 200px 20px 20px;
-  }
-
   .title {
+    padding-top: 200px;
     font-size: 64px;
 
     .italic {
@@ -59,14 +52,11 @@ export default {
 }
 
 @media (max-width: 590px) {
-  .wrapper {
-    padding: 130px 16px 20px;
-  }
-
   .title {
     font-size: 40px;
     max-width: 350px;
-    
+    padding-top: 130px;
+
     .italic {
       font-size: 40px;
     }

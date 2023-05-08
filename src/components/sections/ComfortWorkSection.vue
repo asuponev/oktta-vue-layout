@@ -1,5 +1,5 @@
 <script>
-import SliderTemplate from '@/components/sliders/SliderTemplate.vue'
+import SliderTemplate from '@/components/slider/SliderTemplate.vue'
 
 import sliderImage1 from '@/assets/images/careers-slider/card1.svg'
 import sliderImage2 from '@/assets/images/careers-slider/card2.svg'
@@ -44,7 +44,64 @@ export default {
 </script>
 
 <template>
-  <slider-template :items="sliderItems" />
+  <section>
+    <div class="title">
+      <span>Ком<span class="italic">ф</span>ортная работа без рутины</span>
+    </div>
+    <slider-template :items="sliderItems" />
+  </section>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.title {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 100px 30px 0;
+  font: $font-page-title-gilroy;
+  letter-spacing: -0.04em;
+  margin-bottom: 50px;
+
+  .italic {
+    font: $font-page-title-playfair;
+  }
+
+  span:first-child {
+    grid-area: 1 / 2 / 2 / 4;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .title {
+    gap: 8px;
+    padding-inline: 20px;
+    font-size: 40px;
+
+    .italic {
+      font-size: 40px;
+    }
+
+    span:first-child {
+      grid-area: 1 / 3 / 2 / 5;
+      max-width: 358px;
+    }
+  }
+}
+
+@media (max-width: 590px) {
+  .title {
+    gap: 8px;
+    padding-inline: 16px;
+    font-size: 32px;
+
+    .italic {
+      font-size: 32px;
+    }
+
+    span:first-child {
+      grid-area: 1 / 1 / 2 / 5;
+    }
+  }
+}
+</style>

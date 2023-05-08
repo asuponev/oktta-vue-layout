@@ -68,35 +68,31 @@ export default {
     </div>
   </section>
   <section class="clients">
-    <div class="wrapper">
-      <div class="clients__content">
-        <p class="title title--black">
-          Кл<span class="title title--italic title--black">и</span>енты
-        </p>
-        <clients-list />
-      </div>
+    <div class="clients__content">
+      <p class="title title--black">
+        Кл<span class="title title--italic title--black">и</span>енты
+      </p>
+      <clients-list />
     </div>
   </section>
   <section class="numbers">
-    <div class="wrapper">
-      <div class="numbers__content">
-        <p class="title">Об Okkta в цифрах</p>
-        <div class="numbers__item">
-          <p class="numbers__item-title">12+</p>
-          <p class="numbers__item-descr">профессионалов в команде</p>
-        </div>
-        <div class="numbers__item">
-          <p class="numbers__item-title">2</p>
-          <p class="numbers__item-descr">присутствие в странах</p>
-        </div>
-        <div class="numbers__item">
-          <p class="numbers__item-title">85+</p>
-          <p class="numbers__item-descr">реализованных проектов</p>
-        </div>
-        <div class="numbers__item">
-          <p class="numbers__item-title">5+</p>
-          <p class="numbers__item-descr">лет на рынке</p>
-        </div>
+    <div class="numbers__content">
+      <p class="title">Об Okkta в цифрах</p>
+      <div class="numbers__item">
+        <p class="numbers__item-title">12+</p>
+        <p class="numbers__item-descr">профессионалов в команде</p>
+      </div>
+      <div class="numbers__item">
+        <p class="numbers__item-title">2</p>
+        <p class="numbers__item-descr">присутствие в странах</p>
+      </div>
+      <div class="numbers__item">
+        <p class="numbers__item-title">85+</p>
+        <p class="numbers__item-descr">реализованных проектов</p>
+      </div>
+      <div class="numbers__item">
+        <p class="numbers__item-title">5+</p>
+        <p class="numbers__item-descr">лет на рынке</p>
       </div>
     </div>
   </section>
@@ -113,11 +109,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.wrapper {
-  margin-top: 0;
-}
-
 .hero {
+  transform: translateY(-72px);
   height: 672px;
   background: $color-general-dark;
   background-image: url("@/assets/images/company-bg.png");
@@ -126,7 +119,7 @@ export default {
   background-size: cover;
 
   &__content {
-    padding: 349px 30px 20px;
+    padding: 349px 0 20px;
   }
 }
 
@@ -237,7 +230,7 @@ export default {
     flex-direction: column;
     align-items: center;
     gap: 52px;
-    padding: 100px 30px;
+    padding: 100px 0;
   }
 }
 
@@ -321,7 +314,7 @@ export default {
 
 .publications {
   &__content {
-    padding: 100px 30px;
+    padding: 100px 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 20px;
@@ -364,14 +357,14 @@ export default {
   }
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1024px) {
   .hero {
     height: 972px;
     background-position: -250px -520px;
     background-size: 175%;
 
     &__content {
-      padding: 779px 20px 20px;
+      padding: 779px 0 20px;
     }
   }
 
@@ -382,7 +375,6 @@ export default {
   .principles {
     &__content {
       gap: 48px;
-      padding-inline: 20px;
     }
   }
 
@@ -419,7 +411,6 @@ export default {
     flex-direction: column;
     align-items: center;
     gap: 50px;
-    padding-inline: 20px;
   }
 }
 
@@ -460,7 +451,7 @@ export default {
     background-position: -260px -168px;
 
     &__content {
-      padding: 512px 16px 16px;
+      padding: 512px 0 16px;
     }
   }
 
@@ -471,6 +462,11 @@ export default {
   .approach {
     &__intro {
       gap: 16px;
+    }
+
+    &__content {
+      gap: 48px;
+      padding-top: 24px;
     }
 
     &__illustration {
@@ -525,10 +521,6 @@ export default {
         right: calc(max(5%, 16px));
       }
     }
-  }
-
-  .publications__content {
-    padding-inline: 16px;
   }
 }
 

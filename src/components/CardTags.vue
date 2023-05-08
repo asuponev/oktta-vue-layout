@@ -34,6 +34,7 @@ export default {
     height: 28px;
     background: $color-general-white;
     border: 1px solid $color-general-dark;
+    color: $color-general-dark;
     border-radius: 100px;
     letter-spacing: -0.03em;
     margin-right: -10px;

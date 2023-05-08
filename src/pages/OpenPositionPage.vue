@@ -1,13 +1,13 @@
 <script>
-import OpenPositionView from '@/components/OpenPositionView.vue'
-import CareersSlider from '@/components/sliders/CareersSlider.vue'
+import OpenPositionView from '@/components/sections/OpenPositionView.vue'
+import ComfortWorkSection from '@/components/sections/ComfortWorkSection.vue'
 import FormCareers from '@/components/forms/FormCareers.vue'
 import Breadcrumbs from '@/components/UI/Breadcrumbs.vue'
 
 export default {
   components: {
     OpenPositionView,
-    CareersSlider,
+    ComfortWorkSection,
     FormCareers,
     Breadcrumbs
   },
@@ -49,92 +49,15 @@ export default {
 </script>
 
 <template>
-  <div class="wrapper">
-    <breadcrumbs
-      :items="[{ name: 'Вакансии', path: '/careers' }, { name: position.title }]"
-    />
-    <open-position-view :position="position" />
-    <section>
-      <div class="title">
-        <span>Ком<span class="italic">ф</span>ортная работа без рутины</span>
-      </div>
-      <careers-slider />
-    </section>
-    <section class="section-form">
-      <form-careers
-        :title="'Узнали себя?'"
-        :description="'Оставляйте заявку — ответим в течение недели в Telegram или по почте'"
-      />
-    </section>
-  </div>
+  <breadcrumbs
+    :items="[{ name: 'Вакансии', path: '/careers' }, { name: position.title }]"
+  />
+  <open-position-view :position="position" />
+  <comfort-work-section />
+  <form-careers
+    :title="'Узнали себя?'"
+    :description="'Оставляйте заявку — ответим в течение недели в Telegram или по почте'"
+  />
 </template>
 
-<style lang="scss" scoped>
-.wrapper {
-  padding: 16px 0 30px;
-}
-
-.title {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  padding: 100px 30px 0;
-  font: $font-page-title-gilroy;
-  letter-spacing: -0.04em;
-  margin-bottom: 50px;
-
-  .italic {
-    font: $font-page-title-playfair;
-  }
-
-  span:first-child {
-    grid-area: 1 / 2 / 2 / 4;
-    max-width: 600px;
-  }
-}
-
-.section-form {
-  padding-inline: 30px;
-}
-
-@media (max-width: 1024px) {
-  .title {
-    gap: 8px;
-    padding-inline: 20px;
-    font-size: 40px;
-
-    .italic {
-      font-size: 40px;
-    }
-
-    span:first-child {
-      grid-area: 1 / 3 / 2 / 5;
-      max-width: 358px;
-    }
-  }
-
-  .section-form {
-    padding-inline: 20px;
-  }
-}
-
-@media (max-width: 590px) {
-  .title {
-    gap: 8px;
-    padding-inline: 16px;
-    font-size: 32px;
-
-    .italic {
-      font-size: 32px;
-    }
-
-    span:first-child {
-      grid-area: 1 / 1 / 2 / 5;
-    }
-  }
-
-  .section-form {
-    padding-inline: 16px;
-  }
-}
-</style>
+<style lang="scss" scoped></style>

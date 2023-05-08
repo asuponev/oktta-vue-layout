@@ -3,9 +3,9 @@ import CustomHeader from '@/components/header/CustomHeader.vue'
 import CustomFooter from './components/Footer.vue';
 
 export default {
-  components: { 
-    CustomHeader, 
-    CustomFooter 
+  components: {
+    CustomHeader,
+    CustomFooter
   }
 }
 </script>
@@ -13,7 +13,9 @@ export default {
 <template>
   <custom-header />
   <main>
-    <router-view></router-view>
+    <div class="container">
+      <router-view></router-view>
+    </div>
   </main>
   <custom-footer />
 </template>
@@ -25,9 +27,25 @@ export default {
   box-sizing: border-box;
 }
 
-.wrapper {
+.container {
   margin: 0 auto;
   max-width: 1440px;
   margin-top: 72px;
+}
+
+.wrapper {
+  padding-inline: 30px;
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    padding-inline: 20px;
+  }
+}
+
+@media (max-width: 590px) {
+  .wrapper {
+    padding-inline: 16px;
+  }
 }
 </style>

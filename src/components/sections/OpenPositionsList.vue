@@ -36,18 +36,22 @@ export default {
 
 <template>
   <section class="section">
-    <p class="section__title">
-      Откр<span class="italic">ы</span>тые вакансии
-    </p>
-    <div class="position">
-      <div
-        v-for="position in positions"
-        :key="position.id"
-        class="position__card"
-        @click="$router.push(`/careers/${position.id}`)"
-      >
-        <card-tags :tags="position.tags" />
-        <p class="position__card-title">{{ position.position }}</p>
+    <div class="wrapper">
+      <div class="section__content">
+        <p class="section__title">
+          Откр<span class="italic">ы</span>тые вакансии
+        </p>
+        <div class="position">
+          <div
+            v-for="position in positions"
+            :key="position.id"
+            class="position__card"
+            @click="$router.push(`/careers/${position.id}`)"
+          >
+            <card-tags :tags="position.tags" />
+            <p class="position__card-title">{{ position.position }}</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -55,11 +59,14 @@ export default {
 
 <style lang="scss" scoped>
 .section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 48px;
   margin-top: 100px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+  }
 
   &__title {
     font: $font-page-title-gilroy;
@@ -98,7 +105,9 @@ export default {
 
 @media (max-width: 1024px) {
   .section {
-    gap: 44px;
+    &__content {
+      gap: 44px;
+    }
 
     &__title {
       font-size: 40px;
@@ -123,7 +132,9 @@ export default {
 
 @media (max-width: 590px) {
   .section {
-    gap: 48px;
+    &__content {
+      gap: 48px;
+    }
 
     &__title {
       font-size: 32px;

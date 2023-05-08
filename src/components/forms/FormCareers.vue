@@ -25,64 +25,72 @@ export default {
 </script>
 
 <template>
-  <div class="form-block">
-    <div class="form-block__intro">
-      <p class="form-block__title">
-        {{ title }}
-      </p>
-      <p class="form-block__description">
-        {{ description }}
-      </p>
+  <section>
+    <div class="wrapper">
+      <div class="form-block">
+        <div class="form-block__intro">
+          <p class="form-block__title">
+            {{ title }}
+          </p>
+          <p class="form-block__description">
+            {{ description }}
+          </p>
+        </div>
+        <form
+          action=""
+          class="form"
+        >
+          <custom-input
+            :name="'name'"
+            :label="'Как вас зовут?'"
+            :placeholder="'Ваше имя'"
+            :required="true"
+          />
+          <custom-input
+            :name="'city'"
+            :label="'Город'"
+            :placeholder="'Санкт-Петербург'"
+            :required="true"
+          />
+          <custom-input
+            :name="'email'"
+            :type="'email'"
+            :label="'Почта'"
+            :placeholder="'hi@oktta.ru'"
+            :required="true"
+          />
+          <custom-input
+            :name="'contact'"
+            :label="'Номер телефона или Telegram'"
+            :placeholder="'@oktta'"
+            :required="true"
+          />
+          <custom-textarea
+            :name="'text'"
+            :label="'Рассказ о себе'"
+            :placeholder="'В свободной форме'"
+            :required="false"
+          />
+          <custom-input
+            :name="'resume'"
+            :label="'Резюме и портфолио'"
+            :placeholder="'Ссылка на резюме'"
+            :required="true"
+            :isFile="true"
+          />
+          <send-button />
+          <agreement-text />
+        </form>
+      </div>
     </div>
-    <form
-      action=""
-      class="form"
-    >
-      <custom-input
-        :name="'name'"
-        :label="'Как вас зовут?'"
-        :placeholder="'Ваше имя'"
-        :required="true"
-      />
-      <custom-input
-        :name="'city'"
-        :label="'Город'"
-        :placeholder="'Санкт-Петербург'"
-        :required="true"
-      />
-      <custom-input
-        :name="'email'"
-        :type="'email'"
-        :label="'Почта'"
-        :placeholder="'hi@oktta.ru'"
-        :required="true"
-      />
-      <custom-input
-        :name="'contact'"
-        :label="'Номер телефона или Telegram'"
-        :placeholder="'@oktta'"
-        :required="true"
-      />
-      <custom-textarea
-        :name="'text'"
-        :label="'Рассказ о себе'"
-        :placeholder="'В свободной форме'"
-        :required="false"
-      />
-      <custom-input
-        :name="'resume'"
-        :label="'Резюме и портфолио'"
-        :placeholder="'Ссылка на резюме'"
-        :required="true"
-        :isFile="true"
-      />
-      <send-button />
-      <agreement-text />
-    </form>
-  </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>
+.wrapper {
+  padding-bottom: 30px;
+}
+
 .form-block {
   width: 100%;
   padding: 70px;
@@ -119,6 +127,10 @@ export default {
 }
 
 @media (max-width: 1024px) {
+  .wrapper {
+    padding-bottom: 20px;
+  }
+
   .form-block {
     padding: 70px 48px 72px;
     grid-template-columns: 1fr;
@@ -128,6 +140,10 @@ export default {
       font-size: 40px;
       text-align: center;
       padding-inline: 20px;
+    }
+
+    &__description {
+      text-align: center;
     }
   }
 }

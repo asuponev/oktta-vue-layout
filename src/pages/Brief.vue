@@ -9,34 +9,36 @@ export default {
 </script>
 
 <template>
-  <div class="wrapper">
-    <section class="section">
-      <div class="section__intro">
-        <p class="section__title">
-          Познако<span class="italic">м</span>имся ближе?
-        </p>
-        <p class="section__description">
-          Заполните бриф, свяжемся с вами в течение 24 часов
-        </p>
+  <section class="brief">
+    <div class="wrapper">
+      <div class="brief__content">
+        <div class="brief__intro">
+          <p class="brief__title">
+            Познако<span class="italic">м</span>имся ближе?
+          </p>
+          <p class="brief__description">
+            Заполните бриф, свяжемся с вами в течение 24 часов
+          </p>
+        </div>
+        <form-brief />
       </div>
-      <form-brief />
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>
-.wrapper {
-  padding: 0 30px 30px;
-}
+.brief {
+  margin-bottom: 30px;
 
-.section {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  background: $color-bg-dark;
-  border-radius: 32px;
-  padding: 70px 0;
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background: $color-bg-dark;
+    border-radius: 32px;
+    padding: 70px 0;
+  }
 
   &__intro {
     display: flex;
@@ -61,19 +63,11 @@ export default {
   }
 }
 
-@media (max-width: 1024px) {
-  .wrapper {
-    padding-inline: 20px;
-  }
-}
-
 @media (max-width: 590px) {
-  .wrapper {
-    padding-inline: 16px;
-  }
-
-  .section {
-    padding: 48px 0 50px 24px;
+  .brief {
+    &__content {
+      padding: 48px 0 50px 24px;
+    }
 
     &__intro {
       padding-right: 24px;
@@ -95,6 +89,5 @@ export default {
       text-align: center;
     }
   }
-
 }
 </style>
