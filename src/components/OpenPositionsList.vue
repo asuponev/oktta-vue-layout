@@ -44,6 +44,7 @@ export default {
         v-for="position in positions"
         :key="position.id"
         class="position__card"
+        @click="$router.push(`/careers/${position.id}`)"
       >
         <card-tags :tags="position.tags" />
         <p class="position__card-title">{{ position.position }}</p>
@@ -86,6 +87,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    cursor: pointer;
 
     &-title {
       font: $font-h3-gilroy;

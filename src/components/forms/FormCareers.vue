@@ -5,6 +5,16 @@ import SendButton from '@/components/forms/form-elements/SendButton.vue'
 import AgreementText from '@/components/forms/form-elements/AgreementText.vue'
 
 export default {
+  props: {
+    title: {
+      type: String,
+      default: 'Не нашли подходящую вакансию?'
+    },
+    description: {
+      type: String,
+      default: 'Всё равно рассмотрим вашу заявку и ответим в течение недели'
+    },
+  },
   components: {
     CustomInput,
     CustomTextarea,
@@ -15,13 +25,13 @@ export default {
 </script>
 
 <template>
-  <section class="section">
-    <div class="section__intro">
-      <p class="section__title">
-        Не нашли подходящую вакансию?
+  <div class="form-block">
+    <div class="form-block__intro">
+      <p class="form-block__title">
+        {{ title }}
       </p>
-      <p class="section__description">
-        Всё равно рассмотрим вашу заявку и ответим в течение недели
+      <p class="form-block__description">
+        {{ description }}
       </p>
     </div>
     <form
@@ -69,11 +79,11 @@ export default {
       <send-button />
       <agreement-text />
     </form>
-  </section>
+  </div>
 </template>
 
 <style lang="scss" scoped>
-.section {
+.form-block {
   width: 100%;
   padding: 70px;
   background: $color-bg-dark;
@@ -81,7 +91,7 @@ export default {
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   border-radius: 32px;
-  margin-top: 56px;
+  margin-top: 100px;
 
   &__intro {
     display: flex;
@@ -108,36 +118,23 @@ export default {
   gap: 16px;
 }
 
-@media (max-width: 1280px) {
-  .section {
-    margin-top: 72px;
-  }
-}
-
 @media (max-width: 1024px) {
-  .section {
+  .form-block {
     padding: 70px 48px 72px;
     grid-template-columns: 1fr;
     gap: 32px;
-    margin-top: 56px;
-
 
     &__title {
       font-size: 40px;
       text-align: center;
       padding-inline: 20px;
     }
-
-    &__description {
-      display: none;
-    }
   }
 }
 
 @media (max-width: 590px) {
-  .section {
+  .form-block {
     padding: 48px 24px 72px;
-    margin-top: 108px;
 
     &__title {
       font-size: 32px;

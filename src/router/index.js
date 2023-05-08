@@ -8,6 +8,7 @@ import Contacts from '@/pages/Contacts.vue'
 import Careers from '@/pages/Careers.vue'
 import Documents from '@/pages/Documents.vue'
 import Brief from '@/pages/Brief.vue'
+import OpenPositionPage from '@/pages/OpenPositionPage.vue'
 
 const routes = [
   {
@@ -33,6 +34,10 @@ const routes = [
   {
     path: '/careers',
     component: Careers
+  },
+  {
+    path: '/careers/:id',
+    component: OpenPositionPage
   },
   {
     path: '/documents',

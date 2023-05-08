@@ -1,12 +1,12 @@
 <script>
 import CareerProfits from '@/components/CareerProfits.vue'
-import OpenPositions from '@/components/OpenPositions.vue'
+import OpenPositionsList from '@/components/OpenPositionsList.vue'
 import FormCareers from '@/components/forms/FormCareers.vue'
 
 export default {
   components: {
     CareerProfits,
-    OpenPositions,
+    OpenPositionsList,
     FormCareers
   },
 }
@@ -21,7 +21,7 @@ export default {
       <span class="italic">тебя</span>
     </section>
     <career-profits />
-    <open-positions />
+    <open-positions-list />
     <form-careers />
   </div>
 </template>
