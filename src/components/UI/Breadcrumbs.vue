@@ -38,7 +38,7 @@ export default {
 
 <style lang="scss" scoped>
 .breadcrumbs {
-  margin: 16px 0 32px;
+  padding: 16px 0 32px;
 
   &__content {
     display: flex;
