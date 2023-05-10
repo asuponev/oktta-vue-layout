@@ -32,13 +32,13 @@ export default {
       </div>
       <div class="services__item">
         <span class="services__item-id">(03)</span>
-        <a
-          href="/"
+        <router-link
+          to="/services/development"
           class="services__item-link"
         >
           <p>Мобил<span class="italic">ь</span>ная и
           веб-раз<span class="italic">р</span>аботка</p>
-        </a>
+        </router-link>
       </div>
       <div class="services__item">
         <span class="services__item-id">(04)</span>

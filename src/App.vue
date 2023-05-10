@@ -31,6 +31,7 @@ export default {
   margin: 0 auto;
   max-width: 1440px;
   margin-top: 72px;
+  position: relative;
 }
 
 .wrapper {

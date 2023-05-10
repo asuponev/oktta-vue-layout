@@ -75,7 +75,10 @@ export default {
             />
           </div>
         </div>
-        <button class="section__button">все кейсы</button>
+        <button
+          @click="$router.push('/cases')"
+          class="section__button"
+        >все кейсы</button>
       </div>
     </div>
   </section>

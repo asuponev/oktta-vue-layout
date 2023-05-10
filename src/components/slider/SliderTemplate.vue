@@ -78,6 +78,7 @@ export default {
 
   &__items {
     display: flex;
+    transition: transform 0.3s ease-in-out;
   }
 
   &__item {
