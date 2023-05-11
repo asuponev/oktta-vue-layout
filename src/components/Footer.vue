@@ -28,13 +28,13 @@ export default {
           © oktta design studio
         </p>
         <div class="footer__links">
-          <a @click="$router.push('/documents')">
+          <router-link to="/documents">
             документы
             <svg>
               <use xlink:href="@/assets/icons/_sprite.svg#arrow-link">
               </use>
             </svg>
-          </a>
+          </router-link>
           <a href="/">
             презентация
             <svg>

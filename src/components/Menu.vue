@@ -14,14 +14,6 @@ export default {
       type: Function
     }
   },
-  methods: {
-    onOpenLink(path) {
-      if (this.$route.path !== path) {
-        this.$router.push(path)
-        this.closeMenu()
-      }
-    }
-  }
 }
 </script>
 
@@ -30,48 +22,53 @@ export default {
     <div :class="[isOpen ? 'menu__wrapper--open' : '', 'menu__wrapper']">
       <nav class="menu__nav">
         <div class="menu__item">
-          <a
-            @click="onOpenLink('/cases')"
+          <router-link
+            to="/cases"
+            @click="closeMenu"
             class="menu__item-link"
           >
             <span>Ке<span class="italic">й</span>сы</span>
-          </a>
+          </router-link>
           <p class="menu__item-count">(13)</p>
         </div>
         <div class="menu__item">
-          <a
-            @click="onOpenLink('/company')"
+          <router-link
+            to="/company"
+            @click="closeMenu"
             class="menu__item-link"
           >
             <span>Ко<span class="italic">м</span>пания</span>
-          </a>
+          </router-link>
           <p class="menu__item-count"></p>
         </div>
         <div class="menu__item">
-          <a
-            @click="onOpenLink('/services')"
+          <router-link
+            to="/services"
+            @click="closeMenu"
             class="menu__item-link"
           >
             <span>Услу<span class="italic">г</span>и</span>
-          </a>
+          </router-link>
           <p class="menu__item-count"></p>
         </div>
         <div class="menu__item">
-          <a
-            @click="onOpenLink('/contacts')"
+          <router-link
+            to="/contacts"
+            @click="closeMenu"
             class="menu__item-link"
           >
             <span>Конта<span class="italic">к</span>ты</span>
-          </a>
+          </router-link>
           <p class="menu__item-count"></p>
         </div>
         <div class="menu__item">
-          <a
-            @click="onOpenLink('/careers')"
+          <router-link
+            to="/careers"
+            @click="closeMenu"
             class="menu__item-link"
           >
             <span>Ка<span class="italic">р</span>ьера</span>
-          </a>
+          </router-link>
           <p class="menu__item-count">(4)</p>
         </div>
       </nav>

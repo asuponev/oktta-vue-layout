@@ -13,22 +13,22 @@ export default {
     <section class="services">
       <div class="services__item">
         <span class="services__item-id">(01)</span>
-        <a
-          href="/"
+        <router-link
+          to="/services/development"
           class="services__item-link"
         >
           <p>Ан<span class="italic">а</span>литика
             и иссл<span class="italic">е</span>дования</p>
-        </a>
+          </router-link>
       </div>
       <div class="services__item">
         <span class="services__item-id">(02)</span>
-        <a
-          href="/"
+        <router-link
+          to="/services/development"
           class="services__item-link"
         >
           <p>CX-исс<span class="italic">л</span>едования</p>
-        </a>
+        </router-link>
       </div>
       <div class="services__item">
         <span class="services__item-id">(03)</span>
@@ -42,44 +42,44 @@ export default {
       </div>
       <div class="services__item">
         <span class="services__item-id">(04)</span>
-        <a
-          href="/"
+        <router-link
+          to="/services/development"
           class="services__item-link"
         >
           <p>Диза<span class="italic">й</span>н
           мобильн<span class="italic">ы</span>х и 
           веб-интер<span class="italic">ф</span>ейсов</p>
-        </a>
+        </router-link>
       </div>
       <div class="services__item">
         <span class="services__item-id">(05)</span>
-        <a
-          href="/"
+        <router-link
+          to="/services/development"
           class="services__item-link"
         >
           <p>Бр<span class="italic">е</span>ндинг и
           упа<span class="italic">к</span>овка</p>
-        </a>
+        </router-link>
       </div>
       <div class="services__item">
         <span class="services__item-id">(06)</span>
-        <a
-          href="/"
+        <router-link
+          to="/services/development"
           class="services__item-link"
         >
           <p>Спри<span class="italic">н</span>т за
           7 дне<span class="italic">й</span></p>
-        </a>
+        </router-link>
       </div>
       <div class="services__item">
         <span class="services__item-id">(07)</span>
-        <a
-          href="/"
+        <router-link
+          to="/services/development"
           class="services__item-link"
         >
           <p>Диза<span class="italic">й</span>н-поддер<span
             class="italic">ж</span>ка</p>
-        </a>
+          </router-link>
       </div>
     </section>
     <form-contact />
@@ -118,7 +118,7 @@ export default {
         color: $color-general-dark;
       }
 
-      span:nth-child(1) {
+      p:nth-child(1) {
         box-decoration-break: clone;
         -webkit-box-decoration-break: clone;
         display: inline;
