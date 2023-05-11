@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap');
-
 @font-face {
   font-family: 'Gilroy', sans-serif;
   font-weight: 500;
   src:
-    url(~@/assets/styles/fonts/Gilroy/Gilroy-Medium.woff2) format('woff2'),
-    url(~@/assets/styles/fonts/Gilroy/Gilroy-Medium.woff) format('woff');
+    local('Gilroy'),
+    url(./fonts/Gilroy/Gilroy-Medium.woff2),
+    url(./fonts/Gilroy/Gilroy-Medium.woff);
 }
 
 @font-face {
   font-family: 'Gilroy', sans-serif;
   font-weight: 600;
   src:
-    url(~@/assets/styles/fonts/Gilroy/Gilroy-Semibold.woff2) format('woff2'),
-    url(~@/assets/styles/fonts/Gilroy/Gilroy-Semibold.woff) format('woff');
+    local('Gilroy'),
+    url(./fonts/Gilroy/Gilroy-Semibold.woff2),
+    url(./fonts/Gilroy/Gilroy-Semibold.woff);
 }
