@@ -34,7 +34,7 @@ export default {
           <card-tags :tags="links" />
         </div>
         <div class="intro__title">
-          <span class="intro__title-text">M<span class="italic">e</span>sh3</span>
+          <h1 class="intro__title-text">M<span class="italic">e</span>sh3</h1>
           <span class="intro__title-year">{ 2022 }</span>
         </div>
         <p class="intro__description">
@@ -89,15 +89,16 @@ export default {
   &__title {
     display: flex;
 
-    .italic {
-      font: $font-h1-playfair;
-      font-size: 100px;
-    }
-
     &-text {
+      font: $font-h1-gilroy;
       font-size: 100px;
       line-height: 0.9;
       letter-spacing: -0.04em;
+
+      .italic {
+        font: $font-h1-playfair;
+        font-size: 100px;
+      }
     }
 
     &-year {

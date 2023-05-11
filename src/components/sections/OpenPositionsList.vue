@@ -38,9 +38,9 @@ export default {
   <section class="section">
     <div class="wrapper">
       <div class="section__content">
-        <p class="section__title">
+        <h2 class="section__title">
           Откр<span class="italic">ы</span>тые вакансии
-        </p>
+        </h2>
         <div class="position">
           <div
             v-for="position in positions"
@@ -49,7 +49,7 @@ export default {
             @click="$router.push(`/careers/${position.id}`)"
           >
             <card-tags :tags="position.tags" />
-            <p class="position__card-title">{{ position.position }}</p>
+            <h3 class="position__card-title">{{ position.position }}</h3>
           </div>
         </div>
       </div>

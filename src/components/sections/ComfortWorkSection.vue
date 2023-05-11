@@ -45,9 +45,9 @@ export default {
 
 <template>
   <section>
-    <div class="title">
+    <h2 class="title">
       <span>Ком<span class="italic">ф</span>ортная работа без рутины</span>
-    </div>
+    </h2>
     <slider-template :items="sliderItems" />
   </section>
 </template>

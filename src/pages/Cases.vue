@@ -13,9 +13,9 @@ export default {
 <template>
   <div class="wrapper">
     <section class="section">
-      <p class="section__title">
+      <h1 class="section__title">
         Ке<span class="italic">й</span>сы
-      </p>
+      </h1>
       <case-filters />
     </section>
     <case-list />

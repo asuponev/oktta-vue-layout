@@ -25,7 +25,7 @@ export default {
       >
     </div>
     <div class="card__block">
-      <p class="card__title">{{ caseItem.title }}</p>
+      <h3 class="card__title">{{ caseItem.title }}</h3>
       <div class="card__category">
         <span>{{ caseItem.category }}</span>
       </div>

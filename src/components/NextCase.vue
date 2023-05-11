@@ -17,9 +17,11 @@ export default {
   <section class="next">
     <div class="wrapper">
       <div class="next__content">
-        <div class="next__title">
-          <span class="italic">Следующий</span><br />
-          кейс
+        <div>
+          <h2 class="next__title">
+            <span class="italic">Следующий</span><br />
+            кейс
+          </h2>
         </div>
         <case-card :caseItem="nextCase" />
       </div>
@@ -82,7 +84,6 @@ export default {
       width: 100%;
 
       .italic {
-        font-size: 64px;
         font-size: 40px;
       }
     }

@@ -42,7 +42,7 @@ export default {
           alt="principle-icon"
         >
       </div>
-      <p class="principles__item-title">{{ principle.title }}</p>
+      <h3 class="principles__item-title">{{ principle.title }}</h3>
     </div>
   </div>
 </template>

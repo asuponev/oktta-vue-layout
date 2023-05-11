@@ -10,9 +10,9 @@ export default {
 
 <template>
   <div class="wrapper">
-    <p class="title">
+    <h1 class="title">
       Доку<span class="italic">м</span>енты
-    </p>
+    </h1>
     <documents-list />
   </div>
 </template>

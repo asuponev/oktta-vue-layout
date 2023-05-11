@@ -16,14 +16,14 @@ export default {
   <section class="hero">
     <div class="wrapper">
       <div class="hero__content">
-        <p class="title">
+        <h1 class="title">
           Более <span class="title title--italic">четырех</span> лет
           помогаем<br />
           бизнесу налаживать<br />
           эффективное взаимоде<span
             class="title title--italic">й</span>ствие<br />
           с клиентами в ци<span class="title title--italic">ф</span>ровой среде
-        </p>
+        </h1>
       </div>
     </div>
   </section>
@@ -31,7 +31,7 @@ export default {
     <div class="wrapper">
       <div class="approach__content">
         <div class="approach__intro">
-          <p class="title title--black title--italic">Подход</p>
+          <h2 class="title title--black title--italic">Подход</h2>
           <p class="approach__subtitle">
             Мы создаем функциональные и удобные
             продукты на основе исследований. Строим отношения с клиентами на
@@ -60,24 +60,24 @@ export default {
   <section class="principles">
     <div class="wrapper">
       <div class="principles__content">
-        <p class="title">
+        <h2 class="title">
           Прин<span class="title title--italic">ц</span>ипы
-        </p>
+        </h2>
         <principles-list />
       </div>
     </div>
   </section>
   <section class="clients">
     <div class="clients__content">
-      <p class="title title--black">
+      <h2 class="title title--black">
         Кл<span class="title title--italic title--black">и</span>енты
-      </p>
+      </h2>
       <clients-list />
     </div>
   </section>
   <section class="numbers">
     <div class="numbers__content">
-      <p class="title">Об Okkta в цифрах</p>
+      <h2 class="title">Об Okkta в цифрах</h2>
       <div class="numbers__item">
         <p class="numbers__item-title">12+</p>
         <p class="numbers__item-descr">профессионалов в команде</p>
@@ -99,9 +99,11 @@ export default {
   <section class="publications">
     <div class="wrapper">
       <div class="publications__content">
-        <p class="title title--black">
-          Публик<span class="title title--italic title--black">а</span>ции
-        </p>
+        <div>
+          <h2 class="title title--black">
+            Публик<span class="title title--italic title--black">а</span>ции
+          </h2>
+        </div>
         <publications-list />
       </div>
     </div>

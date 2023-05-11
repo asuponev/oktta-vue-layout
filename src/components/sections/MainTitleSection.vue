@@ -5,37 +5,37 @@ export default {
   components: {
     SocialBlock,
   },
-  // methods: {
-  //   moveTitleText() {
-  //     const titleLine = document.querySelector('.hero__title-line')
-  //     const rightTitleLine = titleLine.getBoundingClientRect().right
+  methods: {
+    moveTitleText() {
+      const titleLine = document.querySelector('.hero__title-line')
+      const rightTitleLine = titleLine.getBoundingClientRect().right
 
-  //     const animateTitleElems = document.querySelectorAll('.animate')
-  //     animateTitleElems.forEach((elem) => {
-  //       const rightAnimateText = elem.getBoundingClientRect().right
-  //       const move = rightTitleLine - rightAnimateText
-  //       elem.animate(
-  //         [
-  //           { transform: 'translateX(0)' },
-  //           { transform: `translateX(${move}px)` }
-  //         ],
-  //         {
-  //           delay: 1000,
-  //           duration: 3000,
-  //           fill: 'forwards',
-  //           easing: 'ease-out'
-  //         }
-  //       )
-  //     })
-  //   }
-  // },
-  // mounted() {
-  //   this.moveTitleText()
-  //   window.addEventListener('resize', this.moveTitleText)
-  // },
-  // unmounted() {
-  //   window.removeEventListener('resize', this.moveTitleText)
-  // }
+      const animateTitleElems = document.querySelectorAll('.animate')
+      animateTitleElems.forEach((elem) => {
+        const rightAnimateText = elem.getBoundingClientRect().right
+        const move = rightTitleLine - rightAnimateText
+        elem.animate(
+          [
+            { transform: 'translateX(0)' },
+            { transform: `translateX(${move}px)` }
+          ],
+          {
+            delay: 1000,
+            duration: 3000,
+            fill: 'forwards',
+            easing: 'ease-out'
+          }
+        )
+      })
+    }
+  },
+  mounted() {
+    this.moveTitleText()
+    window.addEventListener('resize', this.moveTitleText)
+  },
+  unmounted() {
+    window.removeEventListener('resize', this.moveTitleText)
+  }
 }
 </script>
 
@@ -45,25 +45,25 @@ export default {
       <div class="hero__content">
         <div class="hero__title">
           <div class="hero__title-line">
-            <p class="hero__title-text">Создаем бренды</p>
+            <h1 class="hero__title-text">Создаем бренды</h1>
           </div>
           <div class="hero__title-line">
-            <p class="hero__title-text">
+            <h1 class="hero__title-text">
               и ци<span class="italic">ф</span>ровые
-            </p>
+            </h1>
           </div>
           <div class="hero__title-line">
-            <p class="hero__title-text">
+            <h1 class="hero__title-text">
               <span class="italic">продукты </span>&nbsp;
-            </p>
+            </h1>
             <p class="hero__title-text animate">
               в п<span class="italic">а</span>ртнерстве
             </p>
           </div>
           <div class="hero__title-line">
-            <p class="hero__title-text animate">
+            <h1 class="hero__title-text animate">
               с ва<span class="italic">м</span>и
-            </p>
+            </h1>
           </div>
         </div>
         <div class="hero__subtitle">
@@ -84,6 +84,7 @@ export default {
   &__content {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
     position: relative;
   }
 
@@ -126,7 +127,7 @@ export default {
 @media (max-width: 1024px) {
   .hero {
     &__content {
-      row-gap: 44px;
+      gap: 44px 8px;
     }
 
     &__title {

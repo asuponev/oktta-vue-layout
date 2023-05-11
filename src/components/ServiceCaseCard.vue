@@ -50,9 +50,9 @@ export default {
     >
       <div class="card__content">
         <card-tags :tags="caseItem.tags" />
-        <p class="card__title">
+        <h3 class="card__title">
           {{ caseItem.title }}
-        </p>
+        </h3>
       </div>
       <p class="card__description">
         {{ caseItem.description }}

@@ -8,9 +8,9 @@ export default {
   <ul class="list">
     <li class="list__item">
       <div class="list__item-wrapper">
-        <p class="list__item-title">
+        <h3 class="list__item-title">
           През<span class="italic">е</span>нтация
-        </p>
+        </h3>
         <button class="list__item-btn">
           <svg>
             <use xlink:href="@/assets/icons/_sprite.svg#arrow-link">
@@ -21,9 +21,9 @@ export default {
     </li>
     <li class="list__item">
       <div class="list__item-wrapper">
-        <p class="list__item-title">
+        <h3 class="list__item-title">
           Согл<span class="italic">а</span>сие на обработку персональных данных
-        </p>
+        </h3>
         <button class="list__item-btn">
           <svg>
             <use xlink:href="@/assets/icons/_sprite.svg#arrow-link">
@@ -34,9 +34,9 @@ export default {
     </li>
     <li class="list__item">
       <div class="list__item-wrapper">
-        <p class="list__item-title">
+        <h3 class="list__item-title">
           Политика кон<span class="italic">ф</span>иденциальности
-        </p>
+        </h3>
         <button class="list__item-btn">
           <svg>
             <use xlink:href="@/assets/icons/_sprite.svg#arrow-link">
@@ -47,9 +47,9 @@ export default {
     </li>
     <li class="list__item">
       <div class="list__item-wrapper">
-        <p class="list__item-title">
+        <h3 class="list__item-title">
           Рекв<span class="italic">и</span>зиты
-        </p>
+        </h3>
         <button class="list__item-btn">
           <svg>
             <use xlink:href="@/assets/icons/_sprite.svg#arrow-link">

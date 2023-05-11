@@ -51,7 +51,7 @@ export default {
     >
       <div class="list__item-title">
         <span>({{ publication.id < 10 ? `0${publication.id}` : publication.id }})</span>
-        <p>{{ publication.title }}</p>
+        <h3>{{ publication.title }}</h3>
       </div>
       <p class="list__item-description">{{ publication.description }}</p>
       <button
@@ -104,7 +104,7 @@ export default {
         padding-top: 4px;
       }
 
-      p {
+      h3 {
         font: $font-h3-gilroy;
         letter-spacing: -0.04em;
       }
@@ -178,7 +178,7 @@ export default {
 
 @media (max-width: 900px) {
   .list__item-title {
-    p {
+    h3 {
       font-size: 24px;
     }
   }

@@ -12,9 +12,11 @@ export default {
   <section class="publications">
     <div class="wrapper">
       <div class="publications__content">
-        <p class="publications__title">
-          Публик<span class="italic">а</span>ции
-        </p>
+        <div>
+          <h2 class="publications__title">
+            Публик<span class="italic">а</span>ции
+          </h2>
+        </div>
         <publications-list />
       </div>
     </div>

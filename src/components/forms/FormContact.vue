@@ -16,10 +16,12 @@ export default {
 
 <template>
   <section class="section">
-    <p class="section__title">
-      Готовы обсудить
-      п<span class="italic">р</span>ое<span class="italic">к</span>т?
-    </p>
+    <div>
+      <h2 class="section__title">
+        Готовы обсудить
+        п<span class="italic">р</span>ое<span class="italic">к</span>т?
+      </h2>
+    </div>
     <form
       action=""
       class="form"

@@ -116,10 +116,10 @@ export default {
         <div class="intro__subtitle">
           <span>разрабатываем технологичные и эффективные решения для любых задач</span>
         </div>
-        <div class="intro__title">
+        <h1 class="intro__title">
           Моби<span class="italic">л</span>ьная и
           в<span class="italic">е</span>б-раз<span class="italic">р</span>аботка
-        </div>
+        </h1>
         <button class="intro__button">
           оставить заявку
           <svg>
@@ -136,10 +136,10 @@ export default {
         <div class="hero__subtitle">
           <span>разрабатываем технологичные и эффективные решения для любых задач</span>
         </div>
-        <div class="hero__title">
+        <h1 class="hero__title">
           Моби<span class="italic">л</span>ьная и
           в<span class="italic">е</span>б-раз<span class="italic">р</span>аботка
-        </div>
+        </h1>
         <div class="hero__slider">
           <div class="hero__items start">
             <div
@@ -149,7 +149,7 @@ export default {
             >
               <div class="hero__item-content">
                 <p class="hero__item-id">(0{{ item.id }})</p>
-                <p class="hero__item-title">{{ item.title }}</p>
+                <h3 class="hero__item-title">{{ item.title }}</h3>
                 <p class="hero__item-description">{{ item.description }}</p>
               </div>
             </div>
@@ -161,9 +161,9 @@ export default {
   <section class="plan">
     <div class="wrapper">
       <div class="plan__content">
-        <div class="plan__title">
+        <h2 class="plan__title">
           Пл<span class="italic">а</span>н р<span class="italic">а</span>боты
-        </div>
+        </h2>
         <div class="plan__visual">
           <div class="plan__lines">
             <div
@@ -189,9 +189,9 @@ export default {
   <section class="experience">
     <div class="wrapper">
       <div class="experience__content">
-        <div class="experience__title">
+        <h2 class="experience__title">
           На<span class="italic">ш</span> оп<span class="italic">ы</span>т
-        </div>
+        </h2>
         <div class="case">
           <div class="case__block case__block--second">
             <service-case-card

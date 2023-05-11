@@ -34,10 +34,10 @@ export default {
 
 <template>
   <div class="wrapper">
-    <section class="title">
+    <h1 class="title">
       <span>Работаем с кл<span class="italic">и</span>ентами</span>
       <span>по всему <span class="italic">м</span>иру</span>
-    </section>
+    </h1>
     <section class="contacts">
       <div
         v-for="contact in contacts"

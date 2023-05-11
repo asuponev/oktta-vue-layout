@@ -19,9 +19,9 @@ export default {
       <div class="section__content">
         <div class="section__block">
           <div class="position-info">
-            <p class="position-title">
+            <h1 class="position-title">
               {{ position.title }}
-            </p>
+            </h1>
             <button class="position-button position-button--small">
               откликнуться
             </button>
@@ -33,7 +33,7 @@ export default {
               <card-tags :tags="position.tags" />
             </div>
             <div class="position-info-block">
-              <p class="position-list-title">Чем нужно будет заниматься:</p>
+              <h3 class="position-list-title">Чем нужно будет заниматься:</h3>
               <ul class="position-list">
                 <li
                   v-for="(task, index) in position.tasks"
@@ -46,7 +46,7 @@ export default {
               </ul>
             </div>
             <div class="position-info-block">
-              <p class="position-list-title">Чего ждём от тебя:</p>
+              <h3 class="position-list-title">Чего ждём от тебя:</h3>
               <ul class="position-list">
                 <li
                   v-for="(requirement, index) in position.requirements"
@@ -59,7 +59,7 @@ export default {
               </ul>
             </div>
             <div class="position-info-block">
-              <p class="position-list-title">Условия:</p>
+              <h3 class="position-list-title">Условия:</h3>
               <ul class="position-list">
                 <li
                   v-for="(condition, index) in position.conditions"

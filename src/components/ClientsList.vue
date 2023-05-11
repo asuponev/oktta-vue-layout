@@ -27,7 +27,7 @@ export default {
       class="list__item"
     >
       <div class="list__item-wrapper">
-        <p class="list__item-title">{{ client.name }}</p>
+        <h3 class="list__item-title">{{ client.name }}</h3>
         <button class="list__item-btn">
           <svg>
             <use xlink:href="@/assets/icons/_sprite.svg#arrow-link">

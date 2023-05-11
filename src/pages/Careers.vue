@@ -15,12 +15,12 @@ export default {
 <template>
   <section>
     <div class="wrapper">
-      <div class="title">
+      <h1 class="title">
         <span>Д<span class="italic">е</span>лаем
         гранд<span class="italic">и</span>озное,</span>
         <span>не хв<span class="italic">а</span>тает только</span>
         <span class="italic">тебя</span>
-      </div>
+      </h1>
     </div>
   </section>
   <career-in-oktta-section />

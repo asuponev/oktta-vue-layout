@@ -13,9 +13,9 @@ export default {
     <div class="wrapper">
       <div class="brief__content">
         <div class="brief__intro">
-          <p class="brief__title">
+          <h1 class="brief__title">
             Познако<span class="italic">м</span>имся ближе?
-          </p>
+          </h1>
           <p class="brief__description">
             Заполните бриф, свяжемся с вами в течение 24 часов
           </p>

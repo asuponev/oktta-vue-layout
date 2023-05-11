@@ -10,9 +10,9 @@ export default {
       <div class="section__content">
         <div class="section__block">
           <div class="section__intro">
-            <p class="section__title">
+            <h2 class="section__title">
               Кар<span class="italic">ь</span>ера в Oktta
-            </p>
+            </h2>
             <p class="section__description">
               Опираясь на данные веб-аналитики, мы изучили
               типы пользователей, особенности их поведения.
@@ -24,9 +24,9 @@ export default {
             <div class="profit__cards">
               <div class="profit__card">
                 <span class="profit__card-id">(01)</span>
-                <p class="profit__card-title">
+                <h3 class="profit__card-title">
                   Внутр<span class="italic">е</span>ннее обучение
-                </p>
+                </h3>
                 <p class="profit__card-description">
                   проанализировали, из каких регионов идет наибольший трафик и
                   какие
@@ -36,9 +36,9 @@ export default {
               </div>
               <div class="profit__card">
                 <span class="profit__card-id">(02)</span>
-                <p class="profit__card-title">
+                <h3 class="profit__card-title">
                   Опл<span class="italic">а</span>та курсов
-                </p>
+                </h3>
                 <p class="profit__card-description">
                   проанализировали, из каких регионов идет наибольший трафик и
                   какие
@@ -48,9 +48,9 @@ export default {
               </div>
               <div class="profit__card">
                 <span class="profit__card-id">(03)</span>
-                <p class="profit__card-title">
+                <h3 class="profit__card-title">
                   Корпо<span class="italic">р</span>ативы в VR
-                </p>
+                </h3>
                 <p class="profit__card-description">
                   проанализировали, из каких регионов идет наибольший трафик и
                   какие
@@ -60,9 +60,9 @@ export default {
               </div>
               <div class="profit__card">
                 <span class="profit__card-id">(04)</span>
-                <p class="profit__card-title">
+                <h3 class="profit__card-title">
                   Помо<span class="italic">щ</span>ь с релокацией
-                </p>
+                </h3>
                 <p class="profit__card-description">
                   проанализировали, из каких регионов идет наибольший трафик и
                   какие

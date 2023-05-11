@@ -58,7 +58,7 @@ export default {
           </div>
           <div class="slider__item-title">
             <span>({{ item.id < 10 ? `0${item.id}` : item.id }})</span>
-            <p>{{ item.title }}</p>
+            <h3>{{ item.title }}</h3>
           </div>
           <p class="slider__item-description">{{ item.description }}</p>
         </div>
@@ -124,7 +124,7 @@ export default {
         // font-variant-numeric: lining-nums;
       }
 
-      p {
+      h3 {
         font: $font-h3-gilroy;
         letter-spacing: -0.04em;
       }
@@ -203,7 +203,7 @@ export default {
           font-size: 10px;
         }
 
-        p {
+        h3 {
           font-size: 24px;
         }
       }

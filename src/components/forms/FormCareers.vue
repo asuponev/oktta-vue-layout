@@ -29,9 +29,9 @@ export default {
     <div class="wrapper">
       <div class="form-block">
         <div class="form-block__intro">
-          <p class="form-block__title">
+          <h2 class="form-block__title">
             {{ title }}
-          </p>
+          </h2>
           <p class="form-block__description">
             {{ description }}
           </p>
