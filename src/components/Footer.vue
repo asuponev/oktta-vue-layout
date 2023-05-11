@@ -29,17 +29,15 @@ export default {
         </p>
         <div class="footer__links">
           <router-link to="/documents">
-            документы
+            <span>документы</span>
             <svg>
-              <use xlink:href="@/assets/icons/_sprite.svg#arrow-link">
-              </use>
+              <use xlink:href="@/assets/icons/_sprite.svg#arrow-link" />
             </svg>
           </router-link>
-          <a href="/">
-            презентация
+          <a href="/presentation">
+            <span>презентация</span>
             <svg>
-              <use xlink:href="@/assets/icons/_sprite.svg#arrow-link">
-              </use>
+              <use xlink:href="@/assets/icons/_sprite.svg#arrow-link" />
             </svg>
           </a>
         </div>
@@ -131,7 +129,25 @@ export default {
         width: 13px;
         height: 13px;
         stroke: $color-general-white;
-        transition: stroke 0.2s ease-in-out;
+        transition: stroke 0.2s ease-in-out, transform 0.2s ease-in-out;
+      }
+
+      span {
+        display: inline-flex;
+        background: no-repeat 0 100%;
+        background-image: linear-gradient(to right, $color-general-white, $color-general-white);
+        background-size: 0 2px;
+        transition: background-size 0.2s ease-in-out;
+      }
+
+      &:hover {
+        span {
+          background-size: 100% 2px;
+        }
+
+        svg {
+          transform: rotate(45deg);
+        }
       }
     }
   }

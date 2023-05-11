@@ -8,8 +8,7 @@ export default {
   <button class="form-send-button">
     отправить
     <svg>
-      <use xlink:href="@/assets/icons/_sprite.svg#arrow-link">
-      </use>
+      <use xlink:href="@/assets/icons/_sprite.svg#arrow-link" />
     </svg>
   </button>
 </template>
@@ -36,10 +35,15 @@ export default {
     width: 13px;
     height: 13px;
     stroke: $color-general-black;
+    transition: transform 0.2s ease-in-out;
   }
 
   &:hover {
     background: $color-general-green;
+
+    svg {
+      transform: rotate(45deg);
+    }
   }
 }
 
