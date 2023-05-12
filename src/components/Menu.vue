@@ -14,12 +14,20 @@ export default {
       type: Function
     }
   },
+  methods: {
+    getInnerHeight() {
+      document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`)
+    }
+  },
+  created() {
+    this.getInnerHeight()
+  },
 }
 </script>
 
 <template>
   <div :class="[isOpen ? 'menu--open' : '', 'menu']">
-    <div :class="[isOpen ? 'menu__wrapper--open' : '', 'menu__wrapper']">
+    <div class="menu__wrapper">
       <nav class="menu__nav">
         <div class="menu__item">
           <router-link
@@ -85,35 +93,31 @@ export default {
 
 <style lang="scss" scoped>
 .menu {
-  height: 0;
+  height: 1000px;
   width: 100vw;
   position: absolute;
-  top: -10000px;
+  top: -1000px;
   right: 0;
   z-index: -10;
   background: $color-general-dark;
   color: $color-general-white;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  transition: all 0.4s ease;
+  transition: all 0.7s ease-in-out;
 
   &--open {
     top: 0;
-    height: 100vh;
+    height: var(--app-height);
     z-index: 100;
   }
 
   &__wrapper {
-    display: none;
+    display: flex;
     justify-content: space-between;
     flex-direction: column;
     width: 100%;
     height: 100%;
     padding: 128px 30px 24px;
-
-    &--open {
-      display: flex;
-    }
   }
 
   &__nav {
@@ -262,7 +266,7 @@ export default {
 @media (max-width: 700px) {
   .menu {
     &__wrapper {
-      padding: 224px 16px 92px;
+      padding: 224px 16px 16px;
     }
 
     &__nav {

@@ -93,12 +93,6 @@ export default {
       window.removeEventListener('wheel', this.scrollAnimation)
       window.removeEventListener('touchmove', this.scrollAnimation)
     },
-    getInnerHeight() {
-      document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`)
-    }
-  },
-  created() {
-    this.getInnerHeight()
   },
   mounted() {
     this.blockPage()
