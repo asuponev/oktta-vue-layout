@@ -1,18 +1,29 @@
 <script>
 import Breadcrumbs from '@/components/UI/Breadcrumbs.vue'
-import CardTags from '@/components/CardTags.vue'
+import CaseIntro from '@/components/CaseIntro.vue'
 import NextCase from '@/components/NextCase.vue'
 import nextCaseImg from '@/assets/images/mock-content/cases-page-1.png'
 
 export default {
   components: {
     Breadcrumbs,
-    CardTags,
+    CaseIntro,
     NextCase
   },
   data() {
     return {
-      links: ['сайт', 'приложение', 'кейс на behance', 'отзыв'],
+      caseItem: {
+        id: 1,
+        title: 'Mesh3',
+        year: '2022',
+        description: 'Mesh3 — фонд, который инвестирует в современные проекты, объединяющие в себе культуру, искусство и технологии',
+        links: [
+          { name: 'сайт', link: 'https://www.google.com/' },
+          { name: 'приложение', link: 'https://www.google.com/' },
+          { name: 'кейс на behance', link: 'https://www.google.com/' },
+          { name: 'отзыв', link: 'https://www.google.com/' }
+        ],
+      },
       nextCase: {
         id: 2,
         title: 'Логотип Vybez',
@@ -27,23 +38,7 @@ export default {
 
 <template>
   <breadcrumbs :items="[{ name: 'Кейсы', path: '/cases' }, { name: 'Mesh3' }]" />
-  <section class="intro">
-    <div class="wrapper">
-      <div class="intro__content">
-        <div class="intro__links">
-          <card-tags :tags="links" />
-        </div>
-        <div class="intro__title">
-          <h1 class="intro__title-text">M<span class="italic">e</span>sh3</h1>
-          <span class="intro__title-year">{ 2022 }</span>
-        </div>
-        <p class="intro__description">
-          Mesh3 — фонд, который инвестирует в современные проекты, объединяющие
-          в себе культуру, искусство и технологии
-        </p>
-      </div>
-    </div>
-  </section>
+  <case-intro :caseItem="caseItem" />
   <section class="visual">
     <div class="wrapper">
       <div class="visual__content">
@@ -72,57 +67,12 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.intro {
-  margin-top: 16px;
-
-  &__content {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-  }
-
-  &__links {
-    max-width: 330px;
-    padding: 0 122px 16px 0;
-  }
-
-  &__title {
-    display: flex;
-
-    &-text {
-      font: $font-h1-gilroy;
-      font-size: 100px;
-      line-height: 0.9;
-      letter-spacing: -0.04em;
-
-      .italic {
-        font: $font-h1-playfair;
-        font-size: 100px;
-      }
-    }
-
-    &-year {
-      font: $font-small-playfair;
-      font-size: 13px;
-    }
-  }
-
-  &__description {
-    font-size: 12px;
-    color: $color-text-secondary;
-    max-width: 330px;
-    text-indent: 56px;
-    line-height: 1.25;
-    padding-bottom: 8px;
-  }
-}
-
 .visual {
   &__content {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    margin-top: 40px;
+    margin-top: 46px;
   }
 
   &__block {
