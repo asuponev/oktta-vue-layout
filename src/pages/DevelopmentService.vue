@@ -104,109 +104,111 @@ export default {
 </script>
 
 <template>
-  <section class="intro">
-    <div class="wrapper">
-      <div class="intro__content">
-        <div class="intro__subtitle">
-          <span>разрабатываем технологичные и эффективные решения для любых задач</span>
-        </div>
-        <h1 class="intro__title">
-          Моби<span class="italic">л</span>ьная и
-          в<span class="italic">е</span>б-раз<span class="italic">р</span>аботка
-        </h1>
-        <button class="intro__button">
-          оставить заявку
-          <svg>
-            <use xlink:href="@/assets/icons/_sprite.svg#arrow-link">
-            </use>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </section>
-  <section class="hero hidden">
-    <div class="wrapper">
-      <div class="hero__content">
-        <div class="hero__subtitle">
-          <span>разрабатываем технологичные и эффективные решения для любых задач</span>
-        </div>
-        <h1 class="hero__title">
-          Моби<span class="italic">л</span>ьная и
-          в<span class="italic">е</span>б-раз<span class="italic">р</span>аботка
-        </h1>
-        <div class="hero__slider">
-          <div class="hero__items start">
-            <div
-              v-for="item in slideItems"
-              :key="item.id"
-              class="hero__item"
-            >
-              <div class="hero__item-content">
-                <p class="hero__item-id">(0{{ item.id }})</p>
-                <h3 class="hero__item-title">{{ item.title }}</h3>
-                <p class="hero__item-description">{{ item.description }}</p>
-              </div>
-            </div>
+  <div class="container">
+    <section class="intro">
+      <div class="wrapper">
+        <div class="intro__content">
+          <div class="intro__subtitle">
+            <span>разрабатываем технологичные и эффективные решения для любых задач</span>
           </div>
+          <h1 class="intro__title">
+            Моби<span class="italic">л</span>ьная и
+            в<span class="italic">е</span>б-раз<span class="italic">р</span>аботка
+          </h1>
+          <button class="intro__button">
+            оставить заявку
+            <svg>
+              <use xlink:href="@/assets/icons/_sprite.svg#arrow-link">
+              </use>
+            </svg>
+          </button>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="plan">
-    <div class="wrapper">
-      <div class="plan__content">
-        <h2 class="plan__title">
-          Пл<span class="italic">а</span>н р<span class="italic">а</span>боты
-        </h2>
-        <div class="plan__visual">
-          <div class="plan__lines">
-            <div
-              v-for="(item, index) in graphItems"
-              :key="index"
-              class="plan__line"
-            >
-              <div class="plan__item">
-                <p class="plan__item-text">{{ item.title }}</p>
-                <div class="plan__item-timeline">
-                  <svg>
-                    <use xlink:href="@/assets/icons/_sprite.svg#clock" />
-                  </svg>
-                  <span>{{ item.timeline }}</span>
+    </section>
+    <section class="hero hidden">
+      <div class="wrapper">
+        <div class="hero__content">
+          <div class="hero__subtitle">
+            <span>разрабатываем технологичные и эффективные решения для любых задач</span>
+          </div>
+          <h1 class="hero__title">
+            Моби<span class="italic">л</span>ьная и
+            в<span class="italic">е</span>б-раз<span class="italic">р</span>аботка
+          </h1>
+          <div class="hero__slider">
+            <div class="hero__items start">
+              <div
+                v-for="item in slideItems"
+                :key="item.id"
+                class="hero__item"
+              >
+                <div class="hero__item-content">
+                  <p class="hero__item-id">(0{{ item.id }})</p>
+                  <h3 class="hero__item-title">{{ item.title }}</h3>
+                  <p class="hero__item-description">{{ item.description }}</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="experience">
-    <div class="wrapper">
-      <div class="experience__content">
-        <h2 class="experience__title">
-          На<span class="italic">ш</span> оп<span class="italic">ы</span>т
-        </h2>
-        <div class="case">
-          <div class="case__block case__block--second">
-            <service-case-card
-              :caseItem="caseItems[1]"
-              :number="2"
-              :amount="3"
-              :isFullInfo="false"
-            />
-          </div>
-          <div class="case__block">
-            <service-case-card
-              :caseItem="caseItems[0]"
-              :number="1"
-              :amount="3"
-            />
+    </section>
+    <section class="plan">
+      <div class="wrapper">
+        <div class="plan__content">
+          <h2 class="plan__title">
+            Пл<span class="italic">а</span>н р<span class="italic">а</span>боты
+          </h2>
+          <div class="plan__visual">
+            <div class="plan__lines">
+              <div
+                v-for="(item, index) in graphItems"
+                :key="index"
+                class="plan__line"
+              >
+                <div class="plan__item">
+                  <p class="plan__item-text">{{ item.title }}</p>
+                  <div class="plan__item-timeline">
+                    <svg>
+                      <use xlink:href="@/assets/icons/_sprite.svg#clock" />
+                    </svg>
+                    <span>{{ item.timeline }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <services-section />
+    </section>
+    <section class="experience">
+      <div class="wrapper">
+        <div class="experience__content">
+          <h2 class="experience__title">
+            На<span class="italic">ш</span> оп<span class="italic">ы</span>т
+          </h2>
+          <div class="case">
+            <div class="case__block case__block--second">
+              <service-case-card
+                :caseItem="caseItems[1]"
+                :number="2"
+                :amount="3"
+                :isFullInfo="false"
+              />
+            </div>
+            <div class="case__block">
+              <service-case-card
+                :caseItem="caseItems[0]"
+                :number="1"
+                :amount="3"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <services-section />
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -275,7 +277,7 @@ export default {
       width: 13px;
       height: 13px;
       stroke: $color-general-white;
-      transition: stroke 0.2s ease-in-out;
+      transition: stroke 0.2s ease-in-out, transform 0.2s ease-in-out;
     }
 
     &:hover {
@@ -284,6 +286,7 @@ export default {
 
       svg {
         stroke: $color-general-dark;
+        transform: rotate(45deg);
       }
     }
   }

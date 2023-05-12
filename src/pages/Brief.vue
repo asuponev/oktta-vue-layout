@@ -9,21 +9,23 @@ export default {
 </script>
 
 <template>
-  <section class="brief">
-    <div class="wrapper">
-      <div class="brief__content">
-        <div class="brief__intro">
-          <h1 class="brief__title">
-            Познако<span class="italic">м</span>имся ближе?
-          </h1>
-          <p class="brief__description">
-            Заполните бриф, свяжемся с вами в течение 24 часов
-          </p>
+  <div class="container">
+    <section class="brief">
+      <div class="wrapper">
+        <div class="brief__content">
+          <div class="brief__intro">
+            <h1 class="brief__title">
+              Познако<span class="italic">м</span>имся ближе?
+            </h1>
+            <p class="brief__description">
+              Заполните бриф, свяжемся с вами в течение 24 часов
+            </p>
+          </div>
+          <form-brief />
         </div>
-        <form-brief />
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
 
 <style lang="scss" scoped>

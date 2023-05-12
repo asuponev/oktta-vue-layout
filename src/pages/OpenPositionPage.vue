@@ -49,15 +49,17 @@ export default {
 </script>
 
 <template>
-  <breadcrumbs
-    :items="[{ name: 'Вакансии', path: '/careers' }, { name: position.title }]"
-  />
-  <open-position-view :position="position" />
-  <comfort-work-section />
-  <form-careers
-    :title="'Узнали себя?'"
-    :description="'Оставляйте заявку — ответим в течение недели в Telegram или по почте'"
-  />
+  <div class="container">
+    <breadcrumbs
+      :items="[{ name: 'Вакансии', path: '/careers' }, { name: position.title }]"
+    />
+    <open-position-view :position="position" />
+    <comfort-work-section />
+    <form-careers
+      :title="'Узнали себя?'"
+      :description="'Оставляйте заявку — ответим в течение недели в Telegram или по почте'"
+    />
+  </div>
 </template>
 
 <style lang="scss" scoped></style>

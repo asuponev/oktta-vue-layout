@@ -33,79 +33,81 @@ export default {
 </script>
 
 <template>
-  <div class="wrapper">
-    <h1 class="title">
-      <span>Работаем с кл<span class="italic">и</span>ентами</span>
-      <span>по всему <span class="italic">м</span>иру</span>
-    </h1>
-    <section class="contacts">
-      <div
-        v-for="contact in contacts"
-        :key="contact.id"
-        class="contacts__block"
+  <div class="container">
+    <div class="wrapper">
+      <h1 class="title">
+        <span>Работаем с кл<span class="italic">и</span>ентами</span>
+        <span>по всему <span class="italic">м</span>иру</span>
+      </h1>
+      <section class="contacts">
+        <div
+          v-for="contact in contacts"
+          :key="contact.id"
+          class="contacts__block"
+        >
+          <span class="contacts__country">{{ contact.country }}</span>
+          <ul class="contacts__list">
+            <li class="contacts__item">
+              <span class="contacts__item-id">(01)</span>
+              <a
+                :href="'mailto:' + contact.email"
+                class="contacts__item-link"
+              >
+                {{ contact.email }}
+              </a>
+            </li>
+            <li class="contacts__list-divider"></li>
+            <li class="contacts__item">
+              <span class="contacts__item-id">(02)</span>
+              <a
+                :href="'tel:' + contact.tel.replace(/ +/g, '')"
+                class="contacts__item-link"
+              >
+                {{ contact.tel }}
+              </a>
+            </li>
+            <li class="contacts__list-divider"></li>
+            <li class="contacts__item">
+              <span class="contacts__item-id">(03)</span>
+              <a
+                :href="contact.telegram"
+                class="contacts__item-link"
+              >
+                telegram
+                <svg>
+                  <use xlink:href="@/assets/icons/_sprite.svg#arrow-link">
+                  </use>
+                </svg>
+              </a>
+            </li>
+            <li class="contacts__list-divider"></li>
+            <li class="contacts__item">
+              <span class="contacts__item-id">(04)</span>
+              <a
+                :href="contact.whatsapp"
+                class="contacts__item-link"
+              >
+                whatsapp
+                <svg>
+                  <use xlink:href="@/assets/icons/_sprite.svg#arrow-link">
+                  </use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <hover-green-btn
+        @click="$router.push('/brief')"
+        class="contacts-green-btn"
       >
-        <span class="contacts__country">{{ contact.country }}</span>
-        <ul class="contacts__list">
-          <li class="contacts__item">
-            <span class="contacts__item-id">(01)</span>
-            <a
-              :href="'mailto:' + contact.email"
-              class="contacts__item-link"
-            >
-              {{ contact.email }}
-            </a>
-          </li>
-          <li class="contacts__list-divider"></li>
-          <li class="contacts__item">
-            <span class="contacts__item-id">(02)</span>
-            <a
-              :href="'tel:' + contact.tel.replace(/ +/g, '')"
-              class="contacts__item-link"
-            >
-              {{ contact.tel }}
-            </a>
-          </li>
-          <li class="contacts__list-divider"></li>
-          <li class="contacts__item">
-            <span class="contacts__item-id">(03)</span>
-            <a
-              :href="contact.telegram"
-              class="contacts__item-link"
-            >
-              telegram
-              <svg>
-                <use xlink:href="@/assets/icons/_sprite.svg#arrow-link">
-                </use>
-              </svg>
-            </a>
-          </li>
-          <li class="contacts__list-divider"></li>
-          <li class="contacts__item">
-            <span class="contacts__item-id">(04)</span>
-            <a
-              :href="contact.whatsapp"
-              class="contacts__item-link"
-            >
-              whatsapp
-              <svg>
-                <use xlink:href="@/assets/icons/_sprite.svg#arrow-link">
-                </use>
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <hover-green-btn
-      @click="$router.push('/brief')"
-      class="contacts-green-btn"
-    >
-      заполнить бриф
-    </hover-green-btn>
-    <social-block
-      class="social--contacts"
-      :light="true"
-    />
+        заполнить бриф
+      </hover-green-btn>
+      <social-block
+        class="social--contacts"
+        :light="true"
+      />
+    </div>
   </div>
 </template>
 

@@ -24,6 +24,7 @@ export default {
 
 <style lang="scss" scoped>
 .wrapper {
+  margin-top: 72px;
   padding: 64px 30px 80px;
   display: flex;
   flex-direction: column;

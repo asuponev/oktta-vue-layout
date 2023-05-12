@@ -77,7 +77,7 @@ export default {
 
 @media (max-width: 1024px) {
   .section {
-    padding: 70px 48px 84px;
+    padding: 70px 48px;
     grid-template-columns: 1fr;
     gap: 45px;
 

@@ -38,7 +38,6 @@ export default {
 
 <style lang="scss" scoped>
 .not-found {
-  transform: translateY(-72px);
   background-image: url("@/assets/images/404-bg.png");
   background-repeat: no-repeat;
   background-position: -100% 100%;

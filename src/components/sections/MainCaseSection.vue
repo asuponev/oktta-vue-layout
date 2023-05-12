@@ -55,7 +55,10 @@ export default {
               :isPreviewCard="true"
               class="case-first-card"
             />
-            <hover-green-btn class="case-hover-button">
+            <hover-green-btn
+              @click="$router.push('/cases')"
+              class="case-hover-button"
+            >
               все кейсы
             </hover-green-btn>
           </div>

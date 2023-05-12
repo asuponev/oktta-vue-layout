@@ -13,19 +13,21 @@ export default {
 </script>
 
 <template>
-  <section>
-    <div class="wrapper">
-      <h1 class="title">
-        <span>Д<span class="italic">е</span>лаем
-        гранд<span class="italic">и</span>озное,</span>
-        <span>не хв<span class="italic">а</span>тает только</span>
-        <span class="italic">тебя</span>
-      </h1>
-    </div>
-  </section>
-  <career-in-oktta-section />
-  <open-positions-list />
-  <form-careers />
+  <div class="container">
+    <section>
+      <div class="wrapper">
+        <h1 class="title">
+          <span>Д<span class="italic">е</span>лаем
+          гранд<span class="italic">и</span>озное,</span>
+          <span>не хв<span class="italic">а</span>тает только</span>
+          <span class="italic">тебя</span>
+        </h1>
+      </div>
+    </section>
+    <career-in-oktta-section />
+    <open-positions-list />
+    <form-careers />
+  </div>
 </template>
 
 <style lang="scss" scoped>

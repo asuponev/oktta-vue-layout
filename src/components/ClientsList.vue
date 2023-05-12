@@ -67,6 +67,8 @@ export default {
       align-items: center;
       justify-content: space-between;
       padding: 11.5px 30px;
+      margin: 0 auto;
+      max-width: 1440px;
     }
 
     &-title {

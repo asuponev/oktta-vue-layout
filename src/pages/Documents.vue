@@ -9,11 +9,13 @@ export default {
 </script>
 
 <template>
-  <div class="wrapper">
-    <h1 class="title">
-      Доку<span class="italic">м</span>енты
-    </h1>
-    <documents-list />
+  <div class="container">
+    <div class="wrapper">
+      <h1 class="title">
+        Доку<span class="italic">м</span>енты
+      </h1>
+      <documents-list />
+    </div>
   </div>
 </template>
 

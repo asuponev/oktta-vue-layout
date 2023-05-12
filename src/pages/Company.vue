@@ -111,8 +111,12 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.wrapper {
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
 .hero {
-  transform: translateY(-72px);
   height: 672px;
   background: $color-general-dark;
   background-image: url("@/assets/images/company-bg.png");

@@ -9,93 +9,100 @@ export default {
 </script>
 
 <template>
-  <div class="wrapper">
+  <div class="container">
     <section class="services">
-      <div class="services__item">
-        <span class="services__item-id">(01)</span>
-        <router-link
-          to="/services/development"
-          class="services__item-link"
-        >
-          <p>Ан<span class="italic">а</span>литика
-            и иссл<span class="italic">е</span>дования</p>
-          </router-link>
-      </div>
-      <div class="services__item">
-        <span class="services__item-id">(02)</span>
-        <router-link
-          to="/services/development"
-          class="services__item-link"
-        >
-          <p>CX-исс<span class="italic">л</span>едования</p>
-        </router-link>
-      </div>
-      <div class="services__item">
-        <span class="services__item-id">(03)</span>
-        <router-link
-          to="/services/development"
-          class="services__item-link"
-        >
-          <p>Мобил<span class="italic">ь</span>ная и
-          веб-раз<span class="italic">р</span>аботка</p>
-        </router-link>
-      </div>
-      <div class="services__item">
-        <span class="services__item-id">(04)</span>
-        <router-link
-          to="/services/development"
-          class="services__item-link"
-        >
-          <p>Диза<span class="italic">й</span>н
-          мобильн<span class="italic">ы</span>х и 
-          веб-интер<span class="italic">ф</span>ейсов</p>
-        </router-link>
-      </div>
-      <div class="services__item">
-        <span class="services__item-id">(05)</span>
-        <router-link
-          to="/services/development"
-          class="services__item-link"
-        >
-          <p>Бр<span class="italic">е</span>ндинг и
-          упа<span class="italic">к</span>овка</p>
-        </router-link>
-      </div>
-      <div class="services__item">
-        <span class="services__item-id">(06)</span>
-        <router-link
-          to="/services/development"
-          class="services__item-link"
-        >
-          <p>Спри<span class="italic">н</span>т за
-          7 дне<span class="italic">й</span></p>
-        </router-link>
-      </div>
-      <div class="services__item">
-        <span class="services__item-id">(07)</span>
-        <router-link
-          to="/services/development"
-          class="services__item-link"
-        >
-          <p>Диза<span class="italic">й</span>н-поддер<span
-            class="italic">ж</span>ка</p>
-          </router-link>
+      <div class="wrapper">
+        <div class="services__content">
+          <div class="services__item">
+            <span class="services__item-id">(01)</span>
+            <router-link
+              to="/services/development"
+              class="services__item-link"
+            >
+              <p>Ан<span class="italic">а</span>литика
+                и иссл<span class="italic">е</span>дования</p>
+            </router-link>
+          </div>
+          <div class="services__item">
+            <span class="services__item-id">(02)</span>
+            <router-link
+              to="/services/development"
+              class="services__item-link"
+            >
+              <p>CX-исс<span class="italic">л</span>едования</p>
+            </router-link>
+          </div>
+          <div class="services__item">
+            <span class="services__item-id">(03)</span>
+            <router-link
+              to="/services/development"
+              class="services__item-link"
+            >
+              <p>Мобил<span class="italic">ь</span>ная и
+                веб-раз<span class="italic">р</span>аботка</p>
+            </router-link>
+          </div>
+          <div class="services__item">
+            <span class="services__item-id">(04)</span>
+            <router-link
+              to="/services/development"
+              class="services__item-link"
+            >
+              <p>Диза<span class="italic">й</span>н
+                мобильн<span class="italic">ы</span>х и 
+                веб-интер<span class="italic">ф</span>ейсов</p>
+            </router-link>
+          </div>
+          <div class="services__item">
+            <span class="services__item-id">(05)</span>
+            <router-link
+              to="/services/development"
+              class="services__item-link"
+            >
+              <p>Бр<span class="italic">е</span>ндинг и
+                упа<span class="italic">к</span>овка</p>
+            </router-link>
+          </div>
+          <div class="services__item">
+            <span class="services__item-id">(06)</span>
+            <router-link
+              to="/services/development"
+              class="services__item-link"
+            >
+              <p>Спри<span class="italic">н</span>т за
+                7 дне<span class="italic">й</span></p>
+            </router-link>
+          </div>
+          <div class="services__item">
+            <span class="services__item-id">(07)</span>
+            <router-link
+              to="/services/development"
+              class="services__item-link"
+            >
+              <p>Диза<span class="italic">й</span>н-поддер<span
+                  class="italic">ж</span>ка</p>
+            </router-link>
+          </div>
+        </div>
       </div>
     </section>
-    <form-contact />
+    <section class="form-contacts">
+      <div class="wrapper">
+        <form-contact />
+      </div>
+    </section>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.wrapper {
-  padding: 30px;
-}
-
 .services {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 28px 20px;
-  margin-bottom: 96px;
+  margin: 100px 0;
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px 20px;
+  }
 
   &__item {
     display: flex;
@@ -163,9 +170,15 @@ export default {
   }
 }
 
+.form-contacts {
+  margin-bottom: 30px;
+}
+
 @media (max-width: 1250px) {
   .services {
-    gap: 23px 8px;
+    &__content {
+      gap: 23px 8px;
+    }
 
     &__item {
       &-link {
@@ -179,22 +192,25 @@ export default {
   }
 }
 
-@media (max-width: 768px) {
-  .wrapper {
-    padding: 20px;
+@media (max-width: 1024px) {
+  .services {
+    margin: 92px 0;
+  }
+
+  .form-contacts {
+    margin-bottom: 20px;
   }
 }
 
 @media (max-width: 590px) {
-  .wrapper {
-    padding: 48px 16px 20px;
-  }
-
   .services {
-    display: flex;
-    flex-direction: column;
-    gap: 23px;
-    margin-bottom: 68px;
+    margin: 120px 0 68px;
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: 23px;
+    }
 
     &__item {
       &-id {

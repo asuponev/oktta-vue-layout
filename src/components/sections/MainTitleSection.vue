@@ -81,6 +81,8 @@ export default {
 
 <style lang="scss" scoped>
 .hero {
+  margin-top: 72px;
+  
   &__content {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

@@ -37,33 +37,36 @@ export default {
 </script>
 
 <template>
-  <breadcrumbs :items="[{ name: 'Кейсы', path: '/cases' }, { name: 'Mesh3' }]" />
-  <case-intro :caseItem="caseItem" />
-  <section class="visual">
-    <div class="wrapper">
-      <div class="visual__content">
-        <div class="visual__block visual__block--full-width">
-          <img
-            src="@/assets/images/case-mesh3/box1.jpg"
-            alt="img"
-          >
-        </div>
-        <div class="visual__block">
-          <img
-            src="@/assets/images/case-mesh3/box2.jpg"
-            alt="img"
-          >
-        </div>
-        <div class="visual__block">
-          <img
-            src="@/assets/images/case-mesh3/box3.jpg"
-            alt="img"
-          >
+  <div class="container">
+    <breadcrumbs
+      :items="[{ name: 'Кейсы', path: '/cases' }, { name: 'Mesh3' }]" />
+    <case-intro :caseItem="caseItem" />
+    <section class="visual">
+      <div class="wrapper">
+        <div class="visual__content">
+          <div class="visual__block visual__block--full-width">
+            <img
+              src="@/assets/images/case-mesh3/box1.jpg"
+              alt="img"
+            >
+          </div>
+          <div class="visual__block">
+            <img
+              src="@/assets/images/case-mesh3/box2.jpg"
+              alt="img"
+            >
+          </div>
+          <div class="visual__block">
+            <img
+              src="@/assets/images/case-mesh3/box3.jpg"
+              alt="img"
+            >
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  <next-case :nextCase="nextCase" />
+    </section>
+    <next-case :nextCase="nextCase" />
+  </div>
 </template>
 
 <style lang="scss" scoped>
