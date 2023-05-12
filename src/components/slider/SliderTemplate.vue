@@ -73,7 +73,12 @@ export default {
 
   &__wrapper {
     width: 100%;
-    overflow: hidden;
+    overflow-x: scroll;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   &__items {
@@ -178,15 +183,6 @@ export default {
 
 @media (max-width: 1024px) {
   .slider {
-    &__wrapper {
-      overflow-x: scroll;
-      scrollbar-width: none;
-
-      &::-webkit-scrollbar {
-        display: none;
-      }
-    }
-
     &__item {
       &-cover {
         width: 330px;

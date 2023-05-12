@@ -267,7 +267,9 @@ export default {
     width: 201px;
     border: 1px solid rgba(129, 129, 129, 0.1);
     border-radius: 24px;
-    backdrop-filter: blur(34px);
+    -webkit-backdrop-filter: blur(34px) !important;
+    -moz-backdrop-filter: blur(34px) !important;
+    backdrop-filter: blur(34px) !important;
     display: flex;
     align-items: center;
     justify-content: center;
