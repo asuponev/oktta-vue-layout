@@ -1,4 +1,7 @@
 <script>
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import 'swiper/css'
+
 export default {
   props: {
     items: {
@@ -7,25 +10,19 @@ export default {
     },
   },
   methods: {
-    // Mock functions for demonstrate how buttons work
     sliderRight() {
-      const sliderItems = document.querySelector('.slider__items'),
-        leftItems = sliderItems.getBoundingClientRect().left,
-        rightItems = sliderItems.getBoundingClientRect().right;
-
-      if (rightItems > 0) {
-        sliderItems.style.transform = `translateX(${leftItems - 398}px)`
-      }
+      const swiper = document.querySelector('.swiper').swiper
+      swiper.slideNext()
     },
     sliderLeft() {
-      const sliderItems = document.querySelector('.slider__items'),
-        leftItems = sliderItems.getBoundingClientRect().left;
-
-      if (leftItems < 0) {
-        sliderItems.style.transform = `translateX(${leftItems + 398}px)`
-      }
+      const swiper = document.querySelector('.swiper').swiper
+      swiper.slidePrev()
     },
-  }
+  },
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
 }
 </script>
 
@@ -43,48 +40,30 @@ export default {
         </svg>
       </button>
     </div>
-    <div class="slider__wrapper">
-      <div class="slider__items">
+    <swiper :slidesPerView="'auto'">
+      <swiper-slide
+        v-for="item in items"
+        :key="item.id"
+        class="slider__item"
+      >
         <div
-          v-for="item in items"
-          :key="item.id"
-          class="slider__item"
+          :style="{ 'background': `center / cover no-repeat url(${item.image})` }"
+          class="slider__item-cover"
         >
-          <div class="slider__item-cover">
-            <img
-              :src="item.image"
-              alt="visual"
-            >
-          </div>
-          <div class="slider__item-title">
-            <span>({{ item.id < 10 ? `0${item.id}` : item.id }})</span>
-            <h3>{{ item.title }}</h3>
-          </div>
-          <p class="slider__item-description">{{ item.description }}</p>
         </div>
-      </div>
-    </div>
+        <div class="slider__item-title">
+          <span>({{ item.id < 10 ? `0${item.id}` : item.id }})</span>
+          <h3>{{ item.title }}</h3>
+        </div>
+        <p class="slider__item-description">{{ item.description }}</p>
+      </swiper-slide>
+    </swiper>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .slider {
   position: relative;
-
-  &__wrapper {
-    width: 100%;
-    overflow-x: scroll;
-    scrollbar-width: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-
-  &__items {
-    display: flex;
-    transition: transform 0.3s ease-in-out;
-  }
 
   &__item {
     display: flex;
@@ -107,13 +86,6 @@ export default {
       width: 380px;
       height: 260px;
       border-radius: 21px;
-      overflow: hidden;
-
-      img {
-        width: 380px;
-        height: 260px;
-        object-fit: cover;
-      }
     }
 
     &-title {
@@ -125,7 +97,7 @@ export default {
       span {
         font: $font-small-playfair;
         font-size: 13px;
-        padding-top: 2px;
+        line-height: 125%;
         // font-variant-numeric: lining-nums;
       }
 
@@ -181,17 +153,26 @@ export default {
   }
 }
 
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  width: 397.5px;
+
+  &:first-child,
+  &:last-child {
+    width: 417.5px;
+  }
+}
+
 @media (max-width: 1024px) {
   .slider {
     &__item {
       &-cover {
         width: 330px;
         height: 218px;
-
-        img {
-          width: 330px;
-          height: 218px;
-        }
       }
 
       &-title {
@@ -217,6 +198,15 @@ export default {
       display: none;
     }
   }
+
+  .swiper-slide {
+    width: 347.5px;
+
+    &:first-child,
+    &:last-child {
+      width: 357.5px;
+    }
+  }
 }
 
 @media (max-width: 590px) {
@@ -228,6 +218,15 @@ export default {
 
     &:last-child {
       padding-right: 16px;
+    }
+  }
+
+  .swiper-slide {
+    width: 347.5px;
+
+    &:first-child,
+    &:last-child {
+      width: 353.5px;
     }
   }
 }
