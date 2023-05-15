@@ -124,6 +124,7 @@ export default {
       letter-spacing: -0.03em;
       text-decoration: none;
       cursor: pointer;
+      transition: color 0.2s ease-in-out;
 
       svg {
         width: 13px;
@@ -132,20 +133,11 @@ export default {
         transition: stroke 0.2s ease-in-out, transform 0.2s ease-in-out;
       }
 
-      span {
-        display: inline-flex;
-        background: no-repeat 0 100%;
-        background-image: linear-gradient(to right, $color-general-white, $color-general-white);
-        background-size: 0 2px;
-        transition: background-size 0.2s ease-in-out;
-      }
-
       &:hover {
-        span {
-          background-size: 100% 2px;
-        }
+        color: $color-general-green;
 
         svg {
+          stroke: $color-general-green;
           transform: rotate(45deg);
         }
       }

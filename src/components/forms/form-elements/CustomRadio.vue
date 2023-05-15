@@ -121,6 +121,14 @@ export default {
   }
 }
 
+.radio-input:hover+.radio-label {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.radio-input:checked:hover+.radio-label {
+  background: $color-general-green;
+}
+
 @media (max-width: 590px) {
 
   .radio-group-wrapper {

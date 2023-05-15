@@ -73,7 +73,7 @@ export default {
                 :href="contact.telegram"
                 class="contacts__item-link"
               >
-                telegram
+                <span>telegram</span>
                 <svg>
                   <use xlink:href="@/assets/icons/_sprite.svg#arrow-link" />
                 </svg>
@@ -86,7 +86,7 @@ export default {
                 :href="contact.whatsapp"
                 class="contacts__item-link"
               >
-                whatsapp
+                <span>whatsapp</span>
                 <svg>
                   <use xlink:href="@/assets/icons/_sprite.svg#arrow-link" />
                 </svg>
@@ -180,12 +180,34 @@ export default {
       color: $color-general-dark;
       text-decoration: none;
       letter-spacing: -0.04em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
 
       svg {
         width: 13px;
         height: 13px;
         stroke: $color-general-dark;
-        transition: stroke 0.2s ease-in-out;
+        transition: transform 0.2s ease-in-out;
+      }
+
+      span {
+        display: inline-flex;
+        background: no-repeat 0 100%;
+        background-image: linear-gradient(to right, $color-general-dark, $color-general-dark);
+        background-size: 0 2px;
+        transition: background-size 0.2s ease-in-out;
+      }
+
+      &:hover {
+        span {
+          background-size: 100% 2px;
+        }
+
+        svg {
+          transform: rotate(45deg);
+        }
+
       }
     }
   }

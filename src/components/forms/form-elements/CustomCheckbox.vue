@@ -96,11 +96,13 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.2s ease-in-out, position 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out, position 0.2s ease-in-out, background 0.2s ease-in-out;
 
   svg {
+    stroke: $color-general-dark;
     width: 10px;
     height: 10px;
+    transition: stroke 0.2s ease-in-out;
   }
 }
 
@@ -114,6 +116,22 @@ export default {
     position: static;
     z-index: 1;
     opacity: 1;
+  }
+}
+
+.checkbox-input:hover+.checkbox-label {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.checkbox-input:checked:hover+.checkbox-label {
+  background: $color-general-green;
+
+  .checkbox-icon {
+    background: $color-general-dark;
+
+    svg {
+      stroke: $color-general-white;
+    }
   }
 }
 
