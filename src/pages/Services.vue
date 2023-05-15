@@ -1,10 +1,29 @@
 <script>
 import FormContact from '@/components/forms/FormContact.vue'
 
+import sliderImage1 from '@/assets/images/services-slider/card1.svg'
+import sliderImage2 from '@/assets/images/services-slider/card2.svg'
+import sliderImage3 from '@/assets/images/services-slider/card3.svg'
+import sliderImage4 from '@/assets/images/services-slider/card4.svg'
+import sliderImage5 from '@/assets/images/services-slider/card5.svg'
+import sliderImage6 from '@/assets/images/services-slider/card6.svg'
+import sliderImage7 from '@/assets/images/services-slider/card7.svg'
+
 export default {
   components: {
     FormContact
   },
+  data() {
+    return {
+      sliderImage1,
+      sliderImage2,
+      sliderImage3,
+      sliderImage4,
+      sliderImage5,
+      sliderImage6,
+      sliderImage7
+    }
+  }
 }
 </script>
 
@@ -21,6 +40,11 @@ export default {
             >
               <p>Ан<span class="italic">а</span>литика
                 и иссл<span class="italic">е</span>дования</p>
+              <div
+                class="services__item-img"
+                :style="{ 'background': `center / cover no-repeat url(${sliderImage1})` }"
+              >
+              </div>
             </router-link>
           </div>
           <div class="services__item">
@@ -30,6 +54,11 @@ export default {
               class="services__item-link"
             >
               <p>CX-исс<span class="italic">л</span>едования</p>
+              <div
+                class="services__item-img"
+                :style="{ 'background': `center / cover no-repeat url(${sliderImage2})` }"
+              >
+              </div>
             </router-link>
           </div>
           <div class="services__item">
@@ -40,6 +69,11 @@ export default {
             >
               <p>Мобил<span class="italic">ь</span>ная и
                 веб-раз<span class="italic">р</span>аботка</p>
+              <div
+                class="services__item-img"
+                :style="{ 'background': `center / cover no-repeat url(${sliderImage3})` }"
+              >
+              </div>
             </router-link>
           </div>
           <div class="services__item">
@@ -51,6 +85,11 @@ export default {
               <p>Диза<span class="italic">й</span>н
                 мобильн<span class="italic">ы</span>х и 
                 веб-интер<span class="italic">ф</span>ейсов</p>
+                <div
+                class="services__item-img"
+                :style="{ 'background': `center / cover no-repeat url(${sliderImage4})` }"
+              >
+              </div>
             </router-link>
           </div>
           <div class="services__item">
@@ -61,6 +100,11 @@ export default {
             >
               <p>Бр<span class="italic">е</span>ндинг и
                 упа<span class="italic">к</span>овка</p>
+                <div
+                class="services__item-img"
+                :style="{ 'background': `center / cover no-repeat url(${sliderImage5})` }"
+              >
+              </div>
             </router-link>
           </div>
           <div class="services__item">
@@ -71,6 +115,11 @@ export default {
             >
               <p>Спри<span class="italic">н</span>т за
                 7 дне<span class="italic">й</span></p>
+                <div
+                class="services__item-img"
+                :style="{ 'background': `center / cover no-repeat url(${sliderImage6})` }"
+              >
+              </div>
             </router-link>
           </div>
           <div class="services__item">
@@ -81,6 +130,11 @@ export default {
             >
               <p>Диза<span class="italic">й</span>н-поддер<span
                   class="italic">ж</span>ка</p>
+                  <div
+                class="services__item-img"
+                :style="{ 'background': `center / cover no-repeat url(${sliderImage7})` }"
+              >
+              </div>
             </router-link>
           </div>
         </div>
@@ -107,6 +161,7 @@ export default {
   &__item {
     display: flex;
     gap: 4px;
+    position: relative;
 
     &-id {
       font: $font-small-playfair;
@@ -138,10 +193,31 @@ export default {
           background-size: 100% 4px;
         }
       }
+
+      &:hover {
+        .services__item-img {
+          scale: 1;
+        }
+      }
+    }
+
+    &-img {
+      position: absolute;
+      z-index: 2;
+      top: -160px;
+      left: 134px;
+      width: 380px;
+      height: 260px;
+      scale: 0;
+      transition: scale 0.3s ease-in-out;
     }
 
     &:nth-child(1) {
       grid-area: 1 / 1 / 2 / 3;
+
+      .services__item-img {
+        top: -80px;
+      }
     }
 
     &:nth-child(2) {
@@ -195,6 +271,10 @@ export default {
 @media (max-width: 1024px) {
   .services {
     margin: 92px 0;
+
+    &__item-img {
+      display: none;
+    }
   }
 
   .form-contacts {
