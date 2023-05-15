@@ -99,7 +99,7 @@ export default {
   height: 1000px;
   width: 100vw;
   position: absolute;
-  top: -1000px;
+  top: -1100px;
   right: 0;
   z-index: -10;
   background: $color-general-dark;
