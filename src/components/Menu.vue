@@ -22,6 +22,9 @@ export default {
   created() {
     this.getInnerHeight()
   },
+  mounted() {
+    window.addEventListener('resize', this.getInnerHeight)
+  }
 }
 </script>
 

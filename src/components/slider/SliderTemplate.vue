@@ -71,15 +71,15 @@ export default {
     justify-content: flex-start;
     gap: 12px;
     border-right: 1px solid $color-divider;
-    padding: 0 8px;
+    padding-inline: 8px;
 
     &:first-child {
-      padding-left: 30px;
+      padding-left: 0;
     }
 
     &:last-child {
+      padding-right: 0;
       border-right: none;
-      padding-right: 30px;
     }
 
     &-cover {
@@ -156,6 +156,7 @@ export default {
 .swiper {
   width: 100%;
   height: 100%;
+  padding-inline: 30px;
 }
 
 .swiper-slide {
@@ -163,7 +164,7 @@ export default {
 
   &:first-child,
   &:last-child {
-    width: 417.5px;
+    width: 389.5px;
   }
 }
 
@@ -184,14 +185,6 @@ export default {
           font-size: 24px;
         }
       }
-
-      &:first-child {
-        padding-left: 20px;
-      }
-
-      &:last-child {
-        padding-right: 20px;
-      }
     }
 
     &__buttons {
@@ -199,35 +192,23 @@ export default {
     }
   }
 
+  .swiper {
+    padding-inline: 20px;
+  }
+
   .swiper-slide {
     width: 347.5px;
 
     &:first-child,
     &:last-child {
-      width: 357.5px;
+      width: 339.5px;
     }
   }
 }
 
 @media (max-width: 590px) {
-  .slider__item {
-
-    &:first-child {
-      padding-left: 16px;
-    }
-
-    &:last-child {
-      padding-right: 16px;
-    }
-  }
-
-  .swiper-slide {
-    width: 347.5px;
-
-    &:first-child,
-    &:last-child {
-      width: 353.5px;
-    }
+  .swiper {
+    padding-inline: 16px;
   }
 }
 </style>

@@ -1,4 +1,7 @@
 <script>
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import 'swiper/css'
+
 import ServicesSection from '@/components/sections/ServicesSection.vue'
 import ServiceCaseCard from '@/components/ServiceCaseCard.vue'
 import bgKidseeImage from '@/assets/images/mock-content/case-card-services.jpg'
@@ -7,7 +10,9 @@ import bgSkillcodeImage from '@/assets/images/mock-content/case-card-skillcode.j
 export default {
   components: {
     ServiceCaseCard,
-    ServicesSection
+    ServicesSection,
+    Swiper,
+    SwiperSlide,
   },
   data() {
     return {
@@ -84,7 +89,7 @@ export default {
     scrollAnimation() {
       document.querySelector('.intro').classList.add('scroll')
       document.querySelector('.hero').classList.remove('hidden')
-      document.querySelector('.hero__items').classList.remove('start')
+      document.querySelector('.hero__slider').classList.remove('start')
       setTimeout(() => {
         document.querySelector('body').removeAttribute('style')
         document.querySelector('.intro').remove()
@@ -98,7 +103,6 @@ export default {
     this.blockPage()
     window.addEventListener('wheel', this.scrollAnimation)
     window.addEventListener('touchmove', this.scrollAnimation)
-    window.addEventListener('resize', this.getInnerHeight)
   },
 }
 </script>
@@ -135,21 +139,28 @@ export default {
             Моби<span class="italic">л</span>ьная и
             в<span class="italic">е</span>б-раз<span class="italic">р</span>аботка
           </h1>
-          <div class="hero__slider">
-            <div class="hero__items start">
-              <div
-                v-for="item in slideItems"
-                :key="item.id"
-                class="hero__item"
-              >
-                <div class="hero__item-content">
-                  <p class="hero__item-id">(0{{ item.id }})</p>
-                  <h3 class="hero__item-title">{{ item.title }}</h3>
-                  <p class="hero__item-description">{{ item.description }}</p>
-                </div>
+          <swiper
+            :slidesPerView="'auto'"
+            :spaceBetween="8"
+            :breakpoints="{
+              1024: {
+                spaceBetween: 32
+              }
+            }"
+            class="hero__slider start"
+          >
+            <swiper-slide
+              v-for="item in slideItems"
+              :key="item.id"
+              class="hero__item"
+            >
+              <div class="hero__item-content">
+                <p class="hero__item-id">(0{{ item.id }})</p>
+                <h3 class="hero__item-title">{{ item.title }}</h3>
+                <p class="hero__item-description">{{ item.description }}</p>
               </div>
-            </div>
-          </div>
+            </swiper-slide>
+          </swiper>
         </div>
       </div>
     </section>
@@ -310,6 +321,7 @@ export default {
     height: calc(100vh - 102px);
     height: max((var(--app-height) - 102px), 580px);
     position: relative;
+    overflow: hidden;
   }
 
   &__title {
@@ -343,24 +355,11 @@ export default {
   &__slider {
     position: absolute;
     top: 244px;
-    width: 100%;
-    overflow-x: scroll;
-    scrollbar-width: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-
-  &__items {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-    padding-inline: 70px;
-    transition: transform 3s ease-in-out;
+    left: 0;
+    transition: left 3s ease-in-out;
 
     &.start {
-      transform: translateX(100%);
+      left: 60%;
     }
   }
 
@@ -535,6 +534,16 @@ export default {
   margin-bottom: 100px;
 }
 
+.swiper {
+  width: 100%;
+  height: 100%;
+  padding-inline: 70px;
+}
+
+.swiper-slide {
+  width: 440px;
+}
+
 @media (max-width: 1280px) {
   .plan {
     &__visual {
@@ -624,10 +633,6 @@ export default {
       top: 381px;
     }
 
-    &__items {
-      gap: 8px;
-    }
-
     &__item {
       &-content {
         min-width: 360px;
@@ -684,6 +689,14 @@ export default {
         padding-inline: 16px;
       }
     }
+  }
+
+  .swiper {
+    padding-inline: 48px;
+  }
+
+  .swiper-slide {
+    width: 360px;
   }
 }
 
@@ -830,6 +843,14 @@ export default {
         padding-inline: 16px;
       }
     }
+  }
+
+  .swiper {
+    padding-inline: 24px;
+  }
+
+  .swiper-slide {
+    width: 320px;
   }
 }
 </style>

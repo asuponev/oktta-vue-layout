@@ -1,6 +1,13 @@
 <script>
-export default {
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import 'swiper/css'
+import 'swiper/css/scrollbar'
 
+export default {
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
 }
 </script>
 
@@ -20,58 +27,67 @@ export default {
           </div>
         </div>
         <div class="section__block">
-          <div class="profit">
-            <div class="profit__cards">
-              <div class="profit__card">
-                <span class="profit__card-id">(01)</span>
-                <h3 class="profit__card-title">
-                  Внутр<span class="italic">е</span>ннее обучение
-                </h3>
-                <p class="profit__card-description">
-                  проанализировали, из каких регионов идет наибольший трафик и
-                  какие
-                  из
-                  них имеют наивысший процент отказов
-                </p>
-              </div>
-              <div class="profit__card">
-                <span class="profit__card-id">(02)</span>
-                <h3 class="profit__card-title">
-                  Опл<span class="italic">а</span>та курсов
-                </h3>
-                <p class="profit__card-description">
-                  проанализировали, из каких регионов идет наибольший трафик и
-                  какие
-                  из
-                  них имеют наивысший процент отказов
-                </p>
-              </div>
-              <div class="profit__card">
-                <span class="profit__card-id">(03)</span>
-                <h3 class="profit__card-title">
-                  Корпо<span class="italic">р</span>ативы в VR
-                </h3>
-                <p class="profit__card-description">
-                  проанализировали, из каких регионов идет наибольший трафик и
-                  какие
-                  из
-                  них имеют наивысший процент отказов
-                </p>
-              </div>
-              <div class="profit__card">
-                <span class="profit__card-id">(04)</span>
-                <h3 class="profit__card-title">
-                  Помо<span class="italic">щ</span>ь с релокацией
-                </h3>
-                <p class="profit__card-description">
-                  проанализировали, из каких регионов идет наибольший трафик и
-                  какие
-                  из
-                  них имеют наивысший процент отказов
-                </p>
-              </div>
-            </div>
-          </div>
+          <swiper
+            :slidesPerView="'auto'"
+            :spaceBetween="8"
+            :direction="'horizontal'"
+            :breakpoints="{
+              590: {
+                spaceBetween: 16,
+                direction: 'vertical',
+              }
+            }"
+            class="profit"
+          >
+            <swiper-slide class="profit__card">
+              <span class="profit__card-id">(01)</span>
+              <h3 class="profit__card-title">
+                Внутр<span class="italic">е</span>ннее обучение
+              </h3>
+              <p class="profit__card-description">
+                проанализировали, из каких регионов идет наибольший трафик и
+                какие
+                из
+                них имеют наивысший процент отказов
+              </p>
+            </swiper-slide>
+            <swiper-slide class="profit__card">
+              <span class="profit__card-id">(02)</span>
+              <h3 class="profit__card-title">
+                Опл<span class="italic">а</span>та курсов
+              </h3>
+              <p class="profit__card-description">
+                проанализировали, из каких регионов идет наибольший трафик и
+                какие
+                из
+                них имеют наивысший процент отказов
+              </p>
+            </swiper-slide>
+            <swiper-slide class="profit__card">
+              <span class="profit__card-id">(03)</span>
+              <h3 class="profit__card-title">
+                Корпо<span class="italic">р</span>ативы в VR
+              </h3>
+              <p class="profit__card-description">
+                проанализировали, из каких регионов идет наибольший трафик и
+                какие
+                из
+                них имеют наивысший процент отказов
+              </p>
+            </swiper-slide>
+            <swiper-slide class="profit__card">
+              <span class="profit__card-id">(04)</span>
+              <h3 class="profit__card-title">
+                Помо<span class="italic">щ</span>ь с релокацией
+              </h3>
+              <p class="profit__card-description">
+                проанализировали, из каких регионов идет наибольший трафик и
+                какие
+                из
+                них имеют наивысший процент отказов
+              </p>
+            </swiper-slide>
+          </swiper>
         </div>
       </div>
     </div>
@@ -130,16 +146,6 @@ export default {
 }
 
 .profit {
-  height: 100%;
-  overflow-y: scroll;
-  scrollbar-width: none;
-
-  &__cards {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  }
-
   &__card {
     width: 392px;
     display: flex;
@@ -182,10 +188,16 @@ export default {
       margin-bottom: 70px;
     }
   }
+}
 
-  &::-webkit-scrollbar {
-    width: 0;
-  }
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  width: 392px;
+  height: 238px;
 }
 
 @media (max-width: 1024px) {
@@ -251,6 +263,11 @@ export default {
       }
     }
   }
+
+  .swiper-slide {
+    width: 336px;
+    height: 211px;
+  }
 }
 
 @media (max-width: 590px) {
@@ -289,14 +306,6 @@ export default {
   }
 
   .profit {
-    overflow-x: scroll;
-    padding-bottom: 20px;
-
-    &__cards {
-      flex-direction: row;
-      gap: 8px;
-    }
-
     &__card {
       min-width: 320px;
       padding: 28px 24px 24px;
@@ -308,26 +317,32 @@ export default {
       &-title {
         margin: 48px 0 10px;
       }
-
-      &:first-child {
-        margin-left: 24px;
-      }
     }
 
-    &::-webkit-scrollbar {
-      height: 4px;
-    }
+    // &::-webkit-scrollbar {
+    //   height: 4px;
+    // }
 
-    &::-webkit-scrollbar-track {
-      background: rgba(134, 144, 153, 0.2);
-      border-radius: 25px;
-      margin: 0 48px;
-    }
+    // &::-webkit-scrollbar-track {
+    //   background: rgba(134, 144, 153, 0.2);
+    //   border-radius: 25px;
+    //   margin: 0 48px;
+    // }
 
-    &::-webkit-scrollbar-thumb {
-      background: $color-general-white;
-      border-radius: 31px;
-    }
+    // &::-webkit-scrollbar-thumb {
+    //   background: $color-general-white;
+    //   border-radius: 31px;
+    // }
+  }
+
+  .swiper {
+    padding-inline: 24px;
+    padding-bottom: 20px;
+  }
+
+  .swiper-slide {
+    width: 310px;
+    height: 208px;
   }
 }
 </style>
