@@ -11,11 +11,13 @@ export default {
   },
   methods: {
     sliderRight() {
-      const swiper = document.querySelector('.swiper').swiper
+      const sliderBlock = document.querySelector('.slider')
+      const swiper = sliderBlock.querySelector('.swiper').swiper
       swiper.slideNext()
     },
     sliderLeft() {
-      const swiper = document.querySelector('.swiper').swiper
+      const sliderBlock = document.querySelector('.slider')
+      const swiper = sliderBlock.querySelector('.swiper').swiper
       swiper.slidePrev()
     },
   },
@@ -161,6 +163,7 @@ export default {
 
 .swiper-slide {
   width: 397.5px;
+  height: 404px;
 
   &:first-child,
   &:last-child {
@@ -198,6 +201,7 @@ export default {
 
   .swiper-slide {
     width: 347.5px;
+    height: 346px;
 
     &:first-child,
     &:last-child {
