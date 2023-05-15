@@ -47,7 +47,7 @@ export default {
   align-items: center;
   gap: 16px;
   color: $color-text-burger;
-  transition: color 0.4s ease-in-out;
+  transition: color 0.7s ease-in-out;
   z-index: 1000;
 
   &--open {

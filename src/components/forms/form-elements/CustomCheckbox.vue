@@ -38,8 +38,7 @@ export default {
             <span>{{ item.label }}</span>
             <div class="checkbox-icon">
               <svg>
-                <use xlink:href="@/assets/icons/_sprite.svg#close">
-                </use>
+                <use xlink:href="@/assets/icons/_sprite.svg#close" />
               </svg>
             </div>
           </label>

@@ -42,8 +42,7 @@ export default {
             <span>{{ item.label }}</span>
             <div class="radio-icon">
               <svg>
-                <use xlink:href="@/assets/icons/_sprite.svg#tick">
-                </use>
+                <use xlink:href="@/assets/icons/_sprite.svg#tick" />
               </svg>
             </div>
           </label>

@@ -26,8 +26,7 @@ export default {
           >
             <span>изучить кейсы</span>
             <svg>
-              <use xlink:href="@/assets/icons/_sprite.svg#arrow-link">
-              </use>
+              <use xlink:href="@/assets/icons/_sprite.svg#arrow-link" />
             </svg>
           </router-link>
         </div>

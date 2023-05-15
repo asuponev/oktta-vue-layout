@@ -60,8 +60,7 @@ export default {
       >
         vc.ru
         <svg>
-          <use xlink:href="@/assets/icons/_sprite.svg#arrow-link">
-          </use>
+          <use xlink:href="@/assets/icons/_sprite.svg#arrow-link" />
         </svg>
       </button>
       <hover-green-btn class="publications-hover-btn">
@@ -158,10 +157,11 @@ export default {
 
 .publications-hover-btn {
   display: none;
-  opacity: 0;
+  scale: 0;
   transform: rotate(-30deg);
   top: -24px;
   left: -134px;
+  transition: scale 0.2s ease-in-out;
 }
 
 @media (min-width: 1025px) {
@@ -171,7 +171,7 @@ export default {
 
   .list__item:hover {
     .publications-hover-btn {
-      opacity: 1;
+      scale: 1;
     }
   }
 }

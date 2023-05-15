@@ -75,8 +75,7 @@ export default {
               >
                 telegram
                 <svg>
-                  <use xlink:href="@/assets/icons/_sprite.svg#arrow-link">
-                  </use>
+                  <use xlink:href="@/assets/icons/_sprite.svg#arrow-link" />
                 </svg>
               </a>
             </li>
@@ -89,8 +88,7 @@ export default {
               >
                 whatsapp
                 <svg>
-                  <use xlink:href="@/assets/icons/_sprite.svg#arrow-link">
-                  </use>
+                  <use xlink:href="@/assets/icons/_sprite.svg#arrow-link" />
                 </svg>
               </a>
             </li>

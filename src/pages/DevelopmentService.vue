@@ -122,8 +122,7 @@ export default {
           <button class="intro__button">
             оставить заявку
             <svg>
-              <use xlink:href="@/assets/icons/_sprite.svg#arrow-link">
-              </use>
+              <use xlink:href="@/assets/icons/_sprite.svg#arrow-link" />
             </svg>
           </button>
         </div>
@@ -204,7 +203,6 @@ export default {
                 :caseItem="caseItems[1]"
                 :number="2"
                 :amount="3"
-                :isFullInfo="false"
               />
             </div>
             <div class="case__block">

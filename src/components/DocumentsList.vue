@@ -13,8 +13,7 @@ export default {
         </h3>
         <button class="list__item-btn">
           <svg>
-            <use xlink:href="@/assets/icons/_sprite.svg#arrow-link">
-            </use>
+            <use xlink:href="@/assets/icons/_sprite.svg#arrow-link" />
           </svg>
         </button>
       </div>
@@ -26,8 +25,7 @@ export default {
         </h3>
         <button class="list__item-btn">
           <svg>
-            <use xlink:href="@/assets/icons/_sprite.svg#arrow-link">
-            </use>
+            <use xlink:href="@/assets/icons/_sprite.svg#arrow-link" />
           </svg>
         </button>
       </div>
@@ -39,8 +37,7 @@ export default {
         </h3>
         <button class="list__item-btn">
           <svg>
-            <use xlink:href="@/assets/icons/_sprite.svg#arrow-link">
-            </use>
+            <use xlink:href="@/assets/icons/_sprite.svg#arrow-link" />
           </svg>
         </button>
       </div>
@@ -52,8 +49,7 @@ export default {
         </h3>
         <button class="list__item-btn">
           <svg>
-            <use xlink:href="@/assets/icons/_sprite.svg#arrow-link">
-            </use>
+            <use xlink:href="@/assets/icons/_sprite.svg#arrow-link" />
           </svg>
         </button>
       </div>

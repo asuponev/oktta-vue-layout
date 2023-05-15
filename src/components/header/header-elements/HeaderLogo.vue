@@ -43,7 +43,7 @@ export default {
     width: 90px;
     height: 17px;
     fill: $color-logo;
-    transition: fill 0.4s ease-in-out;
+    transition: fill 0.7s ease-in-out;
   }
 
   &--white {

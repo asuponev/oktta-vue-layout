@@ -51,8 +51,7 @@ export default {
           title=" "
         />
         <svg>
-          <use xlink:href="@/assets/icons/_sprite.svg#file">
-          </use>
+          <use xlink:href="@/assets/icons/_sprite.svg#file" />
         </svg>
       </div>
     </div>
