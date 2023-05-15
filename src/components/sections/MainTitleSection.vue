@@ -7,13 +7,13 @@ export default {
   },
   methods: {
     moveTitleText() {
-      const titleLine = document.querySelector('.hero__title-line')
-      const rightTitleLine = titleLine.getBoundingClientRect().right
+      const title = document.querySelector('.hero__title')
+      const rightTitle = title.getBoundingClientRect().right
 
-      const animateTitleElems = document.querySelectorAll('.animate')
+      const animateTitleElems = title.querySelectorAll('.animate')
       animateTitleElems.forEach((elem) => {
         const rightAnimateText = elem.getBoundingClientRect().right
-        const move = rightTitleLine - rightAnimateText
+        const move = rightTitle - rightAnimateText
         elem.animate(
           [
             { transform: 'translateX(0)' },
@@ -44,32 +44,17 @@ export default {
     <div class="wrapper">
       <div class="hero__content">
         <div class="hero__title">
-          <div class="hero__title-line">
-            <h1 class="hero__title-text">Создаем бренды</h1>
-          </div>
-          <div class="hero__title-line">
-            <h1 class="hero__title-text">
-              и ци<span class="italic">ф</span>ровые
-            </h1>
-          </div>
-          <div class="hero__title-line">
-            <h1 class="hero__title-text">
-              <span class="italic">продукты </span>&nbsp;
-            </h1>
-            <p class="hero__title-text animate">
-              в п<span class="italic">а</span>ртнерстве
-            </p>
-          </div>
-          <div class="hero__title-line">
-            <h1 class="hero__title-text animate">
-              с ва<span class="italic">м</span>и
-            </h1>
-          </div>
+          <h1 class="hero__title-text">
+            Создаем бренды<br>и ци<span class="italic">ф</span>ровые<br>
+            <span class="italic">продукты </span>
+            <span class="animate">в п<span class="italic">а</span>ртнерстве</span><br>
+            <span class="animate">с ва<span class="italic">м</span>и</span>
+          </h1>
         </div>
-        <div class="hero__subtitle">
+        <p class="hero__subtitle">
           Компания Oktta более пяти лет помогает бизнесу налаживать эффективное
           взаимодействие с клиентами в цифровой среде.
-        </div>
+        </p>
         <social-block
           class="hero__contacts"
           :light="true"
@@ -82,7 +67,7 @@ export default {
 <style lang="scss" scoped>
 .hero {
   margin-top: 72px;
-  
+
   &__content {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -93,18 +78,16 @@ export default {
   &__title {
     grid-column: 1 / 5;
 
-    &-line {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
     &-text {
       font: $font-h1-gilroy;
       letter-spacing: -0.04em;
 
       .italic {
         font: $font-h1-playfair;
+      }
+
+      .animate {
+        display: inline-block;
       }
     }
   }
