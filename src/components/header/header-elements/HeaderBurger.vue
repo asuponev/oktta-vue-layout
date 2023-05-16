@@ -25,7 +25,7 @@ export default {
       @click="openMenu"
       class="header-burger"
     >
-      <svg>
+      <svg class="header-burger-icon">
         <use xlink:href="@/assets/icons/_sprite.svg#burger" />
       </svg>
     </div>
@@ -86,8 +86,7 @@ export default {
     background: $color-general-white;
 
     svg {
-      width: 8px;
-      height: 8px;
+      stroke: $color-general-dark;
     }
 
     &:hover {
