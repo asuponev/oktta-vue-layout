@@ -29,7 +29,7 @@ export default {
           title: 'Логотип Vybez',
           image: caseImg2,
           category: 'брендинг',
-          url: '/cases/mesh-3'
+          url: '/cases/b2cpl'
         },
         {
           id: 3,
@@ -43,7 +43,7 @@ export default {
           title: 'Сеть продуктовых магазинов «Вкустер»',
           image: caseImg4,
           category: 'брендинг',
-          url: '/cases/mesh-3'
+          url: '/cases/b2cpl'
         },
         {
           id: 5,
@@ -57,7 +57,7 @@ export default {
           title: 'Сеть продуктовых магазинов «Вкустер»',
           image: caseImg6,
           category: 'брендинг',
-          url: '/cases/mesh-3'
+          url: '/cases/b2cpl'
         },
       ]
     }

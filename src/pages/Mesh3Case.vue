@@ -29,7 +29,7 @@ export default {
         title: 'Логотип Vybez',
         image: nextCaseImg,
         category: 'брендинг',
-        url: '/cases'
+        url: '/cases/b2cpl'
       }
     }
   }

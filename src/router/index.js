@@ -11,6 +11,7 @@ import Documents from '@/pages/Documents.vue'
 import Brief from '@/pages/Brief.vue'
 import OpenPositionPage from '@/pages/OpenPositionPage.vue'
 import Mesh3Case from '@/pages/Mesh3Case.vue'
+import B2CPLCase from '@/pages/B2CPLCase.vue'
 import PageNotFound from '@/pages/PageNotFound.vue'
 
 const routes = [
@@ -58,6 +59,10 @@ const routes = [
   {
     path: '/cases/mesh-3',
     component: Mesh3Case
+  },
+  {
+    path: '/cases/b2cpl',
+    component: B2CPLCase
   },
   {
     path: '/:pathMatch(.*)*',
