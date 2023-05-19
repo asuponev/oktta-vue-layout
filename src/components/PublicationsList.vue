@@ -1,4 +1,8 @@
 <script>
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+
 import HoverGreenBtn from '@/components/UI/HoverGreenBtn.vue'
 
 export default {
@@ -38,12 +42,35 @@ export default {
         },
       ]
     }
+  },
+  methods: {
+    animDivider() {
+      const items = gsap.utils.toArray("#publications-list .list__item")
+      items.forEach(item => {
+        gsap.to(item, {
+          scrollTrigger: {
+            trigger: item,
+            // markers: true,
+            start: '80% 80%',
+            end: '100% 80%'
+          },
+          '--after-border-width': '100%',
+          duration: 0.5
+        });
+      })
+    }
+  },
+  mounted() {
+    this.animDivider()
   }
 }
 </script>
 
 <template>
-  <ul class="list">
+  <ul
+    class="list"
+    id="publications-list"
+  >
     <li
       v-for="publication in publications"
       :key="publication.id"
@@ -80,17 +107,30 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    padding: 24px 0;
-    border-bottom: 1px solid $color-divider;
+    padding-top: 20px;
     position: relative;
+    --after-border-width: 0;
+
+    &::after {
+      margin-top: 13px;
+      content: '';
+      width: var(--after-border-width);
+      height: 1px;
+      display: block;
+      background: $color-divider;
+      transition: width 0.5s ease-in-out;
+    }
 
     &:first-child {
       padding-top: 16px;
     }
 
     &:last-child {
-      border-bottom: none;
       padding-bottom: 0px;
+
+      &::after {
+        display: none;
+      }
     }
 
     &-title {
