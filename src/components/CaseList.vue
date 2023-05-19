@@ -134,6 +134,10 @@ export default {
 @media (max-width: 590px) {
   .case {
     gap: 32px;
+
+    &__box {
+      width: 100%;
+    }
   }
 }
 </style>
