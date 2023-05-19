@@ -1,13 +1,16 @@
 <script>
 import { Swiper, SwiperSlide } from 'swiper/vue'
+import SwiperCore, { Mousewheel } from 'swiper'
 import 'swiper/css'
+
+SwiperCore.use([Mousewheel])
 
 export default {
   props: {
     items: {
       type: Array,
       default: []
-    },
+    }
   },
   methods: {
     sliderRight() {
@@ -23,8 +26,8 @@ export default {
   },
   components: {
     Swiper,
-    SwiperSlide,
-  },
+    SwiperSlide
+  }
 }
 </script>
 
@@ -42,17 +45,20 @@ export default {
         </svg>
       </button>
     </div>
-    <swiper :slidesPerView="'auto'">
+    <swiper
+      :slidesPerView="'auto'"
+      :mousewheel="true"
+      :grabCursor="true"
+    >
       <swiper-slide
         v-for="item in items"
         :key="item.id"
         class="slider__item"
       >
         <div
-          :style="{ 'background': `center / cover no-repeat url(${item.image})` }"
+          :style="{ background: `center / cover no-repeat url(${item.image})` }"
           class="slider__item-cover"
-        >
-        </div>
+        ></div>
         <div class="slider__item-title">
           <span>({{ item.id < 10 ? `0${item.id}` : item.id }})</span>
           <h3>{{ item.title }}</h3>
