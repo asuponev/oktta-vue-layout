@@ -192,6 +192,7 @@ export default {
 
 .clients-list {
   position: relative;
+  width: 100%;
 }
 
 .list-visual {
