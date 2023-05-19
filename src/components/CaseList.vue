@@ -1,4 +1,8 @@
 <script>
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+
 import HoverGreenBtn from '@/components/UI/HoverGreenBtn.vue'
 import CaseCard from '@/components/CaseCard.vue'
 
@@ -62,16 +66,44 @@ export default {
       ]
     }
   },
+  methods: {
+    asynchronScroll() {
+      if (window.innerWidth > 590) {
+        const caseSection = document.querySelector('.case')
+
+        gsap.to("[data-speed]", {
+          y: (i, el) => (-1 * parseFloat(el.getAttribute("data-speed"))) * (caseSection.offsetHeight / 3),
+          ease: 'none',
+          scrollTrigger: {
+            trigger: caseSection,
+            invalidateOnRefresh: true,
+            scrub: 0,
+            // markers: true,
+            start: '-200px top',
+            end: 'bottom bottom'
+          }
+        });
+      }
+    }
+  },
+  mounted() {
+    this.asynchronScroll()
+  }
 }
 </script>
 
 <template>
   <div class="case">
-    <case-card
-      v-for="item in cases"
-      :key="item.id"
-      :caseItem="item"
-    />
+    <div
+      v-for="(item, index) in cases"
+      :data-speed="index % 2 === 0 ? 0.15 : 0"
+      class="case__box"
+    >
+      <case-card
+        :key="item.id"
+        :caseItem="item"
+      />
+    </div>
   </div>
 </template>
 
@@ -81,11 +113,21 @@ export default {
   flex-wrap: wrap;
   gap: 20px;
   width: 100%;
+  overflow: hidden;
+
+  &__box {
+    width: calc(50% - 20px / 2);
+    transition: transform 1s ease;
+  }
 }
 
 @media (max-width: 1024px) {
   .case {
     gap: 32px 8px;
+
+    &__box {
+      width: calc(50% - 8px / 2);
+    }
   }
 }
 

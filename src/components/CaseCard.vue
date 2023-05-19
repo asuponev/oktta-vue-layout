@@ -38,7 +38,7 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-  width: calc(50% - 20px / 2);
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -149,8 +149,6 @@ export default {
 
 @media (max-width: 1024px) {
   .card {
-    width: calc(50% - 8px / 2);
-
     &__image {
       height: 360px;
     }
@@ -172,8 +170,6 @@ export default {
 
 @media (max-width: 590px) {
   .card {
-    width: 100%;
-
     &__image {
       height: 350px;
     }
