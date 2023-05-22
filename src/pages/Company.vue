@@ -1,4 +1,6 @@
 <script>
+import gsap from 'gsap'
+
 import PrinciplesList from '@/components/PrinciplesList.vue'
 import ClientsList from '@/components/ClientsList.vue'
 import PublicationsList from '@/components/PublicationsList.vue'
@@ -11,6 +13,20 @@ export default {
     PublicationsList,
     NumbersSection
   },
+  methods: {
+    moveTitleText() {
+      document.querySelectorAll('.animate').forEach((elem) => {
+        gsap.to(elem, {
+          right: 0,
+          duration: 3,
+          delay: 1
+        })
+      })
+    }
+  },
+  mounted() {
+    this.moveTitleText()
+  },
 }
 </script>
 
@@ -18,14 +34,27 @@ export default {
   <section class="hero">
     <div class="wrapper">
       <div class="hero__content">
-        <h1 class="title">
-          Более <span class="title title--italic">четырех</span> лет
-          помогаем<br />
-          бизнесу налаживать<br />
-          эффективное взаимоде<span
-            class="title title--italic">й</span>ствие<br />
-          с клиентами в ци<span class="title title--italic">ф</span>ровой среде
-        </h1>
+        <div>
+          <h1 class="hero__title title">
+            Более <span class="title title--italic">четырех</span> лет
+            помогаем
+          </h1>
+          <h1 class="hero__title title">
+            бизнесу налаживать
+          </h1>
+          <h1 class="hero__title title">
+            <span class="animate">
+              эффект<span class="title title--italic">и</span>вное
+              взаимоде<span class="title title--italic">й</span>ствие
+            </span>
+          </h1>
+          <h1 class="hero__title title">
+            с кли<span class="title title--italic">е</span>нтами
+            <span class="animate">
+              в ци<span class="title title--italic">ф</span>ровой среде
+            </span>
+          </h1>
+        </div>
       </div>
     </div>
   </section>
@@ -109,6 +138,16 @@ export default {
   &__content {
     padding: 349px 0 20px;
   }
+
+  &__title {
+    position: relative;
+    height: 4.7rem;
+
+    .animate {
+      display: inline-block;
+      position: absolute;
+    }
+  }
 }
 
 .title {
@@ -130,7 +169,7 @@ export default {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 8px;
-    padding: 100px 30px;
+    padding: 100px 0;
   }
 
   &__intro {
@@ -262,6 +301,10 @@ export default {
     &__content {
       padding: 779px 0 20px;
     }
+
+    &__title {
+      height: 2.65rem;
+    }
   }
 
   .title {
@@ -289,7 +332,7 @@ export default {
       flex-direction: column;
       align-items: center;
       gap: 40px;
-      padding: 100px 20px;
+      padding: 100px 0;
     }
 
     &__intro {
@@ -317,6 +360,21 @@ export default {
     &__content {
       padding: 512px 0 16px;
     }
+
+    &__title {
+      height: 2rem;
+      display: block;
+
+      .animate {
+        display: block;
+        text-align: right;
+      }
+
+      &:nth-child(1),
+      &:nth-child(3) {
+        height: 4rem;
+      }
+    }
   }
 
   .title {
@@ -324,6 +382,8 @@ export default {
   }
 
   .approach {
+    margin-top: 72px;
+    
     &__intro {
       gap: 16px;
     }

@@ -1,4 +1,6 @@
 <script>
+import gsap from 'gsap'
+
 import SocialBlock from '@/components/SocialBlock.vue'
 
 export default {
@@ -7,35 +9,18 @@ export default {
   },
   methods: {
     moveTitleText() {
-      const title = document.querySelector('.hero__title')
-      const rightTitle = title.getBoundingClientRect().right
-
-      const animateTitleElems = title.querySelectorAll('.animate')
-      animateTitleElems.forEach((elem) => {
-        const rightAnimateText = elem.getBoundingClientRect().right
-        const move = rightTitle - rightAnimateText
-        elem.animate(
-          [
-            { transform: 'translateX(0)' },
-            { transform: `translateX(${move}px)` }
-          ],
-          {
-            delay: 1000,
-            duration: 3000,
-            fill: 'forwards',
-            easing: 'ease-out'
-          }
-        )
+      document.querySelectorAll('.animate').forEach((elem) => {
+        gsap.to(elem, {
+          right: 0,
+          duration: 3,
+          delay: 1
+        })
       })
     }
   },
   mounted() {
     this.moveTitleText()
-    window.addEventListener('resize', this.moveTitleText)
   },
-  unmounted() {
-    window.removeEventListener('resize', this.moveTitleText)
-  }
 }
 </script>
 
@@ -45,9 +30,16 @@ export default {
       <div class="hero__content">
         <div class="hero__title">
           <h1 class="hero__title-text">
-            Создаем бренды<br>и ци<span class="italic">ф</span>ровые<br>
-            <span class="italic">продукты </span>
-            <span class="animate">в п<span class="italic">а</span>ртнерстве</span><br>
+            Создаем бренды
+          </h1>
+          <h1 class="hero__title-text">
+            и ци<span class="italic">ф</span>ровые
+          </h1>
+          <h1 class="hero__title-text">
+            <span class="italic">продукты&nbsp;</span>
+            <span class="animate">в п<span class="italic">а</span>ртнерстве</span>
+          </h1>
+          <h1 class="hero__title-text">
             <span class="animate">с ва<span class="italic">м</span>и</span>
           </h1>
         </div>
@@ -80,7 +72,9 @@ export default {
 
     &-text {
       font: $font-h1-gilroy;
+      height: 5.4rem;
       letter-spacing: -0.04em;
+      position: relative;
 
       .italic {
         font: $font-h1-playfair;
@@ -88,6 +82,7 @@ export default {
 
       .animate {
         display: inline-block;
+        position: absolute;
       }
     }
   }
@@ -109,7 +104,7 @@ export default {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .hero {
     &__content {
       gap: 44px 8px;
@@ -118,6 +113,7 @@ export default {
     &__title {
       &-text {
         font-size: 64px;
+        height: 3.6rem;
 
         .italic {
           font-size: 64px;
@@ -141,10 +137,10 @@ export default {
   }
 }
 
-@media (max-width: 590px) {
+@media (max-width: 767px) {
   .hero {
     &__content {
-      row-gap: 40px;
+      row-gap: 32px;
     }
 
     &__title {
@@ -152,6 +148,8 @@ export default {
 
       &-text {
         font-size: 40px;
+        height: 2.5rem;
+        line-height: 100%;
 
         .italic {
           font-size: 40px;
@@ -173,6 +171,18 @@ export default {
       justify-content: flex-start;
       justify-self: start;
       padding: 32px 8px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .hero__title-text {
+    .animate {
+      display: block;
+    }
+
+    &:nth-child(3) {
+      height: 5rem;
     }
   }
 }

@@ -28,7 +28,7 @@ export default {
 <template>
   <section class="numbers">
     <div class="numbers__content">
-      <h2 class="title">Об Okkta в цифрах</h2>
+      <h2 class="numbers__title">Об Okkta в цифрах</h2>
       <div
         class="numbers__item"
         data-speed="1.25"
@@ -83,6 +83,7 @@ export default {
     width: 201px;
     border: 1px solid rgba(129, 129, 129, 0.1);
     border-radius: 24px;
+    background: rgba(23, 23, 23, 0.01);
     -webkit-backdrop-filter: blur(34px) !important;
     -moz-backdrop-filter: blur(34px) !important;
     backdrop-filter: blur(34px) !important;
@@ -129,6 +130,12 @@ export default {
       bottom: 130px;
       right: 16.8%;
     }
+  }
+
+  &__title {
+    font: $font-page-title-gilroy;
+    color: $color-general-white;
+    letter-spacing: -0.04em;
   }
 }
 
@@ -185,6 +192,10 @@ export default {
         right: 10%;
       }
     }
+
+    &__title {
+      font-size: 40px;
+    }
   }
 }
 
@@ -224,6 +235,10 @@ export default {
         bottom: 175px;
         right: calc(max(5%, 16px));
       }
+    }
+
+    &__title {
+      font-size: 32px;
     }
   }
 }
