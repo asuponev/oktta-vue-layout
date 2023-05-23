@@ -33,11 +33,11 @@ export default {
             Создаем бренды
           </h1>
           <h1 class="hero__title-text">
-            и ци<span class="italic">ф</span>ровые
+            и ци<span class="italic">ф</span>ровые
           </h1>
           <h1 class="hero__title-text">
             <span class="italic">продукты&nbsp;</span>
-            <span class="animate">в п<span class="italic">а</span>ртнерстве</span>
+            <span class="animate">в п<span class="italic">а</span>ртнерстве</span>
           </h1>
           <h1 class="hero__title-text">
             <span class="animate">с ва<span class="italic">м</span>и</span>
@@ -45,7 +45,7 @@ export default {
         </div>
         <p class="hero__subtitle">
           Компания Oktta более пяти лет помогает бизнесу налаживать эффективное
-          взаимодействие с клиентами в цифровой среде.
+          взаимодействие с клиентами в цифровой среде.
         </p>
         <social-block
           class="hero__contacts"

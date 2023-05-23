@@ -18,7 +18,7 @@ export default {
         <div class="section__block">
           <div class="section__intro">
             <h2 class="section__title">
-              Кар<span class="italic">ь</span>ера в Oktta
+              Кар<span class="italic">ь</span>ера в Oktta
             </h2>
             <p class="section__description">
               Опираясь на данные веб-аналитики, мы изучили

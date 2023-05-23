@@ -49,9 +49,9 @@ export default {
             </span>
           </h1>
           <h1 class="hero__title title">
-            с кли<span class="title title--italic">е</span>нтами
+            с кли<span class="title title--italic">е</span>нтами
             <span class="animate">
-              в ци<span class="title title--italic">ф</span>ровой среде
+              в ци<span class="title title--italic">ф</span>ровой среде
             </span>
           </h1>
         </div>
@@ -72,13 +72,13 @@ export default {
         </div>
         <div class="approach__illustration">
           <div class="approach__item">
-            <span>Функционал и удобство</span>
+            <span>Функционал и удобство</span>
           </div>
           <div class="approach__item">
             <span>Визуальная коммуникация</span>
           </div>
           <div class="approach__item">
-            <span>Аналитика и исследования</span>
+            <span>Аналитика и исследования</span>
           </div>
           <div class="approach__item">
             <span>Принципы долгосрочного сотрудничества</span>

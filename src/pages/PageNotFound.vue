@@ -12,8 +12,8 @@ export default {
           З<span class="italic">а</span>блуд<span class="italic">и</span>лись<span class="italic">?</span>
         </h1>
         <p class="not-found__description">
-          Страница, которую вы ищете, не найдена — такое бывает, всегда можно
-          вернуться на главную или посмотреть наши работы
+          Страница, которую вы ищете, не найдена — такое бывает, всегда можно
+          вернуться на главную или посмотреть наши работы
         </p>
         <div class="not-found__actions">
           <button

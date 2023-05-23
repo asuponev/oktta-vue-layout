@@ -9,17 +9,17 @@ export default {
       principles: [
         {
           id: 1,
-          title: 'Прозрачность в работе',
+          title: 'Прозрачность в работе',
           image: principleImg1
         },
         {
           id: 2,
-          title: 'Открытость новому и доверие',
+          title: 'Открытость новому и доверие',
           image: principleImg2
         },
         {
           id: 3,
-          title: 'Нацеленность на результат',
+          title: 'Нацеленность на результат',
           image: principleImg3
         },
       ]

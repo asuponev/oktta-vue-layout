@@ -57,7 +57,7 @@ export default {
     <comfort-work-section />
     <form-careers
       :title="'Узнали себя?'"
-      :description="'Оставляйте заявку — ответим в течение недели в Telegram или по почте'"
+      :description="'Оставляйте заявку — ответим в течение недели в Telegram или по почте'"
     />
   </div>
 </template>

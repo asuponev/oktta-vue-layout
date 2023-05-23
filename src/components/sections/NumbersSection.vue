@@ -41,7 +41,7 @@ export default {
         data-speed="1.75"
       >
         <p class="numbers__item-title">2</p>
-        <p class="numbers__item-descr">присутствие в странах</p>
+        <p class="numbers__item-descr">присутствие в странах</p>
       </div>
       <div
         class="numbers__item"

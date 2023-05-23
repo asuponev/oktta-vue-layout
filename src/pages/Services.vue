@@ -39,7 +39,7 @@ export default {
               class="services__item-link"
             >
               <p>Ан<span class="italic">а</span>литика
-                и иссл<span class="italic">е</span>дования</p>
+                и иссл<span class="italic">е</span>дования</p>
               <div
                 class="services__item-img"
                 :style="{ 'background': `center / cover no-repeat url(${sliderImage1})` }"
@@ -83,7 +83,7 @@ export default {
               class="services__item-link"
             >
               <p>Диза<span class="italic">й</span>н
-                мобильн<span class="italic">ы</span>х и 
+                мобильн<span class="italic">ы</span>х и 
                 веб-интер<span class="italic">ф</span>ейсов</p>
                 <div
                 class="services__item-img"

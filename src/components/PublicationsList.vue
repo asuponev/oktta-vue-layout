@@ -1,10 +1,11 @@
 <script>
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-gsap.registerPlugin(ScrollTrigger)
+import { onMounted, onUnmounted } from 'vue'
 
 import HoverGreenBtn from '@/components/UI/HoverGreenBtn.vue'
 
+gsap.registerPlugin(ScrollTrigger)
 export default {
   components: {
     HoverGreenBtn
@@ -14,15 +15,15 @@ export default {
       publications: [
         {
           id: 1,
-          title: '5 эффективных способов развить soft skills у сотрудников',
-          description: 'Про то, что soft skills прокачивать нужно, сейчас говорят все — от мотивационных ораторов до hr-специалистов. рассказываем, как это сделать, а главное, зачем.',
+          title: '5 эффективных способов развить soft skills у сотрудников',
+          description: 'Про то, что soft skills прокачивать нужно, сейчас говорят все — от мотивационных ораторов до hr-специалистов. рассказываем, как это сделать, а главное, зачем.',
           url: '',
           vcru: 'vc.ru'
         },
         {
           id: 2,
           title: '20 фильмов и сериалов для дизайнеров',
-          description: 'Расширить профессиональный кругозор можно и лежа на диване. советуем 20 фильмов для дизайнеров и о дизайнерах.',
+          description: 'Расширить профессиональный кругозор можно и лежа на диване. советуем 20 фильмов для дизайнеров и о дизайнерах.',
           url: '',
           vcru: ''
         },
@@ -35,33 +36,45 @@ export default {
         },
         {
           id: 4,
-          title: 'Нетворкинг: 6 площадок для знакомств по интересам',
-          description: 'Перенимать опыт — хорошо. особенно в работе. куда пойти, чтобы общаться не только с соседом по рабочему столу, а и с экспертами из различных сфер? рассказываем о классных нетворкинг-платформах.',
+          title: 'Нетворкинг: 6 площадок для знакомств по интересам',
+          description: 'Перенимать опыт — хорошо. особенно в работе. куда пойти, чтобы общаться не только с соседом по рабочему столу, а и с экспертами из различных сфер? рассказываем о классных нетворкинг-платформах.',
           url: '',
           vcru: 'vc.ru'
         },
       ]
     }
   },
-  methods: {
-    animDivider() {
-      const items = gsap.utils.toArray("#publications-list .list__item")
-      items.forEach(item => {
-        gsap.to(item, {
-          scrollTrigger: {
-            trigger: item,
-            // markers: true,
-            start: '80% 80%',
-            end: '100% 80%'
-          },
-          '--after-border-width': '100%',
-          duration: 0.5
-        });
+  setup() {
+    const triggers = ScrollTrigger.getAll()
+
+    function animateDivider() {
+      let listItems = gsap.utils.toArray('#publications-list .list__item')
+      listItems.forEach(listItem => {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: listItem,
+              start: "bottom bottom",
+              // markers: true,
+              toggleActions: "play complete none reset",
+            }
+          })
+          .from(listItem, {
+            '--after-border-width': '0',
+            duration: 1
+          })
       })
     }
-  },
-  mounted() {
-    this.animDivider()
+
+    onMounted(() => {
+      ScrollTrigger.refresh()
+      animateDivider()
+    })
+    onUnmounted(() => {
+      triggers.forEach((trigger) => {
+        trigger.kill()
+      })
+    })
   }
 }
 </script>
@@ -109,7 +122,7 @@ export default {
     gap: 12px;
     padding-top: 20px;
     position: relative;
-    --after-border-width: 0;
+    --after-border-width: 100%;
 
     &::after {
       margin-top: 13px;
@@ -118,7 +131,6 @@ export default {
       height: 1px;
       display: block;
       background: $color-divider;
-      transition: width 0.5s ease-in-out;
     }
 
     &:first-child {
