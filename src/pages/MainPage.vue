@@ -2,8 +2,8 @@
 import MainTitleSection from '@/components/sections/MainTitleSection.vue'
 import MainCaseSection from '@/components/sections/MainCaseSection.vue'
 import ServicesSection from '@/components/sections/ServicesSection.vue'
-import ClientsList from '@/components/ClientsList.vue'
-import PublicationsList from '@/components/PublicationsList.vue'
+import ClientsList from '@/components/lists/ClientsList.vue'
+import PublicationsList from '@/components/lists/PublicationsList.vue'
 
 export default {
   components: {

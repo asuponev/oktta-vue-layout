@@ -16,7 +16,7 @@ export default {
         },
         y: (i, el) => (parseFloat(el.getAttribute("data-speed"))) * 100,
         ease: "none"
-      });
+      })
     }
   },
   mounted() {
@@ -84,9 +84,9 @@ export default {
     border: 1px solid rgba(129, 129, 129, 0.1);
     border-radius: 24px;
     background: rgba(23, 23, 23, 0.01);
-    -webkit-backdrop-filter: blur(34px) !important;
-    -moz-backdrop-filter: blur(34px) !important;
-    backdrop-filter: blur(34px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    -moz- : blur(8px) !important;
+    backdrop-filter: blur(8px) !important;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -4,12 +4,13 @@ import SwiperCore, { Mousewheel } from 'swiper'
 import 'swiper/css'
 
 SwiperCore.use([Mousewheel])
-
 export default {
   props: {
     items: {
       type: Array,
-      default: []
+      default() {
+        return []
+      }
     }
   },
   methods: {
@@ -47,7 +48,9 @@ export default {
     </div>
     <swiper
       :slidesPerView="'auto'"
-      :mousewheel="true"
+      :mousewheel="{
+        releaseOnEdges: true
+      }"
       :grabCursor="true"
     >
       <swiper-slide

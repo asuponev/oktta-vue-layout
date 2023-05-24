@@ -1,21 +1,21 @@
 <script>
-import CustomHeader from '@/components/header/CustomHeader.vue'
-import CustomFooter from './components/Footer.vue';
+import AppHeader from '@/components/header/AppHeader.vue'
+import AppFooter from './components/footer/AppFooter.vue'
 
 export default {
   components: {
-    CustomHeader,
-    CustomFooter
+    AppHeader,
+    AppFooter
   }
 }
 </script>
 
 <template>
-  <custom-header />
+  <app-header />
   <main>
     <router-view></router-view>
   </main>
-  <custom-footer />
+  <app-footer />
 </template>
 
 <style>

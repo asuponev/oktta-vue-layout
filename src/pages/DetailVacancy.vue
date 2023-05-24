@@ -2,14 +2,14 @@
 import OpenPositionView from '@/components/sections/OpenPositionView.vue'
 import ComfortWorkSection from '@/components/sections/ComfortWorkSection.vue'
 import FormCareers from '@/components/forms/FormCareers.vue'
-import Breadcrumbs from '@/components/UI/Breadcrumbs.vue'
+import AppBreadcrumbs from '@/components/UI/AppBreadcrumbs.vue'
 
 export default {
   components: {
     OpenPositionView,
     ComfortWorkSection,
     FormCareers,
-    Breadcrumbs
+    AppBreadcrumbs
   },
   data() {
     return {
@@ -50,7 +50,7 @@ export default {
 
 <template>
   <div class="container">
-    <breadcrumbs
+    <app-breadcrumbs
       :items="[{ name: 'Вакансии', path: '/careers' }, { name: position.title }]"
     />
     <open-position-view :position="position" />

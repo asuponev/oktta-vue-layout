@@ -1,16 +1,19 @@
 <script>
 import { Swiper, SwiperSlide } from 'swiper/vue'
+import SwiperCore, { Mousewheel } from 'swiper'
 import 'swiper/css'
 
+import CardTags from '@/components/CardTags.vue'
 import ServicesSection from '@/components/sections/ServicesSection.vue'
-import ServiceCaseCard from '@/components/ServiceCaseCard.vue'
+
 import bgKidseeImage from '@/assets/images/mock-content/case-card-services.jpg'
 import bgSkillcodeImage from '@/assets/images/mock-content/case-card-skillcode.jpg'
 
+SwiperCore.use([Mousewheel])
 export default {
   components: {
-    ServiceCaseCard,
     ServicesSection,
+    CardTags,
     Swiper,
     SwiperSlide,
   },
@@ -87,16 +90,18 @@ export default {
       document.querySelector('body').style.overflow = 'hidden'
     },
     scrollAnimation() {
-      document.querySelector('.intro').classList.add('scroll')
-      document.querySelector('.hero').classList.remove('hidden')
-      document.querySelector('.hero__slider').classList.remove('start')
-      setTimeout(() => {
-        document.querySelector('body').removeAttribute('style')
-        document.querySelector('.intro').remove()
-      }, 3000)
+      if (document.querySelector('.intro')) {
+        document.querySelector('.intro').classList.add('scroll')
+        document.querySelector('.hero').classList.remove('hidden')
+        document.querySelector('.hero__slider').classList.remove('start')
+        setTimeout(() => {
+          document.querySelector('body').removeAttribute('style')
+          document.querySelector('.intro').remove()
+        }, 3000)
 
-      window.removeEventListener('wheel', this.scrollAnimation)
-      window.removeEventListener('touchmove', this.scrollAnimation)
+        window.removeEventListener('wheel', this.scrollAnimation)
+        window.removeEventListener('touchmove', this.scrollAnimation)
+      }
     },
   },
   mounted() {
@@ -141,6 +146,10 @@ export default {
           <swiper
             :slidesPerView="'auto'"
             :spaceBetween="8"
+            :mousewheel="{
+              releaseOnEdges: true
+            }"
+            :grabCursor="true"
             :breakpoints="{
               1024: {
                 spaceBetween: 32
@@ -197,20 +206,36 @@ export default {
           <h2 class="experience__title">
             На<span class="italic">ш</span> оп<span class="italic">ы</span>т
           </h2>
-          <div class="case">
-            <div class="case__block case__block--second">
-              <service-case-card
-                :caseItem="caseItems[1]"
-                :number="2"
-                :amount="3"
-              />
-            </div>
-            <div class="case__block">
-              <service-case-card
-                :caseItem="caseItems[0]"
-                :number="1"
-                :amount="3"
-              />
+          <div class="cards">
+            <div class="cards__wrapper">
+              <div
+                v-for="(item, index) in caseItems"
+                :key="item.id"
+                class="card"
+              >
+                <div
+                  class="card__inner"
+                  :style="{ 'background': `center / cover no-repeat url(${item.image})` }"
+                >
+                  <div class="card__section">
+                    <p class="card__subtitle">наши кейсы</p>
+                    <p class="card__counter">
+                      0{{ index + 1 }} — 0{{ caseItems.length }}
+                    </p>
+                  </div>
+                  <div class="card__section">
+                    <div class="card__content">
+                      <card-tags :tags="item.tags" />
+                      <h3 class="card__title">
+                        {{ item.title }}
+                      </h3>
+                    </div>
+                    <p class="card__description">
+                      {{ item.description }}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -368,9 +393,9 @@ export default {
       background: rgba(23, 23, 23, 0.01);
       border: 1px solid rgba(129, 129, 129, 0.1);
       border-radius: 24px;
-      -webkit-backdrop-filter: blur(82px) !important;
-      -moz-backdrop-filter: blur(82px) !important;
-      backdrop-filter: blur(82px) !important;
+      -webkit-backdrop-filter: blur(8px) !important;
+      -moz-backdrop-filter: blur(8px) !important;
+      backdrop-filter: blur(8px) !important;
       color: $color-general-white;
       padding: 32px;
       display: flex;
@@ -497,7 +522,7 @@ export default {
   &__content {
     display: flex;
     flex-direction: column;
-    gap: 64px;
+    gap: 72px;
   }
 
   &__title {
@@ -510,21 +535,69 @@ export default {
   }
 }
 
-.case {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 20px;
-  margin-top: 10px;
+.cards {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 
-  &__block {
-    grid-area: 6 / 1 / 9 / 5;
-    z-index: 3;
+.card {
+  grid-area: 1 / 1 / 2 / 5;
 
-    &--second {
-      transform: translateY(-16px);
-      z-index: 2;
-      padding-inline: 32px;
-    }
+  &__inner {
+    border-radius: 32px;
+    height: 592px;
+    width: 100%;
+    padding: 24px 24px 29px;
+    color: $color-general-white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__subtitle {
+    opacity: 0.7;
+    letter-spacing: -0.03em;
+  }
+
+  &__counter {
+    font: $font-small-playfair;
+    font-variant-numeric: lining-nums;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 577px;
+  }
+
+  &__title {
+    font: $font-card-title-gilroy;
+    letter-spacing: -0.04em;
+  }
+
+  &__description {
+    max-width: 270px;
+    padding-right: 61px;
+    align-self: flex-end;
+    letter-spacing: -0.03em;
+  }
+
+  &:first-child {
+    z-index: 2;
+  }
+
+  &:not(:first-child) {
+    transform: translateY(-16px);
+    margin-inline: 32px;
   }
 }
 
@@ -665,7 +738,7 @@ export default {
 
   .experience {
     &__content {
-      gap: 56px;
+      gap: 64px;
     }
 
     &__title {
@@ -677,15 +750,34 @@ export default {
     }
   }
 
-  .case {
-    grid-template-columns: repeat(12, 1fr);
+  .card {
+    &__inner {
+      height: 797px;
+      padding: 16px;
+    }
 
-    &__block {
-      grid-area: 1 / 1 / 2 / 13;
+    &__subtitle {
+      font-size: 14px;
+    }
 
-      &--second {
-        padding-inline: 16px;
-      }
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      max-width: 360px;
+    }
+
+    &__title {
+      font-size: 32px;
+    }
+
+    &__description {
+      max-width: 204px;
+      padding-right: 40px;
+    }
+
+    &:not(:first-child) {
+      margin-inline: 24px;
     }
   }
 
@@ -827,19 +919,36 @@ export default {
     }
 
     &__title {
-      display: none;
+      font-size: 40px;
+      text-align: center;
+
+      .italic {
+        font-size: 40px;
+      }
     }
   }
 
-  .case {
-    grid-template-columns: repeat(12, 1fr);
+  .card {
+    &__inner {
+      height: 700px;
+      padding: 16px;
+      padding-bottom: 24px;
+      border-radius: 24px;
+    }
 
-    &__block {
-      grid-area: 1 / 1 / 2 / 13;
+    &__section:last-child {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
 
-      &--second {
-        padding-inline: 16px;
-      }
+    &__description {
+      max-width: 100%;
+      align-self: auto;
+    }
+
+    &:not(:first-child) {
+      margin-inline: 16px;
     }
   }
 

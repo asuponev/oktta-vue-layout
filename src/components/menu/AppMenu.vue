@@ -1,9 +1,9 @@
 <script>
-import SocialBlock from './SocialBlock.vue'
+import SocialLinks from '@/components/SocialLinks.vue'
 
 export default {
   components: {
-    SocialBlock
+    SocialLinks
   },
   props: {
     isOpen: {
@@ -88,7 +88,7 @@ export default {
           <a href="tel:+995555411407">+995 555 411 407</a>
           <a href="mailto:hello@okttastudio.com">hello@okttastudio.com</a>
         </div>
-        <social-block />
+        <social-links />
       </div>
     </div>
   </div>

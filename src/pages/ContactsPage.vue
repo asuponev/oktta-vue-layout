@@ -1,10 +1,10 @@
 <script>
-import SocialBlock from '@/components/SocialBlock.vue'
+import SocialLinks from '@/components/SocialLinks.vue'
 import HoverGreenBtn from '@/components/UI/HoverGreenBtn.vue'
 
 export default {
   components: {
-    SocialBlock,
+    SocialLinks,
     HoverGreenBtn
   },
   data() {
@@ -101,7 +101,7 @@ export default {
       >
         заполнить бриф
       </hover-green-btn>
-      <social-block
+      <social-links
         class="social--contacts"
         :light="true"
       />

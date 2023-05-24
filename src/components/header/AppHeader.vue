@@ -1,11 +1,11 @@
 <script>
-import MenuVue from '@/components/Menu.vue'
+import AppMenu from '@/components/menu/AppMenu.vue'
 import HeaderBurger from '@/components/header/header-elements/HeaderBurger.vue'
 import HeaderLogo from '@/components/header/header-elements/HeaderLogo.vue'
 
 export default {
   components: {
-    MenuVue,
+    AppMenu,
     HeaderBurger,
     HeaderLogo
   },
@@ -39,7 +39,7 @@ export default {
         :openMenu="openMenu"
         :closeMenu="closeMenu"
       />
-      <MenuVue
+      <app-menu
         :isOpen="menuVisible"
         :closeMenu="closeMenu"
       />

@@ -1,9 +1,9 @@
 <script>
-import SocialBlock from './SocialBlock.vue'
+import SocialLinks from '@/components/SocialLinks.vue'
 
 export default {
   components: {
-    SocialBlock
+    SocialLinks
   },
 }
 </script>
@@ -41,7 +41,7 @@ export default {
             </svg>
           </a>
         </div>
-        <social-block />
+        <social-links />
       </div>
     </div>
   </footer>

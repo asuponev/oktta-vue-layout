@@ -1,9 +1,9 @@
 <script>
 import gsap from 'gsap'
 
-import PrinciplesList from '@/components/PrinciplesList.vue'
-import ClientsList from '@/components/ClientsList.vue'
-import PublicationsList from '@/components/PublicationsList.vue'
+import PrinciplesList from '@/components/lists/PrinciplesList.vue'
+import ClientsList from '@/components/lists/ClientsList.vue'
+import PublicationsList from '@/components/lists/PublicationsList.vue'
 import NumbersSection from '@/components/sections/NumbersSection.vue'
 
 export default {

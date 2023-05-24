@@ -3,14 +3,14 @@ import gsap from 'gsap'
 import { TextPlugin } from 'gsap/all'
 
 import CareerInOkttaSection from '@/components/sections/CareerInOkttaSection.vue'
-import OpenPositionsList from '@/components/sections/OpenPositionsList.vue'
+import OpenPositionsSection from '@/components/sections/OpenPositionsSection.vue'
 import FormCareers from '@/components/forms/FormCareers.vue'
 
 gsap.registerPlugin(TextPlugin)
 export default {
   components: {
     CareerInOkttaSection,
-    OpenPositionsList,
+    OpenPositionsSection,
     FormCareers
   },
   methods: {
@@ -64,7 +64,7 @@ export default {
       </div>
     </section>
     <career-in-oktta-section />
-    <open-positions-list />
+    <open-positions-section />
     <form-careers />
   </div>
 </template>

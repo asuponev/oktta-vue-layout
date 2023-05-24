@@ -1,5 +1,5 @@
 <script>
-import CaseList from '@/components/CaseList.vue'
+import CaseList from '@/components/lists/CaseList.vue'
 import CaseFilters from '@/components/CaseFilters.vue'
 
 export default {

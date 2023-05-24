@@ -1,72 +1,71 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import Main from '@/pages/Main.vue'
-import Company from '@/pages/Company.vue'
-import Services from '@/pages/Services.vue'
-import DevelopmentService from '@/pages/DevelopmentService.vue'
-import Cases from '@/pages/Cases.vue'
-import Contacts from '@/pages/Contacts.vue'
-import Careers from '@/pages/Careers.vue'
-import Documents from '@/pages/Documents.vue'
-import Brief from '@/pages/Brief.vue'
-import OpenPositionPage from '@/pages/OpenPositionPage.vue'
-import Mesh3Case from '@/pages/Mesh3Case.vue'
-import B2CPLCase from '@/pages/B2CPLCase.vue'
-import PageNotFound from '@/pages/PageNotFound.vue'
+import MainPage from '@/pages/MainPage.vue'
+import CompanyPage from '@/pages/CompanyPage.vue'
+import ServicesPage from '@/pages/ServicesPage.vue'
+import DetailServiceDevelopment from '@/pages/DetailServiceDevelopment.vue'
+import CasesPage from '@/pages/CasesPage.vue'
+import ContactsPage from '@/pages/ContactsPage.vue'
+import CareersPage from '@/pages/CareersPage.vue'
+import DocumentsPage from '@/pages/DocumentsPage.vue'
+import BriefPage from '@/pages/BriefPage.vue'
+import DetailVacancy from '@/pages/DetailVacancy.vue'
+import DetailCaseMesh3 from '@/pages/DetailCaseMesh3.vue'
+import DetailCaseB2CPL from '@/pages/DetailCaseB2CPL.vue'
+import NotFoundPage from '@/pages/NotFoundPage.vue'
 
 const routes = [
   {
     path: '/',
-    component: Main
+    component: MainPage
   },
   {
     path: '/company',
-    component: Company
+    component: CompanyPage
   },
   {
     path: '/services',
-    component: Services
+    component: ServicesPage
   },
   {
     path: '/services/development',
-    component: DevelopmentService
+    component: DetailServiceDevelopment
   },
   {
     path: '/cases',
-    component: Cases
+    component: CasesPage
   },
   {
     path: '/contacts',
-    component: Contacts
+    component: ContactsPage
   },
   {
     path: '/careers',
-    component: Careers
+    component: CareersPage
   },
   {
     path: '/careers/:id',
-    component: OpenPositionPage
+    component: DetailVacancy
   },
   {
     path: '/documents',
-    component: Documents
+    component: DocumentsPage
   },
   {
     path: '/brief',
-    component: Brief
+    component: BriefPage
   },
-  // fake path for demonstrate page
   {
     path: '/cases/mesh-3',
-    component: Mesh3Case
+    component: DetailCaseMesh3
   },
   {
     path: '/cases/b2cpl',
-    component: B2CPLCase
+    component: DetailCaseB2CPL
   },
   {
     path: '/:pathMatch(.*)*',
-    component: PageNotFound,
+    component: NotFoundPage,
   },
 ]
 

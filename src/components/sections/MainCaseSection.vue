@@ -1,6 +1,6 @@
 <script>
-import MainCaseCard from '@/components/MainCaseCard.vue'
 import HoverGreenBtn from '@/components/UI/HoverGreenBtn.vue'
+import CardTags from '@/components/CardTags.vue'
 
 import bgKidseeImage from '@/assets/images/mock-content/case-card-kidsee.jpg'
 import bgSkillcodeImage from '@/assets/images/mock-content/case-card-skillcode.jpg'
@@ -8,8 +8,8 @@ import bgVkusterImage from '@/assets/images/mock-content/case-card-vkuster.jpg'
 
 export default {
   components: {
-    MainCaseCard,
-    HoverGreenBtn
+    HoverGreenBtn,
+    CardTags,
   },
   data() {
     return {
@@ -45,38 +45,44 @@ export default {
   <section class="section">
     <div class="wrapper">
       <div class="section__content">
-        <div class="case">
-          <div class="case__block case__block--first">
-            <main-case-card
-              :caseItem="items[0]"
-              :number="1"
-              :amount="items.length"
-              :isFullInfo="false"
-              :isPreviewCard="true"
-              class="case-first-card"
-            />
-            <hover-green-btn
-              @click="$router.push('/cases')"
-              class="case-hover-button"
+        <div class="cards">
+          <div class="cards__wrapper">
+            <div
+              v-for="(item, index) in items"
+              :key="item.id"
+              class="card"
             >
-              все кейсы
-            </hover-green-btn>
+              <div
+                class="card__inner"
+                :style="{ 'background': `center / cover no-repeat url(${item.image})` }"
+              >
+                <div class="card__section">
+                  <p class="card__subtitle">наши кейсы</p>
+                  <p class="card__counter">
+                    0{{ index + 1 }} — 05
+                  </p>
+                </div>
+              </div>
+              <div class="card__section card__section--bottom">
+                <div class="card__content">
+                  <card-tags :tags="item.tags" />
+                  <h3 class="card__title">
+                    {{ item.title.split(' ').slice(0, -1).join(' ') }}
+                    <span class="italic">{{ item.title.split(' ').at(-1) }}</span>
+                  </h3>
+                </div>
+                <p class="card__description">
+                  {{ item.description }}
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="case__block case__block--second">
-            <main-case-card
-              :caseItem="items[1]"
-              :number="2"
-              :amount="items.length"
-              :isFullInfo="false"
-            />
-          </div>
-          <div class="case__block">
-            <main-case-card
-              :caseItem="items[2]"
-              :number="3"
-              :amount="items.length"
-            />
-          </div>
+          <hover-green-btn
+            @click="$router.push('/cases')"
+            class="case-hover-button"
+          >
+            все кейсы
+          </hover-green-btn>
         </div>
         <button
           @click="$router.push('/cases')"
@@ -114,46 +120,109 @@ export default {
   }
 }
 
-.case {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 20px;
+.cards {
   margin-top: 10px;
+  position: relative;
 
-  &__block {
-    grid-area: 6 / 1 / 9 / 5;
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0 20px;
+  }
+
+  .case-hover-button {
+    top: 8%;
+    left: 17%;
     z-index: 3;
+  }
+}
 
-    &--first {
-      grid-area: 1 / 2 / 7 / 4;
+.card {
+  grid-area: 2 / 1 / 4 / 5;
+  z-index: 2;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 28px 24px 29px;
+    height: 592px;
+    color: $color-general-white;
+    border-radius: 32px;
+    overflow: hidden;
+  }
+
+  &__section {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+
+    &--bottom {
+      padding: 28px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      color: $color-general-white;
+    }
+  }
+
+  &__subtitle {
+    opacity: 0.7;
+    letter-spacing: -0.03em;
+  }
+
+  &__counter {
+    font: $font-small-playfair;
+    font-variant-numeric: lining-nums;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 577px;
+  }
+
+  &__title {
+    font: $font-card-title-gilroy;
+    letter-spacing: -0.04em;
+
+    .italic {
+      font: $font-card-title-playfair;
+    }
+  }
+
+  &__description {
+    max-width: 266px;
+    align-self: flex-end;
+    letter-spacing: -0.03em;
+  }
+
+  &:first-child {
+    grid-area: 1 / 2 / 3 / 4;
+    z-index: 1;
+
+    .card__inner {
       border-radius: 24px;
-      height: 492px;
-      z-index: 1;
-      position: relative;
-
-      .case-first-card {
-        height: 492px;
-        border-radius: 24px;
-      }
-
-      .case-hover-button {
-        top: 13%;
-        left: -17%;
-      }
     }
+  }
 
-    &--second {
-      transform: translateY(-16px);
-      z-index: 2;
-      padding-inline: 32px;
+  &:last-child {
+    .card__section {
+      display: flex;
     }
+  }
+
+  &:not(:first-child):not(:last-child) {
+    transform: translateY(-16px);
+    margin-inline: 32px;
   }
 }
 
 @media (max-width: 1024px) {
   .section {
     &__content {
-      gap: 128px;
+      gap: 24px;
     }
 
     &__button {
@@ -162,31 +231,74 @@ export default {
     }
   }
 
-  .case {
-    grid-template-columns: repeat(12, 1fr);
-    grid-column-gap: 0;
-    grid-row-gap: 64px;
+  .cards {
     margin-top: 25px;
 
-    &__block {
-      grid-area: 2 / 1 / 3 / 13;
+    &__wrapper {
+      grid-template-columns: repeat(12, 1fr);
+      gap: 32px 24px;
+    }
 
-      &--first {
-        grid-area: 1 / 2 / 2 / 12;
+    .case-hover-button {
+      display: none;
+    }
+  }
+
+  .card {
+    grid-area: 3 / 1 / 4 / 13;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &__inner {
+      height: 740px;
+      padding: 16px;
+      position: relative;
+    }
+
+    &__subtitle {
+      font-size: 14px;
+    }
+
+    &__section {
+      &--bottom {
+        position: static;
+        color: $color-general-dark;
+        padding: 0;
+      }
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      max-width: 360px;
+    }
+
+    &__title {
+      font-size: 24px;
+
+      .italic {
+        font-size: 24px;
+      }
+    }
+
+    &__description {
+      max-width: 204px;
+      align-self: flex-end;
+      letter-spacing: -0.03em;
+    }
+
+    &:first-child {
+      grid-area: 1 / 2 / 2 / 12;
+
+      .card__inner {
         height: 393px;
-
-        .case-first-card {
-          height: 393px;
-        }
-
-        .case-hover-button {
-          display: none;
-        }
       }
+    }
 
-      &--second {
-        padding-inline: 16px;
-      }
+    &:not(:first-child):not(:last-child) {
+      margin-inline: 24px;
     }
   }
 }
@@ -194,32 +306,69 @@ export default {
 @media (max-width: 590px) {
   .section {
     &__content {
-      gap: 148px;
+      gap: 16px;
     }
   }
 
-  .case {
-    grid-template-columns: repeat(12, 1fr);
-    grid-column-gap: 0;
-    grid-row-gap: 170px;
+  .cards {
     margin-top: 32px;
 
-    &__block {
-      grid-area: 2 / 1 / 3 / 13;
+    &__wrapper {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
 
-      &--first {
-        grid-area: 1 / 1 / 2 / 13;
+  .card {
+    grid-column: 1 / 13;
+
+    &__inner {
+      height: 450px;
+      border-radius: 24px;
+    }
+
+    &__subtitle {
+      font-size: 14px;
+    }
+
+    &__section {
+      &--bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 8px;
+      }
+    }
+
+    &__content {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &__title {
+      font-size: 24px;
+    }
+
+    &__description {
+      max-width: 100%;
+      font-size: 14px;
+      align-self: auto;
+      letter-spacing: -0.03em;
+    }
+
+    &:first-child {
+      grid-column: 1 / 13;
+
+      .card__inner {
         height: 450px;
-
-        .case-first-card {
-          height: 450px;
-          border-radius: 24px;
-        }
       }
 
-      &--second {
-        padding-inline: 16px;
+      .card__section {
+        display: flex;
       }
+    }
+
+    &:not(:first-child):not(:last-child) {
+      margin-inline: 16px;
     }
   }
 }

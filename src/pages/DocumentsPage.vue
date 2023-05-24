@@ -1,5 +1,5 @@
 <script>
-import DocumentsList from '@/components/DocumentsList.vue'
+import DocumentsList from '@/components/lists/DocumentsList.vue'
 
 export default {
   components: {

@@ -1,8 +1,10 @@
 <script>
 import { Swiper, SwiperSlide } from 'swiper/vue'
+import SwiperCore, { Mousewheel } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/scrollbar'
 
+SwiperCore.use([Mousewheel])
 export default {
   components: {
     Swiper,
@@ -29,6 +31,10 @@ export default {
         <div class="section__block">
           <swiper
             :slidesPerView="'auto'"
+            :mousewheel="{
+              releaseOnEdges: true
+            }"
+            :grabCursor="true"
             :spaceBetween="8"
             :direction="'horizontal'"
             :breakpoints="{
@@ -154,9 +160,9 @@ export default {
     padding: 24px;
     border-radius: 24px;
     background: rgba(23, 23, 23, 0.01);
-    -webkit-backdrop-filter: blur(82px) !important;
-    -moz-backdrop-filter: blur(82px) !important;
-    backdrop-filter: blur(82px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    -moz-backdrop-filter: blur(8px) !important;
+    backdrop-filter: blur(8px) !important;
     background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' rx='24' style='fill: none; stroke: rgba(255, 255, 255, 0.09); stroke-width: 2; stroke-dasharray: 10 10'/></svg>");
 
     &-id {

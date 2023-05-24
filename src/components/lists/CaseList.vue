@@ -3,7 +3,6 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-import HoverGreenBtn from '@/components/UI/HoverGreenBtn.vue'
 import CaseCard from '@/components/CaseCard.vue'
 
 import caseImg1 from '@/assets/images/mock-content/cases-page-1.png'
@@ -15,7 +14,6 @@ import caseImg6 from '@/assets/images/mock-content/cases-page-6.png'
 
 export default {
   components: {
-    HoverGreenBtn,
     CaseCard
   },
   data() {
@@ -82,7 +80,7 @@ export default {
             start: '-200px top',
             end: 'bottom bottom'
           }
-        });
+        })
       }
     }
   },
@@ -96,6 +94,7 @@ export default {
   <div class="case">
     <div
       v-for="(item, index) in cases"
+      :key="item.id"
       :data-speed="index % 2 === 0 ? 0.15 : 0"
       class="case__box"
     >

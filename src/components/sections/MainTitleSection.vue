@@ -1,11 +1,11 @@
 <script>
 import gsap from 'gsap'
 
-import SocialBlock from '@/components/SocialBlock.vue'
+import SocialLinks from '@/components/SocialLinks.vue'
 
 export default {
   components: {
-    SocialBlock,
+    SocialLinks,
   },
   methods: {
     moveTitleText() {
@@ -47,7 +47,7 @@ export default {
           Компания Oktta более пяти лет помогает бизнесу налаживать эффективное
           взаимодействие с клиентами в цифровой среде.
         </p>
-        <social-block
+        <social-links
           class="hero__contacts"
           :light="true"
         />
@@ -101,6 +101,7 @@ export default {
     justify-content: flex-end;
     bottom: -260px;
     right: 0;
+    z-index: 5;
   }
 }
 

@@ -3,7 +3,9 @@ export default {
   props: {
     items: {
       type: Array,
-      default: []
+      default() {
+        return []
+      }
     },
     legend: {
       type: String,

@@ -1,13 +1,13 @@
 <script>
-import Breadcrumbs from '@/components/UI/Breadcrumbs.vue'
-import CaseIntro from '@/components/CaseIntro.vue'
+import AppBreadcrumbs from '@/components/UI/AppBreadcrumbs.vue'
+import DetailCaseIntro from '@/components/DetailCaseIntro.vue'
 import NextCase from '@/components/NextCase.vue'
 import nextCaseImg from '@/assets/images/mock-content/cases-page-1.png'
 
 export default {
   components: {
-    Breadcrumbs,
-    CaseIntro,
+    AppBreadcrumbs,
+    DetailCaseIntro,
     NextCase
   },
   data() {
@@ -38,9 +38,9 @@ export default {
 
 <template>
   <div class="container">
-    <breadcrumbs
+    <app-breadcrumbs
       :items="[{ name: 'Кейсы', path: '/cases' }, { name: 'Mesh3' }]" />
-    <case-intro :caseItem="caseItem" />
+    <detail-case-intro :caseItem="caseItem" />
     <section class="visual">
       <div class="wrapper">
         <div class="visual__content">

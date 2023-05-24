@@ -4,7 +4,9 @@ export default {
   props: {
     items: {
       type: Array,
-      default: []
+      default() {
+        return []
+      }
     },
   },
 }
@@ -14,19 +16,19 @@ export default {
   <div class="breadcrumbs">
     <div class="wrapper">
       <div class="breadcrumbs__content">
-        <div
+        <router-link
+          to="/"
           class="breadcrumbs__item"
-          @click="$router.push('/')"
         >
           Главная
-        </div>
+        </router-link>
         <div class="breadcrumbs__divider">/</div>
-        <div
+        <router-link
           class="breadcrumbs__item"
-          @click="$router.push(items[0].path)"
+          :to="items[0].path"
         >
           {{ items[0].name }}
-        </div>
+        </router-link>
         <div class="breadcrumbs__divider">/</div>
         <div class="breadcrumbs__item">
           {{ items[1].name }}
@@ -44,15 +46,21 @@ export default {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: $color-text-secondary;
   }
 
   &__item {
     font-size: 12px;
+    color: $color-text-secondary;
+    text-decoration: none;
+
+    &:last-child {
+      cursor: text;
+    }
   }
 
   &__divider {
     font: 500 20px/1 "Playfair Display", serif;
+    color: $color-text-secondary;
   }
 }
 </style>
