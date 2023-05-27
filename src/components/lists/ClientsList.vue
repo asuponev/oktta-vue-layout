@@ -196,42 +196,49 @@ export default {
 }
 
 .list-visual {
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: none;
+}
 
-  &__inner {
-    border-radius: 21px;
-    overflow: hidden;
-    position: relative;
-    background: $color-orange;
-    width: 260px;
-    height: 360px;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-
-    &.active {
-      opacity: 1;
-    }
-  }
-
-  &__item {
-    width: 100%;
-    height: 100%;
+@media (min-width: 1025px) {
+  .list-visual {
+    display: block;
+    pointer-events: none;
     position: absolute;
     top: 0;
-    background: $color-orange;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transform: translate3d(-100%, 0, 0);
-    transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+    left: 0;
 
-    &.active {
-      transform: translate3d(0, 0, 0);
-      opacity: 1;
+    &__inner {
+      border-radius: 21px;
+      overflow: hidden;
+      position: relative;
+      background: $color-orange;
+      width: 260px;
+      height: 360px;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+
+    &__item {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      background: $color-orange;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: translate3d(-100%, 0, 0);
+      transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+
+      &.active {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
     }
   }
 }

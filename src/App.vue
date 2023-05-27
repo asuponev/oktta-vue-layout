@@ -33,18 +33,18 @@ export default {
 }
 
 .wrapper {
-  padding-inline: 30px;
+  padding: 0 30px;
 }
 
 @media (max-width: 1024px) {
   .wrapper {
-    padding-inline: 20px;
+    padding: 0 20px;
   }
 }
 
 @media (max-width: 590px) {
   .wrapper {
-    padding-inline: 16px;
+    padding: 0 16px;
   }
 }
 </style>

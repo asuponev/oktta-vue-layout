@@ -57,7 +57,6 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 50px;
     padding: 40px 30px;
     max-width: 1440px;
     margin: 0 auto;
@@ -71,6 +70,7 @@ export default {
     letter-spacing: -0.04em;
     cursor: pointer;
     line-height: 0.95;
+    margin-bottom: 50px;
 
     .italic {
       font: $font-h1-playfair;
@@ -99,8 +99,8 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 36px;
     width: 100%;
+    margin-top: 50px;
   }
 
   &__notice {
@@ -112,21 +112,21 @@ export default {
   &__links {
     display: flex;
     align-items: center;
-    gap: 36px;
     margin-right: auto;
 
     a {
       display: flex;
       align-items: center;
-      gap: 8px;
       color: $color-general-white;
       font: $font-button;
       letter-spacing: -0.03em;
       text-decoration: none;
       cursor: pointer;
       transition: color 0.2s ease-in-out;
+      margin: 0 36px;
 
       svg {
+        margin-left: 8px;
         width: 13px;
         height: 13px;
         stroke: $color-general-white;
@@ -172,8 +172,11 @@ export default {
 @media (max-width: 970px) {
   .footer {
     &__content {
-      gap: 24px;
       padding-bottom: 16px;
+    }
+
+    &__email {
+      margin-bottom: 24px;
     }
 
     &__button {
@@ -183,7 +186,7 @@ export default {
 
     &__block {
       flex-direction: column;
-      gap: 32px;
+      margin-top: 24px;
     }
 
     &__notice {
@@ -192,7 +195,7 @@ export default {
 
     &__links {
       order: 2;
-      margin-right: 0;
+      margin: 32px 0;
     }
   }
 }
@@ -212,7 +215,6 @@ export default {
 @media (max-width: 500px) {
   .footer {
     &__content {
-      gap: 24px;
       padding: 40px 16px 16px
     }
 
@@ -222,17 +224,13 @@ export default {
     }
 
     &__links {
-      gap: 20px;
       margin-bottom: 72px;
 
       a {
         font-size: 16px;
+        margin: 0 20px;
       }
 
-    }
-
-    &__block {
-      gap: 36px;
     }
   }
 }

@@ -44,14 +44,14 @@ export default {
           </h1>
           <h1 class="hero__title title">
             <span class="animate">
-              эффект<span class="title title--italic">и</span>вное
-              взаимоде<span class="title title--italic">й</span>ствие
+                  эффект<span class="title title--italic">и</span>вное
+            взаимоде<span class="title title--italic">й</span>ствие
             </span>
           </h1>
           <h1 class="hero__title title">
             с кли<span class="title title--italic">е</span>нтами
             <span class="animate">
-              в ци<span class="title title--italic">ф</span>ровой среде
+                  в ци<span class="title title--italic">ф</span>ровой среде
             </span>
           </h1>
         </div>
@@ -175,13 +175,13 @@ export default {
   &__intro {
     display: flex;
     flex-direction: column;
-    gap: 32px;
   }
 
   &__subtitle {
     color: $color-text-secondary;
     letter-spacing: -0.03em;
     max-width: 563px;
+    margin-top: 32px;
   }
 
   &__illustration {
@@ -256,8 +256,11 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 52px;
     padding: 100px 0;
+  }
+
+  &__list {
+    margin-top: 52px;
   }
 }
 
@@ -266,8 +269,11 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 58px;
     padding: 100px 0 100px;
+  }
+
+  &-list {
+    margin-top: 58px;
   }
 }
 
@@ -312,16 +318,21 @@ export default {
   }
 
   .principles {
-    &__content {
-      gap: 48px;
+    &__list {
+      margin-top: 48px;
     }
   }
 
-  .publications__content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 50px;
+  .publications {
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h2 {
+      margin-bottom: 50px;
+    }
   }
 }
 
@@ -331,13 +342,13 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 40px;
       padding: 100px 0;
     }
 
     &__intro {
       align-items: center;
       text-align: center;
+      margin-bottom: 40px;
     }
 
     &__subtitle {
@@ -346,8 +357,8 @@ export default {
   }
 
   .clients {
-    &__content {
-      gap: 32px;
+    &-list {
+      margin-top: 32px;
     }
   }
 }
@@ -383,13 +394,16 @@ export default {
 
   .approach {
     margin-top: 72px;
-    
+
     &__intro {
-      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    &__subtitle {
+      margin-top: 16px;
     }
 
     &__content {
-      gap: 48px;
       padding-top: 24px;
     }
 

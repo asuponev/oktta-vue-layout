@@ -119,7 +119,6 @@ export default {
   &__item {
     display: flex;
     flex-direction: column;
-    gap: 12px;
     padding-top: 20px;
     position: relative;
     --after-border-width: 100%;
@@ -147,12 +146,12 @@ export default {
 
     &-title {
       display: flex;
-      gap: 4px;
+      margin-bottom: 12px;
 
       span {
         font: $font-small-playfair;
         font-size: 13px;
-        padding-top: 4px;
+        padding: 4px 4px 0 0;
       }
 
       h3 {
@@ -166,7 +165,6 @@ export default {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 4px;
       border: 1px solid $color-divider;
       border-radius: 57px;
       background: $color-general-white;
@@ -178,6 +176,7 @@ export default {
       transition: border 0.2s ease-in-out, background 0.2s ease-in-out;
 
       svg {
+        margin-left: 4px;
         width: 13px;
         height: 13px;
         stroke: $color-general-black;
@@ -203,6 +202,7 @@ export default {
     &-description {
       color: $color-text-secondary;
       letter-spacing: -0.03em;
+      margin-bottom: 12px;
     }
   }
 }
@@ -210,10 +210,11 @@ export default {
 .publications-hover-btn {
   display: none;
   scale: 0;
+  opacity: 0;
   transform: rotate(-30deg);
   top: -24px;
   left: -134px;
-  transition: scale 0.2s ease-in-out;
+  transition: scale 0.2s ease-in-out, opacity 0.2s ease-in-out;
 }
 
 @media (min-width: 1025px) {
@@ -224,6 +225,7 @@ export default {
   .list__item:hover {
     .publications-hover-btn {
       scale: 1;
+      opacity: 1;
     }
   }
 }

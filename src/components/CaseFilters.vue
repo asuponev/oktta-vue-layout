@@ -49,16 +49,18 @@ export default {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px 8px;
+  // gap: 10px 8px;
   max-width: 867px;
 
   &__item {
     display: flex;
-    gap: 4px;
+    // gap: 4px;
 
     &-name {
       font: $font-h3-gilroy;
       letter-spacing: -0.04em;
+      line-height: 150%;
+      margin-right: 4px;
     }
 
     &-count {
@@ -70,12 +72,13 @@ export default {
   &__divider {
     font: $font-card-title-playfair;
     font-size: 32px;
+    margin: 0 8px;
   }
 }
 
 @media (max-width: 1024px) {
   .filters {
-    gap: 8px 4px;
+    // gap: 8px 4px;
 
     &__item {
 
@@ -93,7 +96,7 @@ export default {
 @media (max-width: 590px) {
   .filters {
     justify-content: flex-start;
-    gap: 4px 8px;
+    // gap: 4px 8px;
 
     &__item {
 

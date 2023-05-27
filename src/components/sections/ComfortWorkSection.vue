@@ -75,7 +75,7 @@ export default {
 @media (max-width: 1024px) {
   .title {
     gap: 8px;
-    padding-inline: 20px;
+    padding: 0 20px;
     font-size: 40px;
 
     .italic {
@@ -92,7 +92,7 @@ export default {
 @media (max-width: 590px) {
   .title {
     gap: 8px;
-    padding-inline: 16px;
+    padding: 0 16px;
     font-size: 32px;
 
     .italic {

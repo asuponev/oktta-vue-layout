@@ -20,7 +20,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
   font: $font-button;
   letter-spacing: -0.03em;
   color: $color-general-dark;
@@ -32,6 +31,7 @@ export default {
   transition: background 0.2s ease-in-out;
 
   svg {
+    margin-left: 8px;
     width: 13px;
     height: 13px;
     stroke: $color-general-black;

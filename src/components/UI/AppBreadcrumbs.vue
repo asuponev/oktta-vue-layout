@@ -45,7 +45,6 @@ export default {
   &__content {
     display: flex;
     align-items: center;
-    gap: 8px;
   }
 
   &__item {
@@ -61,6 +60,7 @@ export default {
   &__divider {
     font: 500 20px/1 "Playfair Display", serif;
     color: $color-text-secondary;
+    margin: 0 8px;
   }
 }
 </style>

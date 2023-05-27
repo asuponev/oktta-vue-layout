@@ -69,16 +69,14 @@ export default {
   &-items {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
   }
 }
 
 .radio-label {
   display: flex;
   align-items: center;
-  gap: 8px;
   height: 36px;
-  padding-inline: 16px;
+  padding: 0 16px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 29px;
@@ -89,7 +87,17 @@ export default {
   position: relative;
 }
 
+.radio-item {
+  margin-right: 8px;
+  margin-bottom: 8px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
 .radio-icon {
+  margin-left: 8px;
   position: absolute;
   z-index: -1;
   opacity: 1;
@@ -111,7 +119,7 @@ export default {
 }
 
 .radio-input:checked+.radio-label {
-  padding-inline: 16px 4px;
+  padding: 0 4px 0 16px;
   color: $color-general-dark;
   background: $color-general-green;
   border: 1px solid $color-border-green;

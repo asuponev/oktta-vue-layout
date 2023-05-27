@@ -50,13 +50,13 @@ export default {
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 6px;
   font-size: 14px;
   color: $color-general-white;
   letter-spacing: -0.03em;
 }
 
 .form-textarea {
+  margin-top: 12px;
   resize: none;
   // height: 120px;
   padding: 12px 16px;

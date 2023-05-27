@@ -353,7 +353,7 @@ export default {
     line-height: 90%;
     letter-spacing: -0.04em;
     color: $color-general-green;
-    padding-inline: 70px;
+    padding: 0 70px;
 
     .italic {
       font: $font-h1-playfair;
@@ -445,7 +445,7 @@ export default {
     font: $font-h1-gilroy;
     line-height: 105%;
     letter-spacing: -0.02em;
-    padding-inline: 70px;
+    padding: 0 70px;
 
     .italic {
       font: $font-h1-playfair;
@@ -455,7 +455,7 @@ export default {
   &__lines {
     display: flex;
     flex-direction: column;
-    padding-inline: 70px;
+    padding: 0 70px;
   }
 
   &__line {
@@ -494,14 +494,14 @@ export default {
     justify-content: center;
     gap: 20px;
     letter-spacing: -0.03em;
-    padding-inline: 24px 6px;
+    padding: 0 6px 0 24px;
 
     &-timeline {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding-inline: 12px 16px;
+      padding: 0 16px 0 12px;
       color: $color-general-green;
       background: rgba(168, 253, 50, 0.1);
       border-radius: 40px;
@@ -597,7 +597,7 @@ export default {
 
   &:not(:first-child) {
     transform: translateY(-16px);
-    margin-inline: 32px;
+    margin: 0 32px;
   }
 }
 
@@ -608,7 +608,7 @@ export default {
 .swiper {
   width: 100%;
   height: 100%;
-  padding-inline: 70px;
+  padding: 0 70px;
 }
 
 .swiper-slide {
@@ -724,7 +724,7 @@ export default {
 
     &__title {
       font-size: 64px;
-      padding-inline: 48px;
+      padding: 0 48px;
 
       .italic {
         font-size: 64px;
@@ -732,7 +732,7 @@ export default {
     }
 
     &__lines {
-      padding-inline: 48px;
+      padding: 0 48px;
     }
   }
 
@@ -777,12 +777,12 @@ export default {
     }
 
     &:not(:first-child) {
-      margin-inline: 24px;
+      margin: 0 24px;
     }
   }
 
   .swiper {
-    padding-inline: 48px;
+    padding: 0 48px;
   }
 
   .swiper-slide {
@@ -852,7 +852,7 @@ export default {
     }
 
     &__items {
-      padding-inline: 34px;
+      padding: 0 34px;
     }
 
     &__item {
@@ -906,8 +906,7 @@ export default {
     }
 
     &__lines {
-      padding-inline: 24px;
-      padding-bottom: 5px;
+      padding: 0 24px 5px;
     }
   }
 
@@ -948,12 +947,12 @@ export default {
     }
 
     &:not(:first-child) {
-      margin-inline: 16px;
+      margin: 0 16px;
     }
   }
 
   .swiper {
-    padding-inline: 24px;
+    padding: 0 24px;
   }
 
   .swiper-slide {

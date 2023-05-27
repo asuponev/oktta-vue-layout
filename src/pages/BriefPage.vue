@@ -36,7 +36,6 @@ export default {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 30px;
     background: $color-bg-dark;
     border-radius: 32px;
     padding: 70px 0;
@@ -46,13 +45,14 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    margin-bottom: 30px;
   }
 
   &__title {
     font: $font-card-title-gilroy;
     color: $color-general-white;
     letter-spacing: -0.04em;
+    margin-bottom: 10px;
 
     .italic {
       font: $font-card-title-playfair;
@@ -73,13 +73,13 @@ export default {
 
     &__intro {
       padding-right: 24px;
-      gap: 14px;
     }
 
     &__title {
       max-width: 310px;
       text-align: center;
       font-size: 32px;
+      margin-bottom: 14px;
 
       .italic {
         font-size: 32px;

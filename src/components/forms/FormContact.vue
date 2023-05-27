@@ -29,6 +29,7 @@ export default {
         :label="'Как вас зовут?'"
         :placeholder="'Ваше имя'"
         :required="true"
+        class="form__box"
       />
       <custom-input
         :name="'phone'"
@@ -36,8 +37,9 @@ export default {
         :label="'Номер телефона'"
         :placeholder="'+7 (_ _ _) _ _ _-_ _ -_ _'"
         :required="true"
+        class="form__box"
       />
-      <send-button />
+      <send-button class="form__box" />
       <agreement-text />
     </form>
   </section>
@@ -70,7 +72,10 @@ export default {
 .form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+
+  &__box {
+    margin-bottom: 16px;
+  }
 }
 
 @media (max-width: 1024px) {

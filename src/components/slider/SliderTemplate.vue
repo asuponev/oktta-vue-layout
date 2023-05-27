@@ -80,9 +80,8 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 12px;
     border-right: 1px solid $color-divider;
-    padding-inline: 8px;
+    padding: 0 8px;
 
     &:first-child {
       padding-left: 0;
@@ -101,7 +100,6 @@ export default {
 
     &-title {
       display: flex;
-      gap: 4px;
       margin-top: 12px;
       max-width: 98%;
 
@@ -115,6 +113,7 @@ export default {
       h3 {
         font: $font-h3-gilroy;
         letter-spacing: -0.04em;
+        margin: 0 0 12px 4px;
       }
     }
 
@@ -128,7 +127,6 @@ export default {
   &__buttons {
     display: flex;
     align-items: center;
-    gap: 12px;
     position: absolute;
     right: 30px;
     top: -104px;
@@ -152,6 +150,10 @@ export default {
         transition: stroke 0.2s ease-in-out;
       }
 
+      &:first-child {
+        margin-right: 12px;
+      }
+
       &:hover {
         border: 1px solid $color-general-dark;
         background: $color-general-dark;
@@ -167,7 +169,7 @@ export default {
 .swiper {
   width: 100%;
   height: 100%;
-  padding-inline: 30px;
+  padding: 0 30px;
 }
 
 .swiper-slide {
@@ -205,7 +207,7 @@ export default {
   }
 
   .swiper {
-    padding-inline: 20px;
+    padding: 0 20px;
   }
 
   .swiper-slide {
@@ -221,7 +223,7 @@ export default {
 
 @media (max-width: 590px) {
   .swiper {
-    padding-inline: 16px;
+    padding: 0 16px;
   }
 }
 </style>

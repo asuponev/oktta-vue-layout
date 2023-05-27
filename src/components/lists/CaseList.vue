@@ -91,17 +91,19 @@ export default {
 </script>
 
 <template>
-  <div class="case">
-    <div
-      v-for="(item, index) in cases"
-      :key="item.id"
-      :data-speed="index % 2 === 0 ? 0.15 : 0"
-      class="case__box"
-    >
-      <case-card
+  <div class="wrapper">
+    <div class="case">
+      <div
+        v-for="(item, index) in cases"
         :key="item.id"
-        :caseItem="item"
-      />
+        :data-speed="index % 2 === 0 ? 0.15 : 0"
+        class="case__box"
+      >
+        <case-card
+          :key="item.id"
+          :caseItem="item"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -109,30 +111,37 @@ export default {
 <style lang="scss" scoped>
 .case {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 20px;
+  // gap: 20px;
   width: 100%;
   overflow: hidden;
 
   &__box {
     width: calc(50% - 20px / 2);
     transition: transform 1s ease;
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
 @media (max-width: 1024px) {
   .case {
-    gap: 32px 8px;
+    // gap: 32px 8px;
 
     &__box {
       width: calc(50% - 8px / 2);
+      margin-bottom: 32px;
     }
   }
 }
 
 @media (max-width: 590px) {
   .case {
-    gap: 32px;
+    // gap: 32px;
 
     &__box {
       width: 100%;

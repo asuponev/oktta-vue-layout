@@ -85,13 +85,11 @@ export default {
     border-radius: 24px;
     background: rgba(23, 23, 23, 0.01);
     -webkit-backdrop-filter: blur(8px) !important;
-    -moz- : blur(8px) !important;
     backdrop-filter: blur(8px) !important;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 8px;
     color: $color-general-white;
     padding: 24px;
     transition: transform 0.3s ease-in-out;
@@ -101,6 +99,7 @@ export default {
       // font-variant-numeric: lining-nums;
       font-feature-settings: 'pnum' on, 'lnum' on;
       letter-spacing: -0.04em;
+      margin-bottom: 12px;
     }
 
     &-descr {

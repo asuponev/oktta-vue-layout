@@ -74,8 +74,8 @@ export default {
   &__content {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
     margin-top: 46px;
+    justify-content: space-between;
   }
 
   &__block {
@@ -95,6 +95,7 @@ export default {
     &--full-width {
       width: 100%;
       height: 725px;
+      margin-bottom: 20px;
 
       img {
         object-fit: contain;
@@ -114,36 +115,8 @@ export default {
 }
 
 @media (max-width: 1024px) {
-  .intro {
-    margin-top: 0;
-
-    &__content {
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    &__links {
-      order: 2;
-      max-width: 208px;
-      padding: 0 0 4px 0;
-    }
-
-    &__title {
-      justify-content: center;
-      width: 100%;
-      order: 1;
-    }
-
-    &__description {
-      order: 3;
-      max-width: 275px;
-      padding: 0;
-    }
-  }
-
   .visual {
     &__content {
-      gap: 8px;
       margin-top: 23px;
     }
 
@@ -154,47 +127,13 @@ export default {
       &--full-width {
         width: 100%;
         height: 400px;
+        margin-bottom: 8px;
       }
     }
   }
 }
 
 @media (max-width: 590px) {
-  .intro {
-    &__content {
-      flex-direction: column;
-      gap: 8px;
-      align-items: center;
-    }
-
-    &__links {
-      .tags {
-        justify-content: center;
-      }
-    }
-
-    &__title {
-      display: flex;
-
-      &-text {
-        font-size: 64px;
-      }
-
-      .italic {
-        font-size: 64px;
-      }
-
-      &-year {
-        font-size: 10px;
-      }
-    }
-
-    &__description {
-      max-width: 100%;
-      margin-top: 16px;
-    }
-  }
-
   .visual {
     &__block {
       width: 100%;

@@ -62,11 +62,14 @@ export default {
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 6px;
   font-size: 14px;
   color: $color-general-white;
   letter-spacing: -0.03em;
   position: relative;
+
+  label {
+    margin-bottom: 6px;
+  }
 }
 
 .form-input {

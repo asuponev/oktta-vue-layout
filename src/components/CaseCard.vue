@@ -41,7 +41,6 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 16px;
   position: relative;
 
   &__image {
@@ -49,6 +48,7 @@ export default {
     height: 630px;
     border-radius: 32px;
     overflow: hidden;
+    margin-bottom: 16px;
 
     img {
       object-fit: cover;
@@ -101,7 +101,7 @@ export default {
     transform: translate(-50%, -50%) rotate(15deg);
     z-index: 3;
     font-size: 30px;
-    padding-inline: 20px;
+    padding: 0 20px;
   }
 }
 

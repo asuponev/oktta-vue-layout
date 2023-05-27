@@ -114,7 +114,6 @@ export default {
   padding: 0 30px 111px;
   display: flex;
   flex-direction: column;
-  gap: 44px;
   position: relative;
 }
 
@@ -123,6 +122,7 @@ export default {
   flex-direction: column;
   font: $font-h1-gilroy;
   letter-spacing: -0.04em;
+  margin-bottom: 44px;
 
   .italic {
     font: $font-h1-playfair;
@@ -144,35 +144,35 @@ export default {
   &__block {
     display: flex;
     flex-direction: column;
-    gap: 24px;
   }
 
   &__country {
     font: $font-small-gilroy;
     color: $color-text-secondary;
     text-indent: 56px;
+    margin-bottom: 24px;
   }
 
   &__list {
     list-style-type: none;
     display: flex;
     flex-direction: column;
-    gap: 23px;
 
     &-divider {
       width: 50%;
       height: 1px;
       background: $color-divider;
+      margin: 23px 0;
     }
   }
 
   &__item {
     display: flex;
-    gap: 4px;
 
     &-id {
       font: $font-small-playfair;
       font-size: 13px;
+      margin-right: 4px;
     }
 
     &-link {
@@ -182,9 +182,9 @@ export default {
       letter-spacing: -0.04em;
       display: flex;
       align-items: center;
-      gap: 8px;
 
       svg {
+        margin-left: 8px;
         width: 13px;
         height: 13px;
         stroke: $color-general-dark;
@@ -228,7 +228,7 @@ export default {
   width: 250px;
   height: 250px;
   font-size: 30px;
-  padding-inline: 20px;
+  padding: 0 20px;
 }
 
 @media (max-width: 1024px) {
@@ -237,15 +237,10 @@ export default {
   }
 
   .title {
-    // display: flex;
-    // flex-direction: column;
     font-size: 64px;
-    // font: $font-h1-gilroy;
-    // letter-spacing: -0.04em;
 
     .italic {
       font-size: 64px;
-      // font: $font-h1-playfair;
     }
 
     span {
@@ -253,31 +248,28 @@ export default {
         align-self: flex-end;
       }
     }
-
   }
 
   .contacts {
-    gap: 8px;
-
-    &__block {
-      gap: 32px;
-    }
-
     &__list {
-      gap: 32px;
-
       &-divider {
         display: none;
       }
     }
 
     &__item {
+      margin-bottom: 32px;
+
       &-id {
         font-size: 10px;
       }
 
       &-link {
         font-size: 24px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
       }
     }
   }
@@ -293,18 +285,18 @@ export default {
     width: 220px;
     height: 220px;
     font-size: 24px;
-    padding-inline: 30px;
+    padding: 0 30px;
   }
 }
 
 @media (max-width: 590px) {
   .wrapper {
     padding: 100px 16px 100px;
-    gap: 48px;
   }
 
   .title {
     font-size: 40px;
+    margin-bottom: 48px;
 
     .italic {
       font-size: 40px;
@@ -323,17 +315,18 @@ export default {
   }
 
   .social--contacts {
-    margin-top: 0;
+    margin-top: 48px;
     margin-left: 12px;
   }
 
   .contacts-green-btn {
     position: static;
+    margin-top: 48px;
     margin-left: 12px;
     width: 220px;
     height: 220px;
     font-size: 24px;
-    padding-inline: 30px;
+    padding: 0 30px;
   }
 }
 </style>

@@ -65,12 +65,12 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 48px;
   }
 
   &__title {
     font: $font-page-title-gilroy;
     letter-spacing: -0.04em;
+    margin-bottom: 48px;
 
     .italic {
       font: $font-page-title-playfair;
@@ -82,7 +82,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  gap: 20px;
+  justify-content: space-between;
 
   &__card {
     width: calc(50% - 20px / 2);
@@ -95,6 +95,7 @@ export default {
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
+    margin-bottom: 20px;
 
     &-title {
       font: $font-h3-gilroy;
@@ -105,12 +106,9 @@ export default {
 
 @media (max-width: 1024px) {
   .section {
-    &__content {
-      gap: 44px;
-    }
-
     &__title {
       font-size: 40px;
+      margin-bottom: 44px;
 
       .italic {
         font-size: 40px;
@@ -132,12 +130,9 @@ export default {
 
 @media (max-width: 590px) {
   .section {
-    &__content {
-      gap: 48px;
-    }
-
     &__title {
       font-size: 32px;
+      margin-bottom: 48px;
 
       .italic {
         font-size: 32px;
@@ -146,13 +141,19 @@ export default {
   }
 
   .position {
-    gap: 16px;
-
     &__card {
       width: 100%;
       height: auto;
       justify-content: flex-start;
-      gap: 64px;
+      margin-bottom: 16px;
+
+      &-title {
+        margin-top: 64px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }

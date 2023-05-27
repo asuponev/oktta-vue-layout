@@ -113,16 +113,18 @@ export default {
 </script>
 
 <template>
-  <div class="container">
+  <div class="form-container">
     <form class="form">
       <custom-checkbox
         :items="typesProject"
         :legend="'Тип проекта'"
+        class="form__box"
       />
       <custom-radio
         :items="budgets"
         :legend="'Бюджет'"
         :name="'budget'"
+        class="form__box"
       />
       <custom-textarea
         :name="'task'"
@@ -130,9 +132,9 @@ export default {
         :placeholder="'Опишите задачу'"
         :required="true"
         :heightTextarea="90"
-        class="form__textarea-brief"
+        class="form__textarea-brief form__box"
       />
-      <div class="form__contacts">
+      <div class="form__contacts form__box">
         <p class="form__contacts-label">Контакты</p>
         <div class="form__contacts-wrapper">
           <custom-input
@@ -165,15 +167,16 @@ export default {
       <custom-checkbox
         :items="sources"
         :legend="'Откуда вы узнали о нас?'"
+        class="form__box"
       />
-      <send-button class="form__brief-btn" />
+      <send-button class="form__brief-btn form__box" />
       <agreement-text class="form__brief-text" />
     </form>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.container {
+.form-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 20px;
@@ -183,28 +186,35 @@ export default {
   grid-area: 1 / 2 / 2 / 4;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+
+  &__box {
+    margin-bottom: 24px;
+  }
 
   &__textarea-brief {
     font-size: 18px;
-    gap: 12px;
   }
 
   &__contacts {
     display: flex;
     flex-direction: column;
-    gap: 4px;
     color: $color-general-white;
     font-size: 18px;
 
     &-wrapper {
+      margin-top: 12px;
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
+      justify-content: space-between;
     }
 
     &-item {
       width: calc(50% - 8px / 2);
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        margin-bottom: 8px;
+      }
     }
   }
 
@@ -216,13 +226,13 @@ export default {
 @media (max-width: 1024px) {
   .form {
     grid-area: 1 / 1 / 2 / 5;
-    padding-inline: 48px;
+    padding: 0 48px;
   }
 }
 
 @media (max-width: 590px) {
   .form {
-    padding-inline: 0px;
+    padding: 0px;
 
     &__textarea-brief {
       padding-right: 24px;

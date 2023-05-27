@@ -45,7 +45,6 @@ export default {
 .header-menu {
   display: flex;
   align-items: center;
-  gap: 16px;
   color: $color-text-burger;
   transition: color 0.7s ease-in-out;
   z-index: 1000;
@@ -66,6 +65,7 @@ export default {
   border: 1px solid $color-general-green;
   cursor: pointer;
   transition: border 0.4s ease-in-out, background 0.4s ease-in-out;
+  margin-left: 16px;
 
   svg {
     width: 12px;

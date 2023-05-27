@@ -110,7 +110,7 @@ export default {
     gap: 20px;
     background: $color-bg-dark;
     border-radius: 32px;
-    padding-inline: 70px;
+    padding: 0 70px;
     background-image: url("@/assets/images/careers-bg1.png");
     background-repeat: no-repeat, no-repeat;
     background-position: top right;
@@ -342,8 +342,7 @@ export default {
   }
 
   .swiper {
-    padding-inline: 24px;
-    padding-bottom: 20px;
+    padding: 0 24px 20px;
   }
 
   .swiper-slide {

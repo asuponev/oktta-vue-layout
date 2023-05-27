@@ -160,12 +160,12 @@ export default {
 
   &__item {
     display: flex;
-    gap: 4px;
     position: relative;
 
     &-id {
       font: $font-small-playfair;
       font-size: 13px;
+      margin-right: 4px;
     }
 
     &-link {
@@ -197,6 +197,7 @@ export default {
       &:hover {
         .services__item-img {
           scale: 1;
+          opacity: 1;
         }
       }
     }
@@ -209,7 +210,8 @@ export default {
       width: 380px;
       height: 260px;
       scale: 0;
-      transition: scale 0.3s ease-in-out;
+      opacity: 0;
+      transition: scale 0.3s ease-in-out, opacity 0.3s ease-in-out;
     }
 
     &:nth-child(1) {

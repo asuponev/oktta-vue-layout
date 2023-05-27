@@ -161,7 +161,7 @@ export default {
     &__subtitle {
       order: 3;
       grid-column: 1 / 5;
-      padding-inline: 46px 20px;
+      padding: 0 20px 0 46px;
       justify-self: end;
     }
 

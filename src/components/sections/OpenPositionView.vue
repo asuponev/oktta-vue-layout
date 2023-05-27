@@ -93,17 +93,16 @@ export default {
   &-title {
     font: $font-page-title-gilroy;
     letter-spacing: -0.04em;
+    margin-bottom: 16px;
   }
 
   &-info {
     display: flex;
     flex-direction: column;
-    gap: 32px;
 
     &-block {
       display: flex;
       flex-direction: column;
-      gap: 16px;
     }
   }
 
@@ -111,16 +110,17 @@ export default {
     list-style-type: none;
     display: flex;
     flex-direction: column;
-    gap: 8px;
     padding-right: 24px;
 
     &-title {
       font: $font-h3-gilroy;
       letter-spacing: -0.04em;
+      margin: 16px 0;
     }
 
     &-marker {
       font: 400 13px/1.25 "Playfair Display", serif;
+      margin-right: 8px;
     }
 
     &-item {
@@ -129,7 +129,11 @@ export default {
       line-height: 1.5;
       letter-spacing: -0.03em;
       display: flex;
-      gap: 8px;
+      margin-bottom: 8px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -182,7 +186,6 @@ export default {
       display: flex;
       justify-content: flex-start;
       flex-direction: column;
-      gap: 40px;
     }
   }
 
@@ -206,6 +209,7 @@ export default {
 
       &--fullwidth {
         display: flex;
+        margin: 40px 0;
       }
     }
   }

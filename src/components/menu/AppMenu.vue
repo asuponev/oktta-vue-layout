@@ -135,7 +135,6 @@ export default {
   &__item {
     display: flex;
     align-items: flex-end;
-    gap: 20px;
 
     &:nth-child(1) {
       grid-area: 1 / 2 / 2 / 4;
@@ -163,6 +162,7 @@ export default {
       letter-spacing: -0.04em;
       text-decoration: none;
       cursor: pointer;
+      margin-right: 20px;
 
       .italic {
         font: $font-h1-playfair;
@@ -200,12 +200,12 @@ export default {
     &-contacts {
       display: flex;
       align-items: center;
-      gap: 28px;
 
       a {
         letter-spacing: -0.03em;
         text-decoration: none;
         color: $color-general-white;
+        margin-right: 28px;
       }
     }
   }
@@ -223,11 +223,10 @@ export default {
     }
 
     &__item {
-      gap: 10px;
-
       &-link {
         letter-spacing: -2px;
         font-size: 64px;
+        margin-right: 10px;
 
         .italic {
           font-size: 64px;
@@ -293,10 +292,10 @@ export default {
 
     &__footer {
       flex-direction: column-reverse;
-      gap: 32px;
 
       &-contacts {
         align-self: center;
+        margin-top: 32px;
       }
 
       &-social {

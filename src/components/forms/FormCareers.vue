@@ -45,12 +45,14 @@ export default {
             :label="'Как вас зовут?'"
             :placeholder="'Ваше имя'"
             :required="true"
+            class="form__box"
           />
           <custom-input
             :name="'city'"
             :label="'Город'"
             :placeholder="'Санкт-Петербург'"
             :required="true"
+            class="form__box"
           />
           <custom-input
             :name="'email'"
@@ -58,18 +60,21 @@ export default {
             :label="'Почта'"
             :placeholder="'hi@oktta.ru'"
             :required="true"
+            class="form__box"
           />
           <custom-input
             :name="'contact'"
             :label="'Номер телефона или Telegram'"
             :placeholder="'@oktta'"
             :required="true"
+            class="form__box"
           />
           <custom-textarea
             :name="'text'"
             :label="'Рассказ о себе'"
             :placeholder="'В свободной форме'"
             :required="false"
+            class="form__box"
           />
           <custom-input
             :name="'resume'"
@@ -77,8 +82,9 @@ export default {
             :placeholder="'Ссылка на резюме'"
             :required="true"
             :isFile="true"
+            class="form__box"
           />
-          <send-button />
+          <send-button class="form__box" />
           <agreement-text />
         </form>
       </div>
@@ -97,20 +103,19 @@ export default {
   background: $color-bg-dark;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
   border-radius: 32px;
   margin-top: 100px;
 
   &__intro {
     display: flex;
     flex-direction: column;
-    gap: 16px;
   }
 
   &__title {
     font: $font-card-title-gilroy;
     color: $color-general-white;
     letter-spacing: -0.04em;
+    margin-bottom: 16px;
   }
 
   &__description {
@@ -123,7 +128,10 @@ export default {
 .form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+
+  &__box {
+    margin-bottom: 16px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -134,16 +142,18 @@ export default {
   .form-block {
     padding: 70px 48px 72px;
     grid-template-columns: 1fr;
-    gap: 32px;
 
     &__title {
       font-size: 40px;
       text-align: center;
-      padding-inline: 20px;
+      padding: 0 20px;
+      margin-bottom: 32px;
     }
 
     &__description {
       text-align: center;
+      margin: 0 auto;
+      margin-bottom: 20px;
     }
   }
 }

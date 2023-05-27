@@ -137,8 +137,8 @@ export default {
         <div class="work__content">
           <div class="work__title">
             <h2 class="section__title">
-              Вып<span class="italic">о</span>лненн<span class="italic">ы</span
-              >е раб<span class="italic">о</span>ты
+              Вып<span class="italic">о</span>лненн<span class="italic">ы</span>е
+              раб<span class="italic">о</span>ты
             </h2>
           </div>
           <div class="work__subtitle">
@@ -157,14 +157,23 @@ export default {
                 :key="item.id"
               >
                 <p class="work__item-id">
-                  ({{ index < 10 ? `0${index + 1}` : index }})
-                </p>
-                <h3 class="work__item-title">
-                  {{ item.title }}
-                </h3>
-                <p class="work__item-description">
-                  {{ item.description }}
-                </p>
+                  ({{ index <
+                    10
+                    ?
+                    `0${index
+                    +
+                    1}`
+                    :
+                    index
+                  }})
+                    </p
+                  >
+                    <h3 class="work__item-title">
+                      {{ item.title }}
+                    </h3>
+                    <p class="work__item-description">
+                      {{ item.description }}
+                    </p>
               </div>
             </div>
           </div>
@@ -192,11 +201,20 @@ export default {
                 :key="item.id"
               >
                 <p class="metrics__item-id">
-                  ({{ index < 10 ? `0${index + 1}` : index }})
-                </p>
-                <p class="metrics__item-text">
-                  {{ item.text }}
-                </p>
+                  ({{ index <
+                    10
+                    ?
+                    `0${index
+                    +
+                    1}`
+                    :
+                    index
+                  }})
+                    </p
+                  >
+                    <p class="metrics__item-text">
+                      {{ item.text }}
+                    </p>
               </div>
             </div>
           </div>
@@ -215,8 +233,8 @@ export default {
         <div class="survey__content">
           <div class="survey__title">
             <h2 class="section__title">
-              Анке<span class="italic">т</span>иров<span class="italic">а</span
-              >ние
+              Анке<span class="italic">т</span>иров<span
+                class="italic">а</span>ние
             </h2>
           </div>
           <div class="survey__text">
@@ -257,8 +275,8 @@ export default {
         </div>
         <div class="test__visual">
           <h2 class="section__title">
-            В<span class="italic">ы</span>полнили р<span class="italic">я</span
-            >д<br />
+            В<span class="italic">ы</span>полнили р<span
+              class="italic">я</span>д<br />
             следу<span class="italic">ю</span>щих работ:
           </h2>
           <img
@@ -391,7 +409,7 @@ export default {
   &__items {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    justify-content: space-between;
   }
 
   &__item {
@@ -403,6 +421,7 @@ export default {
     padding: 32px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
 
     &-id {
       font: $font-small-playfair;
@@ -452,24 +471,28 @@ export default {
   &__items {
     display: flex;
     flex-direction: column;
-    gap: 16px;
   }
 
   &__item {
     padding: 26px 24px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
     background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' rx='24' style='fill: none; stroke: rgba(255, 255, 255, 0.09); stroke-width: 2; stroke-dasharray: 10 10'/></svg>");
+    margin-bottom: 16px;
 
     &-id {
       font: $font-small-playfair;
       font-size: 13px;
+      margin-bottom: 24px;
     }
 
     &-text {
       color: $color-text-secondary;
       letter-spacing: -0.03em;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 
@@ -523,8 +546,11 @@ export default {
   &__visual {
     display: flex;
     flex-direction: column;
-    gap: 80px;
     margin-top: 72px;
+
+    img {
+      margin-top: 80px;
+    }
   }
 }
 
@@ -569,7 +595,6 @@ export default {
     margin-top: 12px;
     display: flex;
     align-items: center;
-    gap: 24px;
 
     &-logo {
       width: 100px;
@@ -580,6 +605,7 @@ export default {
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-right: 24px;
 
       img {
         width: 60px;
@@ -729,8 +755,11 @@ export default {
     }
 
     &__visual {
-      gap: 48px;
       margin-top: 48px;
+
+      img {
+        margin-top: 48px;
+      }
     }
   }
 
@@ -759,11 +788,11 @@ export default {
 
     &__company {
       grid-column: 1 / 5;
-      gap: 32px;
 
       &-logo {
         width: 80px;
         height: 80px;
+        margin-right: 32px;
 
         img {
           width: 48px;
@@ -776,19 +805,9 @@ export default {
 
 @media (max-width: 590px) {
   .section {
-    // margin-top: 48px;
-
     &.mission {
       margin-top: 48px;
     }
-
-    // &__title {
-    //   font-size: 32px;
-
-    //   .italic {
-    //     font-size: 32px;
-    //   }
-    // }
   }
 
   .mission {
@@ -830,13 +849,13 @@ export default {
     &__content {
       flex-direction: column;
       padding: 48px 0;
-      gap: 48px;
     }
 
     &__block {
       &:first-child {
         max-width: 100%;
         align-items: center;
+        margin-bottom: 48px;
       }
 
       &:last-child {
@@ -853,12 +872,17 @@ export default {
     &__items {
       flex-direction: row;
       overflow-x: scroll;
-      padding-inline: 24px;
-      padding-bottom: 20px;
+      padding: 0 24px 20px;
     }
 
     &__item {
       min-width: 320px;
+      margin-bottom: 0;
+      margin-right: 16px;
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
 
     &__visual {
@@ -943,5 +967,4 @@ export default {
       }
     }
   }
-}
-</style>
+}</style>

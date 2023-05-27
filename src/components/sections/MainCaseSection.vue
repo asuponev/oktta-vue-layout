@@ -67,8 +67,9 @@ export default {
                 <div class="card__content">
                   <card-tags :tags="item.tags" />
                   <h3 class="card__title">
-                    {{ item.title.split(' ').slice(0, -1).join(' ') }}
-                    <span class="italic">{{ item.title.split(' ').at(-1) }}</span>
+                    <!-- {{ item.title.split(' ').slice(0, -1).join(' ') }}
+                    <span class="italic">{{ item.title.split(' ').at(-1) }}</span> -->
+                    {{ item.title }}
                   </h3>
                 </div>
                 <p class="card__description">
@@ -98,7 +99,6 @@ export default {
   &__content {
     display: flex;
     flex-direction: column;
-    gap: 26px;
   }
 
   &__button {
@@ -112,6 +112,7 @@ export default {
     letter-spacing: -0.03em;
     cursor: pointer;
     transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+    margin-top: 26px;
 
     &:hover {
       background: $color-general-green;
@@ -179,13 +180,13 @@ export default {
   &__content {
     display: flex;
     flex-direction: column;
-    gap: 24px;
     max-width: 577px;
   }
 
   &__title {
     font: $font-card-title-gilroy;
     letter-spacing: -0.04em;
+    margin-top: 24px;
 
     .italic {
       font: $font-card-title-playfair;
@@ -215,19 +216,16 @@ export default {
 
   &:not(:first-child):not(:last-child) {
     transform: translateY(-16px);
-    margin-inline: 32px;
+    margin: 0 32px;
   }
 }
 
 @media (max-width: 1024px) {
   .section {
-    &__content {
-      gap: 24px;
-    }
-
     &__button {
       height: 46px;
       font-size: 16px;
+      margin-top: 24px;
     }
   }
 
@@ -248,7 +246,6 @@ export default {
     grid-area: 3 / 1 / 4 / 13;
     display: flex;
     flex-direction: column;
-    gap: 16px;
 
     &__inner {
       height: 740px;
@@ -265,13 +262,13 @@ export default {
         position: static;
         color: $color-general-dark;
         padding: 0;
+        margin-top: 16px;
       }
     }
 
     &__content {
       display: flex;
       flex-direction: column;
-      gap: 24px;
       max-width: 360px;
     }
 
@@ -298,15 +295,15 @@ export default {
     }
 
     &:not(:first-child):not(:last-child) {
-      margin-inline: 24px;
+      margin: 0 24px;
     }
   }
 }
 
 @media (max-width: 590px) {
   .section {
-    &__content {
-      gap: 16px;
+    &__button {
+      margin-top: 16px;
     }
   }
 
@@ -335,17 +332,16 @@ export default {
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
-        gap: 8px;
       }
     }
 
     &__content {
       flex-direction: column;
-      gap: 16px;
     }
 
     &__title {
       font-size: 24px;
+      margin: 16px 0 8px;
     }
 
     &__description {
@@ -368,7 +364,7 @@ export default {
     }
 
     &:not(:first-child):not(:last-child) {
-      margin-inline: 16px;
+      margin: 0 16px;
     }
   }
 }

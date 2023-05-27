@@ -65,7 +65,6 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 24px;
 
     &-id {
       font: $font-small-playfair;
@@ -103,17 +102,21 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 20px;
       width: 100%;
     }
 
     &__item {
       width: 100%;
       gap: 20px;
+      margin-bottom: 20px;
 
       &-title {
         font-size: 24px;
         max-width: 100%;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
       }
     }
   }
